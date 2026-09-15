@@ -128,7 +128,7 @@ Inicio
 
          // ---- Confirmação ----
          Escreval()
-         Escreval("========================================")
+         Escreval("===============================================")
          Escreval("CONFIRME OS DADOS DO TURNO DA MANHÃ:")
          Escreval()
          Escreval(" - Clínicos Gerais: ", turno_manha_CG)
@@ -136,7 +136,7 @@ Inicio
          Escreval(" - Cirurgiões: ", turno_manha_Cir)
          Escreval()
          Escreval("Digite 's' para confirmar ou 'n' para corrigir:")
-         Escreval("========================================")
+         Escreval("===============================================")
          Escreval()
          Escreva("OPÇÃO: ")
          Leia(button)
@@ -196,7 +196,7 @@ Inicio
             Escreval()
             Escreval("Digite o número de **PEDIATRAS** do TURNO DA TARDE: ")
             Leia(turno_tarde_Ped)
-            result_Ped <- turno_tarde_Ped - int(turno_tarde_Ped)
+            result_tarde_Ped <- turno_tarde_Ped - int(turno_tarde_Ped)
             Se (turno_tarde_Ped < 0) Então
                LimpaTela()
                Escreval()
@@ -245,7 +245,7 @@ Inicio
          LimpaTela()
 
          Escreval()
-         Escreval("========================================")
+         Escreval("===============================================")
          Escreval("CONFIRME OS DADOS DO TURNO DA TARDE:")
          Escreval()
          Escreval(" - Clínicos Gerais: ", turno_tarde_CG)
@@ -253,7 +253,7 @@ Inicio
          Escreval(" - Cirurgiões: ", turno_tarde_Cir)
          Escreval()
          Escreval("Digite 's' para confirmar ou 'n' para corrigir:")
-         Escreval("========================================")
+         Escreval("===============================================")
          Escreval()
          Escreva("OPÇÃO: ")
          Leia(button)
@@ -361,7 +361,7 @@ Inicio
          LimpaTela()
 
          Escreval()
-         Escreval("========================================")
+         Escreval("===============================================")
          Escreval("CONFIRME OS DADOS DO TURNO DA NOITE:")
          Escreval()
          Escreval(" - Clínicos Gerais: ", turno_noite_CG)
@@ -369,7 +369,7 @@ Inicio
          Escreval(" - Cirurgiões: ", turno_noite_Cir)
          Escreval()
          Escreval("Digite 's' para confirmar ou 'n' para corrigir:")
-         Escreval("========================================")
+         Escreval("===============================================")
          Escreval()
          Escreva("OPÇÃO: ")
          Leia(button)
