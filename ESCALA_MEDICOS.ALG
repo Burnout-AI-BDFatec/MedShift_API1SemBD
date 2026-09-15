@@ -1,6 +1,4 @@
 Algoritmo "Escala_Medicos"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
 
 Var
    turno_manha_CG, turno_manha_Ped, turno_manha_Cir : real
@@ -147,8 +145,6 @@ Inicio
             button <- "n"
          Fimse
 
-         LimpaTela()
-
       Fimenquanto
 
       Escreval("Dados do TURNO DA MANHÃ **CONFIRMADOS**.")
@@ -264,8 +260,6 @@ Inicio
             button <- "n"
          Fimse
 
-         LimpaTela()
-
       Fimenquanto
 
       Escreval("Dados do TURNO DA TARDE **CONFIRMADOS**.")
@@ -380,8 +374,6 @@ Inicio
             button <- "n"
          Fimse
 
-         LimpaTela()
-
       Fimenquanto
 
       Escreval("Dados do TURNO DA NOITE **CONFIRMADOS**.")
@@ -431,8 +423,8 @@ Inicio
    Escreval("  - Total no turno:  ", soma_noite)
    Escreval()
    Escreval("TOTAL GERAL DE MÉDICOS: ", soma_geral)
-   Escreval("========================================")
    Escreval()
+   Escreval("========================================")
 
 
    //FIM INDICE 4
@@ -450,8 +442,7 @@ Inicio
    Fimse
 
    Se (log_manha = 0) OU (log_tarde = 0) OU (log_noite = 0)Então
-      Escreval("========================================")
-      Escreval("    PLANTÃO NÃO PODE SER PUBLICADO!     ")
+      Escreval("    O PLANTÃO NÃO PODE SER PUBLICADO!   ")
       Escreval("========================================")
       Escreval()
 
@@ -518,8 +509,7 @@ Inicio
       Fimse
 
    Senão
-      Escreval("========================================")
-      Escreval("       PLANTÃO PODE SER PUBLICADO!      ")
+      Escreval("     O PLANTÃO PODE SER PUBLICADO!      ")
       Escreval("========================================")
    Fimse
 
