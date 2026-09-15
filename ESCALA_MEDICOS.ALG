@@ -328,13 +328,44 @@ Inicio
          turno_manha_CG <- -1
          turno_manha_Ped <- -1
          turno_manha_Cir <- -1
-         button <- "n"
+         button <- "n
       senao
          Escreval("Turno válido!")
       fimse
 
 
    Fimenquanto
+
+   Se (turno_manha_CG >= min_CG) E (turno_manha_Ped >= min_Ped) E (turno_manha_Cir >= min_Cir) Então
+   escreval("Turno da Manhã Válido.")
+    log_manha <- 1
+   Senão
+   escreval("Turno da Manhã Inválido.")
+    Fimse
+
+   Se (turno_tarde_CG >= min_CG) E (turno_tarde_Ped >= min_Ped) E (turno_tarde_Cir >= min_Cir) Então
+    escreval("Turno da Tarde Válido.")
+   log_tarde <- 1
+   Senão
+   Escreval("Turno da Tarde Inválido")
+   Fimse
+
+   Se (turno_noite_CG >= min_CG) E (turno_noite_Ped >= min_Ped) E (turno_noite_Cir >= min_Cir) Então
+   escreval("Turno da Noite Válido.")
+    log_noite <- 1
+   Senão
+    escreval("Turno da Noite Inválido.")
+   Fimse
+
+   Se (soma_geral > max_Med) então
+    escreval("O número total de médicos inseridos ultrapassa o total de médicos Disponíveis.")
+   Senão
+    escreval("Plantão Válido.")
+   Fimse
+
+
+
+
 
 
 Fimalgoritmo
