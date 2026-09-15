@@ -1,5 +1,16 @@
 Algoritmo "Escala_Medicos"
 
+//API FATEC - BANCO DE DADOS - 1º SEMESTRE
+//EQUIPE BURNOUT AI
+//P.O. - GUSTAVO NEVES
+//S.M. - GUILHERME NANNI
+//DEV - DAVI WILLIAM
+//DEV - FERNANDO TRONE
+//DEV - GABRIEL KODATO
+//DEV - JONAS VIEIRA
+//DEV - LUCAS ROBERTO
+//DEV - WILLIAM TOLEDO
+
 Var
    turno_manha_CG, turno_manha_Ped, turno_manha_Cir : real
    result_CG, result_Ped, result_Cir : real
@@ -34,6 +45,14 @@ Inicio
    soma_tarde <- 0
    soma_noite <- 0
    soma_geral <- max_Med +1
+   
+   Escreval("========================================")
+   Escreval("    MEDSHIFT - Hospital Santa Aurora    ")
+   Escreval("========================================")
+   Escreval()
+   Escreval("VAMOS INICIAR A CONFIGURAÇÃO DO PLANTÃO.")
+   
+   
 
    Enquanto (soma_geral > max_Med)faça
 
