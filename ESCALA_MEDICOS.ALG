@@ -1,4 +1,6 @@
 Algoritmo "Escala_Medicos"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi
 
 Var
    turno_manha_CG, turno_manha_Ped, turno_manha_Cir : real
@@ -385,11 +387,38 @@ Inicio
 
    Fimenquanto
 
-   //INSERIR AQUI PARTE DE IMPRESSAO DOS 3 TURNOS ANTES TOMADA DECISAO
-   //INDICE 4
-   //INSERIR AQUI
-
    LimpaTela()
+
+   //INDICE 4
+
+   Escreval("========================================")
+   Escreval("         RELATÓRIO GERAL DO PLANTÃO     ")
+   Escreval("========================================")
+   Escreval()
+   Escreval("TURNO DA MANHÃ:")
+   Escreval("  - Clínicos Gerais: ", turno_manha_CG)
+   Escreval("  - Pediatras:       ", turno_manha_Ped)
+   Escreval("  - Cirurgiões:      ", turno_manha_Cir)
+   Escreval("  - Total no turno:  ", soma_manha)
+   Escreval()
+   Escreval("TURNO DA TARDE:")
+   Escreval("  - Clínicos Gerais: ", turno_tarde_CG)
+   Escreval("  - Pediatras:       ", turno_tarde_Ped)
+   Escreval("  - Cirurgiões:      ", turno_tarde_Cir)
+   Escreval("  - Total no turno:  ", soma_tarde)
+   Escreval()
+   Escreval("TURNO DA NOITE:")
+   Escreval("  - Clínicos Gerais: ", turno_noite_CG)
+   Escreval("  - Pediatras:       ", turno_noite_Ped)
+   Escreval("  - Cirurgiões:      ", turno_noite_Cir)
+   Escreval("  - Total no turno:  ", soma_noite)
+   Escreval()
+   Escreval("TOTAL GERAL DE MÉDICOS: ", soma_geral)
+   Escreval("========================================")
+   Escreval()
+
+
+   //FIM INDICE 4
 
    Se (turno_manha_CG >= min_CG) E (turno_manha_Ped >= min_Ped) E (turno_manha_Cir >= min_Cir) Então
       log_manha <- 1
