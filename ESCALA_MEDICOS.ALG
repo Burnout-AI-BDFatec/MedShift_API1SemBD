@@ -1,4 +1,6 @@
 Algoritmo "Escala_Medicos"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi
 
 //API FATEC - BANCO DE DADOS - 1º SEMESTRE
 //EQUIPE BURNOUT AI
@@ -45,491 +47,480 @@ Inicio
    soma_tarde <- 0
    soma_noite <- 0
    soma_geral <- max_Med +1
-   
+
    Escreval("========================================")
-   Escreval("    MEDSHIFT - Hospital Santa Aurora    ")
+   Escreval("       MEDSHIFT - SISTEMA MÉDICO        ")
+   Escreval("         HOSPITAL SANTA AURORA          ")
    Escreval("========================================")
    Escreval()
-   Escreval("VAMOS INICIAR A CONFIGURAÇÃO DO PLANTÃO.")
-   
-   
+   Escreval(" Olá, seja muito bem-vindo(a)!")
+   Escreval(" Central de Configuração de Escalas.")
+   Escreval("----------------------------------------")
+   Escreval(" Pressione [C] para Cancelar")
+   Escreval(" Ou pressione [ENTER] para Continuar...")
+   Escreval("========================================")
+   Escreva(" Opção: ")
+   Leia(button)
 
-   Enquanto (soma_geral > max_Med)faça
+   Se (button = "C") OU (button = "c") Então
+      LimpaTela()
+      Escreval("Sistema encerrado pelo usuário. Até logo!")
+Fimalgoritmo
+Fimse
 
-      Enquanto (button <> "s") E (button <> "S") Faça
+LimpaTela()
 
-         turno_manha_CG <- -1
-         turno_manha_Ped <- -1
-         turno_manha_Cir <- -1
+Enquanto (soma_geral > max_Med)faça
 
-         //  Clínicos Gerais
-         Enquanto (turno_manha_CG < 0) OU (turno_manha_CG > max_Med) OU (result_CG > 0) Faça
+   Enquanto (button <> "s") E (button <> "S") Faça
+
+      turno_manha_CG <- -1
+      turno_manha_Ped <- -1
+      turno_manha_Cir <- -1
+
+      Escreval("========================================")
+      Escreval("       CADASTRO DO TURNO DA MANHA")
+      Escreval("========================================")
+
+      //  Clínicos Gerais
+      Enquanto (turno_manha_CG < 0) OU (turno_manha_CG > max_Med) OU (result_CG > 0) Faça
+         Escreva("Digite o número de CLÍNICOS GERAIS: ")
+         Leia(turno_manha_CG)
+         result_CG <- turno_manha_CG - int(turno_manha_CG)
+         Se (turno_manha_CG < 0) Então
+            LimpaTela()
             Escreval()
-            Escreval("Digite o número de **CLÍNICOS GERAIS** do TURNO DA MANHÃ: ")
-            Leia(turno_manha_CG)
-            result_CG <- turno_manha_CG - int(turno_manha_CG)
-            Se (turno_manha_CG < 0) Então
+            Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+         Senão
+            Se (turno_manha_CG > max_Med) Então
                LimpaTela()
                Escreval()
-               Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+               Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
             Senão
-               Se (turno_manha_CG > max_Med) Então
+               Se (result_CG > 0) Então
                   LimpaTela()
                   Escreval()
-                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-               Senão
-                  Se (result_CG > 0) Então
-                     LimpaTela()
-                     Escreval()
-                     Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-                  Fimse
+                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
                Fimse
             Fimse
-         Fimenquanto
-
-         LimpaTela()
-
-         //  Pediatras
-         Enquanto (turno_manha_Ped < 0) OU (turno_manha_Ped > max_Med) OU (result_Ped > 0) Faça
-            Escreval()
-            Escreval("Digite o número de **PEDIATRAS** do TURNO DA MANHÃ: ")
-            Leia(turno_manha_Ped)
-            result_Ped <- turno_manha_Ped - int(turno_manha_Ped)
-            Se (turno_manha_Ped < 0) Então
-               LimpaTela()
-               Escreval()
-               Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
-            Senão
-               Se (turno_manha_Ped > max_Med) Então
-                  LimpaTela()
-                  Escreval()
-                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-               Senão
-                  Se (result_Ped > 0) Então
-                     LimpaTela()
-                     Escreval()
-                     Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-                  Fimse
-               Fimse
-            Fimse
-         Fimenquanto
-
-         LimpaTela()
-
-         // ---- Cirurgiões ----
-         Enquanto (turno_manha_Cir < 0) OU (turno_manha_Cir > max_Med) OU (result_Cir > 0) Faça
-            Escreval()
-            Escreval("Digite o número de **CIRURGIÕES** do TURNO DA MANHÃ: ")
-            Leia(turno_manha_Cir)
-            result_Cir <- turno_manha_Cir - int(turno_manha_Cir)
-            Se (turno_manha_Cir < 0) Então
-               LimpaTela()
-               Escreval()
-               Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
-            Senão
-               Se (turno_manha_Cir > max_Med) Então
-                  LimpaTela()
-                  Escreval()
-                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-               Senão
-                  Se (result_Cir > 0) Então
-                     LimpaTela()
-                     Escreval()
-                     Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-                  Fimse
-               Fimse
-            Fimse
-         Fimenquanto
-
-         LimpaTela()
-
-         // ---- Confirmação ----
-         Escreval()
-         Escreval("===============================================")
-         Escreval("CONFIRME OS DADOS DO TURNO DA MANHÃ:")
-         Escreval()
-         Escreval(" - Clínicos Gerais: ", turno_manha_CG)
-         Escreval(" - Pediatras: ", turno_manha_Ped)
-         Escreval(" - Cirurgiões: ", turno_manha_Cir)
-         Escreval()
-         Escreval("Digite 's' para confirmar ou 'n' para corrigir:")
-         Escreval("===============================================")
-         Escreval()
-         Escreva("OPÇÃO: ")
-         Leia(button)
-         Escreval()
-
-         Se (button <> "s") E (button <> "S") E (button <> "n") E (button <> "N") Então
-            Escreval("OPÇÃO INVÁLIDA! Digite novamente os dados")
-            button <- "n"
          Fimse
-
       Fimenquanto
 
-      Escreval("Dados do TURNO DA MANHÃ **CONFIRMADOS**.")
-
-      LimpaTela()
-
-
-      //TURNO DA TARDE
-
-      button <- "n"
-
-      Enquanto (button <> "s") E (button <> "S") Faça
-
-         turno_tarde_CG <- -1
-         turno_tarde_Ped <- -1
-         turno_tarde_Cir <- -1
-
-         Enquanto (turno_tarde_CG < 0) OU (turno_tarde_CG > max_Med) OU (result_CG > 0) Faça
+      //  Pediatras
+      Enquanto (turno_manha_Ped < 0) OU (turno_manha_Ped > max_Med) OU (result_Ped > 0) Faça
+         Escreva("Digite o número de PEDIATRAS: ")
+         Leia(turno_manha_Ped)
+         result_Ped <- turno_manha_Ped - int(turno_manha_Ped)
+         Se (turno_manha_Ped < 0) Então
+            LimpaTela()
             Escreval()
-            Escreval("Digite o número de **CLÍNICOS GERAIS** do TURNO DA TARDE: ")
-            Leia(turno_tarde_CG)
-            result_CG <- turno_tarde_CG - int(turno_tarde_CG)
-            Se (turno_tarde_CG < 0) Então
+            Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+         Senão
+            Se (turno_manha_Ped > max_Med) Então
                LimpaTela()
                Escreval()
-               Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+               Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
             Senão
-               Se (turno_tarde_CG > max_Med) Então
+               Se (result_Ped > 0) Então
                   LimpaTela()
                   Escreval()
-                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-               Senão
-                  Se (result_CG > 0) Então
-                     LimpaTela()
-                     Escreval()
-                     Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-                  Fimse
+                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
                Fimse
             Fimse
-         Fimenquanto
-
-         LimpaTela()
-
-         Enquanto (turno_tarde_Ped < 0) OU (turno_tarde_Ped > max_Med) OU (result_tarde_Ped > 0) Faça
-            Escreval()
-            Escreval("Digite o número de **PEDIATRAS** do TURNO DA TARDE: ")
-            Leia(turno_tarde_Ped)
-            result_tarde_Ped <- turno_tarde_Ped - int(turno_tarde_Ped)
-            Se (turno_tarde_Ped < 0) Então
-               LimpaTela()
-               Escreval()
-               Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
-            Senão
-               Se (turno_tarde_Ped > max_Med) Então
-                  LimpaTela()
-                  Escreval()
-                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-               Senão
-                  Se (result_tarde_Ped > 0) Então
-                     LimpaTela()
-                     Escreval()
-                     Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-                  Fimse
-               Fimse
-            Fimse
-         Fimenquanto
-
-         LimpaTela()
-
-         Enquanto (turno_tarde_Cir < 0) OU (turno_tarde_Cir > max_Med) OU (result_tarde_Cir > 0) Faça
-            Escreval()
-            Escreval("Digite o número de **CIRURGIÕES** do TURNO DA TARDE: ")
-            Leia(turno_tarde_Cir)
-            result_tarde_Cir <- turno_tarde_Cir - int(turno_tarde_Cir)
-            Se (turno_tarde_Cir < 0) Então
-               LimpaTela()
-               Escreval()
-               Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
-            Senão
-               Se (turno_tarde_Cir > max_Med) Então
-                  LimpaTela()
-                  Escreval()
-                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-               Senão
-                  Se (result_tarde_Cir > 0) Então
-                     LimpaTela()
-                     Escreval()
-                     Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-                  Fimse
-               Fimse
-            Fimse
-         Fimenquanto
-
-         LimpaTela()
-
-         Escreval()
-         Escreval("===============================================")
-         Escreval("CONFIRME OS DADOS DO TURNO DA TARDE:")
-         Escreval()
-         Escreval(" - Clínicos Gerais: ", turno_tarde_CG)
-         Escreval(" - Pediatras: ", turno_tarde_Ped)
-         Escreval(" - Cirurgiões: ", turno_tarde_Cir)
-         Escreval()
-         Escreval("Digite 's' para confirmar ou 'n' para corrigir:")
-         Escreval("===============================================")
-         Escreval()
-         Escreva("OPÇÃO: ")
-         Leia(button)
-         Escreval()
-
-         Se (button <> "s") E (button <> "S") E (button <> "n") E (button <> "N") Então
-            Escreval("OPÇÃO INVÁLIDA! Digite novamente os dados")
-            button <- "n"
          Fimse
-
       Fimenquanto
 
-      Escreval("Dados do TURNO DA TARDE **CONFIRMADOS**.")
 
-      LimpaTela()
-
-      //TURNO DA NOITE
-
-      button <- "n"
-
-      Enquanto (button <> "s") E (button <> "S") Faça
-
-         turno_noite_CG <- -1
-         turno_noite_Ped <- -1
-         turno_noite_Cir <- -1
-
-         Enquanto (turno_noite_CG < 0) OU (turno_noite_CG > max_Med) OU (result_noite_CG > 0) Faça
+      // ---- Cirurgiões ----
+      Enquanto (turno_manha_Cir < 0) OU (turno_manha_Cir > max_Med) OU (result_Cir > 0) Faça
+         Escreva("Digite o número de CIRURGIÕES: ")
+         Leia(turno_manha_Cir)
+         result_Cir <- turno_manha_Cir - int(turno_manha_Cir)
+         Se (turno_manha_Cir < 0) Então
+            LimpaTela()
             Escreval()
-            Escreval("Digite o número de **CLÍNICOS GERAIS** do TURNO DA NOITE: ")
-            Leia(turno_noite_CG)
-            result_noite_CG <- turno_noite_CG - int(turno_noite_CG)
-            Se (turno_noite_CG < 0) Então
+            Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+         Senão
+            Se (turno_manha_Cir > max_Med) Então
                LimpaTela()
                Escreval()
-               Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+               Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
             Senão
-               Se (turno_noite_CG > max_Med) Então
+               Se (result_Cir > 0) Então
                   LimpaTela()
                   Escreval()
-                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-               Senão
-                  Se (result_noite_CG > 0) Então
-                     LimpaTela()
-                     Escreval()
-                     Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-                  Fimse
+                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
                Fimse
             Fimse
-         Fimenquanto
-
-         LimpaTela()
-
-         Enquanto (turno_noite_Ped < 0) OU (turno_noite_Ped > max_Med) OU (result_noite_Ped > 0) Faça
-            Escreval()
-            Escreval("Digite o número de **PEDIATRAS** do TURNO DA NOITE: ")
-            Leia(turno_noite_Ped)
-            result_noite_Ped <- turno_noite_Ped - int(turno_noite_Ped)
-            Se (turno_noite_Ped < 0) Então
-               LimpaTela()
-               Escreval()
-               Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
-            Senão
-               Se (turno_noite_Ped > max_Med) Então
-                  LimpaTela()
-                  Escreval()
-                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-               Senão
-                  Se (result_noite_Ped > 0) Então
-                     LimpaTela()
-                     Escreval()
-                     Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-                  Fimse
-               Fimse
-            Fimse
-         Fimenquanto
-
-         LimpaTela()
-
-         Enquanto (turno_noite_Cir < 0) OU (turno_noite_Cir > max_Med) OU (result_noite_Cir > 0) Faça
-            Escreval()
-            Escreval("Digite o número de **CIRURGIÕES** do TURNO DA NOITE: ")
-            Leia(turno_noite_Cir)
-            result_noite_Cir <- turno_noite_Cir - int(turno_noite_Cir)
-            Se (turno_noite_Cir < 0) Então
-               LimpaTela()
-               Escreval()
-               Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
-            Senão
-               Se (turno_noite_Cir > max_Med) Então
-                  LimpaTela()
-                  Escreval()
-                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-               Senão
-                  Se (result_noite_Cir > 0) Então
-                     LimpaTela()
-                     Escreval()
-                     Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-                  Fimse
-               Fimse
-            Fimse
-         Fimenquanto
-
-         LimpaTela()
-
-         Escreval()
-         Escreval("===============================================")
-         Escreval("CONFIRME OS DADOS DO TURNO DA NOITE:")
-         Escreval()
-         Escreval(" - Clínicos Gerais: ", turno_noite_CG)
-         Escreval(" - Pediatras: ", turno_noite_Ped)
-         Escreval(" - Cirurgiões: ", turno_noite_Cir)
-         Escreval()
-         Escreval("Digite 's' para confirmar ou 'n' para corrigir:")
-         Escreval("===============================================")
-         Escreval()
-         Escreva("OPÇÃO: ")
-         Leia(button)
-         Escreval()
-
-         Se (button <> "s") E (button <> "S") E (button <> "n") E (button <> "N") Então
-            Escreval("OPÇÃO INVÁLIDA! Digite novamente os dados")
-            button <- "n"
          Fimse
-
       Fimenquanto
 
-      Escreval("Dados do TURNO DA NOITE **CONFIRMADOS**.")
+      // ---- Confirmação ----
+      Escreval()
+      Escreval("***CONFIRME OS DADOS DO TURNO DA MANHÃ:***")
+      Escreval("Digite 's' para confirmar")
+      Escreval("Digite 'n' para corrigir")
+      Escreval()
+      Escreva("OPÇÃO: ")
+      Leia(button)
+      limpatela
+      Escreval()
 
-      LimpaTela()
-
-      escreval()
-      soma_manha <- (turno_manha_CG + turno_manha_Ped + turno_manha_Cir)
-      soma_tarde <- (turno_tarde_CG + turno_tarde_Ped + turno_tarde_Cir)
-      soma_noite <- (turno_noite_CG + turno_noite_Ped + turno_noite_Cir)
-      soma_geral <- (soma_manha + soma_tarde + soma_noite)
-
-      Se (soma_geral >max_Med)entao
-         escreval("PLANTÃO INVÁLIDO! Insira os dados novamente. Número máximo de médicos ultrapassado")
-         turno_manha_CG <- -1
-         turno_manha_Ped <- -1
-         turno_manha_Cir <- -1
-         button <- "n
+      Se (button <> "s") E (button <> "S") E (button <> "n") E (button <> "N") Então
+         Escreval("OPÇÃO INVÁLIDA! Digite novamente os dados")
+         button <- "n"
       Fimse
 
    Fimenquanto
 
+   Escreval("Dados do TURNO DA MANHÃ **CONFIRMADOS**.")
+
    LimpaTela()
 
-   //INDICE 4
 
-   Escreval("========================================")
-   Escreval("         RELATÓRIO GERAL DO PLANTÃO     ")
-   Escreval("========================================")
-   Escreval()
-   Escreval("TURNO DA MANHÃ:")
-   Escreval("  - Clínicos Gerais: ", turno_manha_CG)
-   Escreval("  - Pediatras:       ", turno_manha_Ped)
-   Escreval("  - Cirurgiões:      ", turno_manha_Cir)
-   Escreval("  - Total no turno:  ", soma_manha)
-   Escreval()
-   Escreval("TURNO DA TARDE:")
-   Escreval("  - Clínicos Gerais: ", turno_tarde_CG)
-   Escreval("  - Pediatras:       ", turno_tarde_Ped)
-   Escreval("  - Cirurgiões:      ", turno_tarde_Cir)
-   Escreval("  - Total no turno:  ", soma_tarde)
-   Escreval()
-   Escreval("TURNO DA NOITE:")
-   Escreval("  - Clínicos Gerais: ", turno_noite_CG)
-   Escreval("  - Pediatras:       ", turno_noite_Ped)
-   Escreval("  - Cirurgiões:      ", turno_noite_Cir)
-   Escreval("  - Total no turno:  ", soma_noite)
-   Escreval()
-   Escreval("TOTAL GERAL DE MÉDICOS: ", soma_geral)
-   Escreval()
-   Escreval("========================================")
+   //TURNO DA TARDE
 
+   button <- "n"
 
-   //FIM INDICE 4
+   Enquanto (button <> "s") E (button <> "S") Faça
 
-   Se (turno_manha_CG >= min_CG) E (turno_manha_Ped >= min_Ped) E (turno_manha_Cir >= min_Cir) Então
-      log_manha <- 1
-   Fimse
+      turno_tarde_CG <- -1
+      turno_tarde_Ped <- -1
+      turno_tarde_Cir <- -1
 
-   Se (turno_tarde_CG >= min_CG) E (turno_tarde_Ped >= min_Ped) E (turno_tarde_Cir >= min_Cir) Então
-      log_tarde <- 1
-   Fimse
-
-   Se (turno_noite_CG >= min_CG) E (turno_noite_Ped >= min_Ped) E (turno_noite_Cir >= min_Cir) Então
-      log_noite <- 1
-   Fimse
-
-   Se (log_manha = 0) OU (log_tarde = 0) OU (log_noite = 0)Então
-      Escreval("    O PLANTÃO NÃO PODE SER PUBLICADO!   ")
       Escreval("========================================")
+      Escreval("       CADASTRO DO TURNO DA TARDE")
+      Escreval("========================================")
+
+      Enquanto (turno_tarde_CG < 0) OU (turno_tarde_CG > max_Med) OU (result_CG > 0) Faça
+         Escreva("Digite o número de CLÍNICOS GERAIS: ")
+         Leia(turno_tarde_CG)
+         result_CG <- turno_tarde_CG - int(turno_tarde_CG)
+         Se (turno_tarde_CG < 0) Então
+            LimpaTela()
+            Escreval()
+            Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+         Senão
+            Se (turno_tarde_CG > max_Med) Então
+               LimpaTela()
+               Escreval()
+               Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
+            Senão
+               Se (result_CG > 0) Então
+                  LimpaTela()
+                  Escreval()
+                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
+               Fimse
+            Fimse
+         Fimse
+      Fimenquanto
+
+
+      Enquanto (turno_tarde_Ped < 0) OU (turno_tarde_Ped > max_Med) OU (result_tarde_Ped > 0) Faça
+         Escreva("Digite o número de PEDIATRAS: ")
+         Leia(turno_tarde_Ped)
+         result_tarde_Ped <- turno_tarde_Ped - int(turno_tarde_Ped)
+         Se (turno_tarde_Ped < 0) Então
+            LimpaTela()
+            Escreval()
+            Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+         Senão
+            Se (turno_tarde_Ped > max_Med) Então
+               LimpaTela()
+               Escreval()
+               Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
+            Senão
+               Se (result_tarde_Ped > 0) Então
+                  LimpaTela()
+                  Escreval()
+                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
+               Fimse
+            Fimse
+         Fimse
+      Fimenquanto
+
+      Enquanto (turno_tarde_Cir < 0) OU (turno_tarde_Cir > max_Med) OU (result_tarde_Cir > 0) Faça
+         Escreva("Digite o número de CIRURGIÕES: ")
+         Leia(turno_tarde_Cir)
+         result_tarde_Cir <- turno_tarde_Cir - int(turno_tarde_Cir)
+         Se (turno_tarde_Cir < 0) Então
+            LimpaTela()
+            Escreval()
+            Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+         Senão
+            Se (turno_tarde_Cir > max_Med) Então
+               LimpaTela()
+               Escreval()
+               Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
+            Senão
+               Se (result_tarde_Cir > 0) Então
+                  LimpaTela()
+                  Escreval()
+                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
+               Fimse
+            Fimse
+         Fimse
+      Fimenquanto
+
+      // ---- Confirmação tarde ----
+      Escreval()
+      Escreval("***CONFIRME OS DADOS DO TURNO DA TARDE:***")
+      Escreval("Digite 's' para confirmar")
+      Escreval("Digite 'n' para corrigir")
+      Escreval()
+      Escreva("OPÇÃO: ")
+      Leia(button)
+      limpatela
       Escreval()
 
-      Se (log_manha = 0) Então
-         Escreval("========================================")
-         Escreval("   -> Problema(s) no TURNO DA MANHÃ:    ")
-         Escreval()
-         Se (turno_manha_CG < min_CG) Então
-            falta_CG <- int(min_CG - turno_manha_CG)
-            Escreval(" - Falta(m): ", falta_CG, " Clínico(s) Geral(is)")
-         Fimse
-         Se (turno_manha_Ped < min_Ped) Então
-            falta_Ped <- int(min_Ped - turno_manha_Ped)
-            Escreval (" - Falta(m): ", falta_Ped, " Pediatra(s)")
-         Fimse
-         Se (turno_manha_Cir < min_Cir) Então
-            falta_Cir <- int(min_Cir - turno_manha_Cir)
-            Escreval (" - Falta(m): ", falta_Cir, " Cirurgião(ões)")
-         Fimse
-         Escreval("========================================")
+      Se (button <> "s") E (button <> "S") E (button <> "n") E (button <> "N") Então
+         Escreval("OPÇÃO INVÁLIDA! Digite novamente os dados")
+         button <- "n"
       Fimse
 
+   Fimenquanto
+
+   Escreval("Dados do TURNO DA TARDE **CONFIRMADOS**.")
+
+   LimpaTela()
+
+   //TURNO DA NOITE
+
+   button <- "n"
+
+   Enquanto (button <> "s") E (button <> "S") Faça
+
+      turno_noite_CG <- -1
+      turno_noite_Ped <- -1
+      turno_noite_Cir <- -1
+
+      Escreval("========================================")
+      Escreval("       CADASTRO DO TURNO DA NOITE")
+      Escreval("========================================")
+
+      Enquanto (turno_noite_CG < 0) OU (turno_noite_CG > max_Med) OU (result_noite_CG > 0) Faça
+         Escreva("Digite o número de CLÍNICOS GERAIS: ")
+         Leia(turno_noite_CG)
+         result_noite_CG <- turno_noite_CG - int(turno_noite_CG)
+         Se (turno_noite_CG < 0) Então
+            LimpaTela()
+            Escreval()
+            Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+         Senão
+            Se (turno_noite_CG > max_Med) Então
+               LimpaTela()
+               Escreval()
+               Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
+            Senão
+               Se (result_noite_CG > 0) Então
+                  LimpaTela()
+                  Escreval()
+                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
+               Fimse
+            Fimse
+         Fimse
+      Fimenquanto
+
+      Enquanto (turno_noite_Ped < 0) OU (turno_noite_Ped > max_Med) OU (result_noite_Ped > 0) Faça
+         Escreva("Digite o número de PEDIATRAS: ")
+         Leia(turno_noite_Ped)
+         result_noite_Ped <- turno_noite_Ped - int(turno_noite_Ped)
+         Se (turno_noite_Ped < 0) Então
+            LimpaTela()
+            Escreval()
+            Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+         Senão
+            Se (turno_noite_Ped > max_Med) Então
+               LimpaTela()
+               Escreval()
+               Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
+            Senão
+               Se (result_noite_Ped > 0) Então
+                  LimpaTela()
+                  Escreval()
+                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
+               Fimse
+            Fimse
+         Fimse
+      Fimenquanto
+
+
+      Enquanto (turno_noite_Cir < 0) OU (turno_noite_Cir > max_Med) OU (result_noite_Cir > 0) Faça
+         Escreva("Digite o número de CIRURGIÕES: ")
+         Leia(turno_noite_Cir)
+         result_noite_Cir <- turno_noite_Cir - int(turno_noite_Cir)
+         Se (turno_noite_Cir < 0) Então
+            LimpaTela()
+            Escreval()
+            Escreval("NÚMERO INVÁLIDO! Quantidade não pode ser negativa")
+         Senão
+            Se (turno_noite_Cir > max_Med) Então
+               LimpaTela()
+               Escreval()
+               Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
+            Senão
+               Se (result_noite_Cir > 0) Então
+                  LimpaTela()
+                  Escreval()
+                  Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
+               Fimse
+            Fimse
+         Fimse
+      Fimenquanto
+
+      //CONFIRMAÇÃO TURNO NOITE
+      Escreval()
+      Escreval("***CONFIRME OS DADOS DO TURNO DA NOITE:***")
+      Escreval("Digite 's' para confirmar")
+      Escreval("Digite 'n' para corrigir")
+      Escreval()
+      Escreva("OPÇÃO: ")
+      Leia(button)
+      limpatela
       Escreval()
 
-
-      Se (log_tarde = 0) Então
-         Escreval("========================================")
-         Escreval("   -> Problema(s) no TURNO DA TARDE:    ")
-         Escreval()
-         Se (turno_tarde_CG < min_CG) Então
-            falta_CG <- int(min_CG - turno_tarde_CG)
-            Escreval(" - Falta(m): ", falta_CG, " Clínico(s) Geral(is)")
-         Fimse
-         Se (turno_tarde_Ped < min_Ped) Então
-            falta_Ped <- int(min_Ped - turno_tarde_Ped)
-            Escreval (" - Falta(m): ", falta_Ped, " Pediatra(s)")
-         Fimse
-         Se (turno_tarde_Cir < min_Cir) Então
-            falta_Cir <- int(min_Cir - turno_tarde_Cir)
-            Escreval (" - Falta(m): ", falta_Cir, " Cirurgião(ões)")
-         Fimse
-         Escreval("========================================")
+      Se (button <> "s") E (button <> "S") E (button <> "n") E (button <> "N") Então
+         Escreval("OPÇÃO INVÁLIDA! Digite novamente os dados")
+         button <- "n"
       Fimse
 
+   Fimenquanto
+
+   Escreval("Dados do TURNO DA NOITE **CONFIRMADOS**.")
+
+   LimpaTela()
+
+   escreval()
+   soma_manha <- (turno_manha_CG + turno_manha_Ped + turno_manha_Cir)
+   soma_tarde <- (turno_tarde_CG + turno_tarde_Ped + turno_tarde_Cir)
+   soma_noite <- (turno_noite_CG + turno_noite_Ped + turno_noite_Cir)
+   soma_geral <- (soma_manha + soma_tarde + soma_noite)
+
+   Se (soma_geral >max_Med)entao
+      escreval("PLANTÃO INVÁLIDO! Insira os dados novamente. Número máximo de médicos ultrapassado")
+      turno_manha_CG <- -1
+      turno_manha_Ped <- -1
+      turno_manha_Cir <- -1
+      button <- "n"
+   Fimse
+
+Fimenquanto
+
+LimpaTela()
+
+//INDICE 4
+
+Escreval("========================================")
+Escreval("         RELATÓRIO GERAL DO PLANTÃO     ")
+Escreval("========================================")
+Escreval()
+Escreval("TURNO DA MANHÃ:")
+Escreval("  - Clínicos Gerais: ", turno_manha_CG)
+Escreval("  - Pediatras:       ", turno_manha_Ped)
+Escreval("  - Cirurgiões:      ", turno_manha_Cir)
+Escreval("  - Total no turno:  ", soma_manha)
+Escreval()
+Escreval("TURNO DA TARDE:")
+Escreval("  - Clínicos Gerais: ", turno_tarde_CG)
+Escreval("  - Pediatras:       ", turno_tarde_Ped)
+Escreval("  - Cirurgiões:      ", turno_tarde_Cir)
+Escreval("  - Total no turno:  ", soma_tarde)
+Escreval()
+Escreval("TURNO DA NOITE:")
+Escreval("  - Clínicos Gerais: ", turno_noite_CG)
+Escreval("  - Pediatras:       ", turno_noite_Ped)
+Escreval("  - Cirurgiões:      ", turno_noite_Cir)
+Escreval("  - Total no turno:  ", soma_noite)
+Escreval()
+Escreval("TOTAL GERAL DE MÉDICOS: ", soma_geral)
+Escreval()
+Escreval("========================================")
+
+
+//FIM INDICE 4
+
+Se (turno_manha_CG >= min_CG) E (turno_manha_Ped >= min_Ped) E (turno_manha_Cir >= min_Cir) Então
+   log_manha <- 1
+Fimse
+
+Se (turno_tarde_CG >= min_CG) E (turno_tarde_Ped >= min_Ped) E (turno_tarde_Cir >= min_Cir) Então
+   log_tarde <- 1
+Fimse
+
+Se (turno_noite_CG >= min_CG) E (turno_noite_Ped >= min_Ped) E (turno_noite_Cir >= min_Cir) Então
+   log_noite <- 1
+Fimse
+
+Se (log_manha = 0) OU (log_tarde = 0) OU (log_noite = 0)Então
+   Escreval("    O PLANTÃO NÃO PODE SER PUBLICADO!   ")
+   Escreval("========================================")
+   Escreval()
+
+   Se (log_manha = 0) Então
+      Escreval("========================================")
+      Escreval("   -> Problema(s) no TURNO DA MANHÃ:    ")
       Escreval()
-
-      Se (log_noite = 0) Então
-         Escreval("========================================")
-         Escreval("   -> Problema(s) no TURNO DA NOITE:    ")
-         Escreval()
-         Se (turno_noite_CG < min_CG) Então
-            falta_CG <- int(min_CG - turno_noite_CG)
-            Escreval(" - Falta(m): ", falta_CG, " Clínico(s) Geral(is)")
-         Fimse
-         Se (turno_noite_Ped < min_Ped) Então
-            falta_Ped <- int(min_Ped - turno_noite_Ped)
-            Escreval (" - Falta(m): ", falta_Ped, " Pediatra(s)")
-         Fimse
-         Se (turno_noite_Cir < min_Cir) Então
-            falta_Cir <- int(min_Cir - turno_noite_Cir)
-            Escreval (" - Falta(m): ", falta_Cir, " Cirurgião(ões)")
-         Fimse
-         Escreval("========================================")
+      Se (turno_manha_CG < min_CG) Então
+         falta_CG <- int(min_CG - turno_manha_CG)
+         Escreval(" - Falta(m): ", falta_CG, " Clínico(s) Geral(is)")
       Fimse
-
-   Senão
-      Escreval("     O PLANTÃO PODE SER PUBLICADO!      ")
+      Se (turno_manha_Ped < min_Ped) Então
+         falta_Ped <- int(min_Ped - turno_manha_Ped)
+         Escreval (" - Falta(m): ", falta_Ped, " Pediatra(s)")
+      Fimse
+      Se (turno_manha_Cir < min_Cir) Então
+         falta_Cir <- int(min_Cir - turno_manha_Cir)
+         Escreval (" - Falta(m): ", falta_Cir, " Cirurgião(ões)")
+      Fimse
       Escreval("========================================")
    Fimse
+
+   Escreval()
+
+
+   Se (log_tarde = 0) Então
+      Escreval("========================================")
+      Escreval("   -> Problema(s) no TURNO DA TARDE:    ")
+      Escreval()
+      Se (turno_tarde_CG < min_CG) Então
+         falta_CG <- int(min_CG - turno_tarde_CG)
+         Escreval(" - Falta(m): ", falta_CG, " Clínico(s) Geral(is)")
+      Fimse
+      Se (turno_tarde_Ped < min_Ped) Então
+         falta_Ped <- int(min_Ped - turno_tarde_Ped)
+         Escreval (" - Falta(m): ", falta_Ped, " Pediatra(s)")
+      Fimse
+      Se (turno_tarde_Cir < min_Cir) Então
+         falta_Cir <- int(min_Cir - turno_tarde_Cir)
+         Escreval (" - Falta(m): ", falta_Cir, " Cirurgião(ões)")
+      Fimse
+      Escreval("========================================")
+   Fimse
+
+   Escreval()
+
+   Se (log_noite = 0) Então
+      Escreval("========================================")
+      Escreval("   -> Problema(s) no TURNO DA NOITE:    ")
+      Escreval()
+      Se (turno_noite_CG < min_CG) Então
+         falta_CG <- int(min_CG - turno_noite_CG)
+         Escreval(" - Falta(m): ", falta_CG, " Clínico(s) Geral(is)")
+      Fimse
+      Se (turno_noite_Ped < min_Ped) Então
+         falta_Ped <- int(min_Ped - turno_noite_Ped)
+         Escreval (" - Falta(m): ", falta_Ped, " Pediatra(s)")
+      Fimse
+      Se (turno_noite_Cir < min_Cir) Então
+         falta_Cir <- int(min_Cir - turno_noite_Cir)
+         Escreval (" - Falta(m): ", falta_Cir, " Cirurgião(ões)")
+      Fimse
+      Escreval("========================================")
+   Fimse
+
+Senão
+   Escreval("     O PLANTÃO PODE SER PUBLICADO!      ")
+   Escreval("========================================")
+Fimse
 
 Fimalgoritmo
