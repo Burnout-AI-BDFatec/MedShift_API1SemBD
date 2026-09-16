@@ -318,20 +318,20 @@ Enquanto (soma_geral > max_Med)faça
          Escreval("==========================================================================")
          Escreval("ERRO! Número de médicos do TURNO DA TARDE excede a capacidade de médicos: ", max_Med)
          Escreval("ENTRE COM OS DADOS NOVAMENTE!")
-         Escreval("VOCE PODE CADASTRAR ATÉ: ", resta_tarde, " MÉDICOS NO TURNO DA TARDE")
+         Escreval("VOCE PODE ESCALAR ATÉ: ", resta_tarde, " MÉDICOS NO TURNO DA TARDE")
          Escreval("==========================================================================")
       Senão
          Se(soma_parcial_tarde>max_Med) E (resta_tarde <> 0)Então
             Escreval("=======================================================================================================================")
             Escreval("ERRO! Número de médicos do TURNO DA TARDE somado com o TURNO DA MANHÃ excede a capacidade de médicos: ", max_Med)
             Escreval("ENTRE COM OS DADOS NOVAMENTE!")
-            Escreval("VOCE PODE CADASTRAR ATÉ: ", resta_tarde, " MÉDICOS NO TURNO DA TARDE")
+            Escreval("VOCE PODE ESCALAR ATÉ: ", resta_tarde, " MÉDICOS NO TURNO DA TARDE")
             Escreval("=======================================================================================================================")
          Fimse
 
          Se (resta_tarde = 0)Então
             Escreval("=================================================================================")
-            Escreval("ERRO FATAL! NÃO SOBRARAM MÉDICOS PARA CADASTRAR!")
+            Escreval("ERRO FATAL! NÃO SOBRARAM MÉDICOS PARA ESCALAR!")
             Escreval("VOCÊ ESCALOU TODOS OS: ", max_Med, " MÉDICOS DISPONÍVEIS NO TURNO DA MANHÃ")
             Escreval("ENTRE COM A QUANTIDADE 0/0/0 DE ESPECIALISTAS PARA PROSSEGUIR")
             Escreval("=================================================================================")
@@ -455,22 +455,22 @@ Enquanto (soma_geral > max_Med)faça
 
       Se(soma_noite>max_Med)Então
          Escreval("==========================================================================")
-         Escreval("ERRO! Número de médicos do TURNO DA TARDE excede a capacidade de médicos: ", max_Med)
+         Escreval("ERRO! Número de médicos do TURNO DA NOITE excede a capacidade de médicos: ", max_Med)
          Escreval("ENTRE COM OS DADOS NOVAMENTE!")
-         Escreval("VOCE PODE CADASTRAR ATÉ: ", resta_noite, " MÉDICOS NO TURNO DA TARDE")
+         Escreval("VOCE PODE ESCALAR ATÉ: ", resta_noite, " MÉDICOS NO TURNO DA NOITE")
          Escreval("==========================================================================")
       Senão
          Se(soma_parcial_noite>max_Med) E (resta_noite <> 0)Então
-            Escreval("=======================================================================================================================")
-            Escreval("ERRO! Número de médicos do TURNO DA TARDE somado com o TURNO DA MANHÃ excede a capacidade de médicos: ", max_Med)
+            Escreval("=============================================================================================================================")
+            Escreval("ERRO! Número de médicos do TURNO DA NOITE somado com o TURNO DA MANHÃ e TURNO DA TARDE excede a capacidade de médicos: ", max_Med)
             Escreval("ENTRE COM OS DADOS NOVAMENTE!")
-            Escreval("VOCE PODE CADASTRAR ATÉ: ", resta_noite, " MÉDICOS NO TURNO DA TARDE")
-            Escreval("=======================================================================================================================")
+            Escreval("VOCE PODE ESCALAR ATÉ: ", resta_noite, " MÉDICOS NO TURNO DA NOITE")
+            Escreval("=============================================================================================================================")
          Fimse
 
          Se (resta_noite = 0)Então
             Escreval("=================================================================================")
-            Escreval("ERRO FATAL! NÃO SOBRARAM MÉDICOS PARA CADASTRAR!")
+            Escreval("ERRO FATAL! NÃO SOBRARAM MÉDICOS PARA ESCALAR!")
             Escreval("VOCÊ ESCALOU TODOS OS: ", max_Med, " MÉDICOS DISPONÍVEIS NO TURNO DA MANHÃ E NO TURNO DA TARDE")
             Escreval("ENTRE COM A QUANTIDADE 0/0/0 DE ESPECIALISTAS PARA PROSSEGUIR")
             Escreval("=================================================================================")
