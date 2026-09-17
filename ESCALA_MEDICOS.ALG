@@ -156,25 +156,43 @@ Enquanto (soma_geral > max_Med)faça
       Fimenquanto
 
       // ---- Confirmação ----
-      Escreval()
-      Escreval("***CONFIRME OS DADOS DO TURNO DA MANHÃ:***")
-      Escreval("Digite 's' para confirmar")
-      Escreval("Digite 'n' para corrigir")
-      Escreval()
-      Escreva("OPÇÃO: ")
-      Leia(button)
-      limpatela
-      Escreval()
 
-      Se (button <> "s") E (button <> "S") E (button <> "n") E (button <> "N") Então
-         Escreval("OPÇÃO INVÁLIDA! Digite novamente os dados")
-         button <- "n"
-      Fimse
+      LimpaTela()
+
+      Escreval("========================================")
+      Escreval("       RESUMO DO TURNO DA MANHÃ")
+      Escreval("========================================")
+      Escreval()
+      Escreval(" Clínicos Gerais: ", turno_manha_CG)
+      Escreval(" Pediatras:       ", turno_manha_Ped)
+      Escreval(" Cirurgiões:      ", turno_manha_Cir)
+      Escreval()
+      Escreval("----------------------------------------")
+      Escreval(" Total de médicos: ", turno_manha_CG + turno_manha_Ped + turno_manha_Cir)
+      Escreval("========================================")
+      Escreval()
+      Escreval(" Os dados estão corretos?")
+      Escreval()
+      Escreval(" [S] Sim, confirmar")
+      Escreval(" [N] Não, corrigir")
+      Escreval()
+      Escreva(" Opção: ")
+      Leia(button)
+
+      Enquanto (button <> "s") E (button <> "S") E (button <> "n") E (button<> "N") Faça
+
+         Escreval()
+         Escreval("Opcao invalida! Digite novamente.")
+         Escreva(" Opcao: ")
+         leia(button)
+
+      Fimenquanto
+
+      LimpaTela()
 
    Fimenquanto
 
-   Escreval("Dados do TURNO DA MANHÃ **CONFIRMADOS**.")
-
+   Escreval("Dados do TURNO DA MANHÃ confirmados.")
    LimpaTela()
 
 
@@ -262,26 +280,44 @@ Enquanto (soma_geral > max_Med)faça
          Fimse
       Fimenquanto
 
-      // ---- Confirmação tarde ----
-      Escreval()
-      Escreval("***CONFIRME OS DADOS DO TURNO DA TARDE:***")
-      Escreval("Digite 's' para confirmar")
-      Escreval("Digite 'n' para corrigir")
-      Escreval()
-      Escreva("OPÇÃO: ")
-      Leia(button)
-      limpatela
-      Escreval()
+      // ---- Confirmação ----
 
-      Se (button <> "s") E (button <> "S") E (button <> "n") E (button <> "N") Então
-         Escreval("OPÇÃO INVÁLIDA! Digite novamente os dados")
-         button <- "n"
-      Fimse
+      LimpaTela()
+
+      Escreval("========================================")
+      Escreval("       RESUMO DO TURNO DA TARDE")
+      Escreval("========================================")
+      Escreval()
+      Escreval(" Clínicos Gerais: ", turno_tarde_CG)
+      Escreval(" Pediatras:       ", turno_tarde_Ped)
+      Escreval(" Cirurgiões:      ", turno_tarde_Cir)
+      Escreval()
+      Escreval("----------------------------------------")
+      Escreval(" Total de médicos: ", turno_tarde_CG + turno_tarde_Ped + turno_tarde_Cir)
+      Escreval("========================================")
+      Escreval()
+      Escreval(" Os dados estão corretos?")
+      Escreval()
+      Escreval(" [S] Sim, confirmar")
+      Escreval(" [N] Não, corrigir")
+      Escreval()
+      Escreva(" Opção: ")
+      Leia(button)
+
+      Enquanto (button <> "s") E (button <> "S") E (button <> "n") E (button<> "N") Faça
+
+         Escreval()
+         Escreval("Opcao invalida! Digite novamente.")
+         Escreva(" Opcao: ")
+         leia(button)
+
+      Fimenquanto
+
+      LimpaTela()
 
    Fimenquanto
 
-   Escreval("Dados do TURNO DA TARDE **CONFIRMADOS**.")
-
+   Escreval("Dados do TURNO DA TARDE confirmados.")
    LimpaTela()
 
    //TURNO DA NOITE
@@ -368,26 +404,44 @@ Enquanto (soma_geral > max_Med)faça
          Fimse
       Fimenquanto
 
-      //CONFIRMAÇÃO TURNO NOITE
-      Escreval()
-      Escreval("***CONFIRME OS DADOS DO TURNO DA NOITE:***")
-      Escreval("Digite 's' para confirmar")
-      Escreval("Digite 'n' para corrigir")
-      Escreval()
-      Escreva("OPÇÃO: ")
-      Leia(button)
-      limpatela
-      Escreval()
+      // ---- Confirmação ----
 
-      Se (button <> "s") E (button <> "S") E (button <> "n") E (button <> "N") Então
-         Escreval("OPÇÃO INVÁLIDA! Digite novamente os dados")
-         button <- "n"
-      Fimse
+      LimpaTela()
+
+      Escreval("========================================")
+      Escreval("       RESUMO DO TURNO DA NOITE")
+      Escreval("========================================")
+      Escreval()
+      Escreval(" Clínicos Gerais: ", turno_noite_CG)
+      Escreval(" Pediatras:       ", turno_noite_Ped)
+      Escreval(" Cirurgiões:      ", turno_noite_Cir)
+      Escreval()
+      Escreval("----------------------------------------")
+      Escreval(" Total de médicos: ", turno_noite_CG + turno_noite_Ped + turno_noite_Cir)
+      Escreval("========================================")
+      Escreval()
+      Escreval(" Os dados estão corretos?")
+      Escreval()
+      Escreval(" [S] Sim, confirmar")
+      Escreval(" [N] Não, corrigir")
+      Escreval()
+      Escreva(" Opção: ")
+      Leia(button)
+
+      Enquanto (button <> "s") E (button <> "S") E (button <> "n") E (button<> "N") Faça
+
+         Escreval()
+         Escreval("Opcao invalida! Digite novamente.")
+         Escreva(" Opcao: ")
+         leia(button)
+
+      Fimenquanto
+
+      LimpaTela()
 
    Fimenquanto
 
-   Escreval("Dados do TURNO DA NOITE **CONFIRMADOS**.")
-
+   Escreval("Dados do TURNO DA NOITE confirmados.")
    LimpaTela()
 
    escreval()
@@ -524,3 +578,6 @@ Senão
 Fimse
 
 Fimalgoritmo
+
+
+
