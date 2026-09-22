@@ -19,19 +19,19 @@ Var
    turno_noite_CG, turno_noite_Ped, turno_noite_Cir : inteiro
 
    min_CG, min_Ped, Min_Cir: inteiro
-   
+
    max_Med, min_Med: inteiro
-   
+
    valida_manha, valida_tarde, valida_noite: inteiro
-   
+
    log_manha, log_tarde, log_noite: inteiro
-   
+
    soma_manha, soma_tarde, soma_noite, soma_geral: inteiro
 
    falta_CG, falta_Ped, falta_Cir: inteiro
 
    contador_supremo, contador_auxiliar: inteiro
-   
+
    button : caractere
 
 Inicio
@@ -185,10 +185,18 @@ Inicio
 
             Se ((button <> "s") E (button <> "S") E (button <> "n") E (button<> "N")) Então
 
-               Escreval()
-               Escreval("Opção invalida! Digite novamente.")
-               Escreva(" Opção: ")
-               leia(button)
+               Se (contador_auxiliar < 100) Então
+
+                  Escreval()
+                  Escreval("Opção invalida! Digite novamente.")
+                  Escreva(" Opção: ")
+                  leia(button)
+
+               Senão
+
+                  button <- "s"
+
+               Fimse
 
             Fimse
 
@@ -330,10 +338,18 @@ Inicio
 
             Se ((button <> "s") E (button <> "S") E (button <> "n") E (button<> "N")) Então
 
-               Escreval()
-               Escreval("Opção invalida! Digite novamente.")
-               Escreva(" Opção: ")
-               leia(button)
+               Se (contador_auxiliar < 100) Então
+
+                  Escreval()
+                  Escreval("Opção invalida! Digite novamente.")
+                  Escreva(" Opção: ")
+                  leia(button)
+
+               Senão
+
+                  button <- "s"
+
+               Fimse
 
             Fimse
 
@@ -474,10 +490,18 @@ Inicio
 
             Se ((button <> "s") E (button <> "S") E (button <> "n") E (button<> "N")) Então
 
-               Escreval()
-               Escreval("Opção invalida! Digite novamente.")
-               Escreva(" Opção: ")
-               leia(button)
+               Se (contador_auxiliar < 100) Então
+
+                  Escreval()
+                  Escreval("Opção invalida! Digite novamente.")
+                  Escreva(" Opção: ")
+                  leia(button)
+
+               Senão
+
+                  button <- "s"
+
+               Fimse
 
             Fimse
 
