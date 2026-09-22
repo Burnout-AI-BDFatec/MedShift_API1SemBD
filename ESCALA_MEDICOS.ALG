@@ -60,9 +60,6 @@ Inicio
    Escreval("Central de Configuração de Escalas")
    Escreval()
 
-
-   // Controle do limite máximo de médicos
-
    Para contador_supremo de 1 ate 100 Faça
       Se ((button <> "s") E (button <>"S")) Então
 
@@ -75,7 +72,6 @@ Inicio
          Escreval("========================================")
          Escreval()
 
-         //  Clínicos Gerais
          Para contador_auxiliar de 1 ate 100 Faça
 
             Se ((turno_manha_CG < 0) OU (turno_manha_CG > max_Med)) Então
@@ -105,7 +101,6 @@ Inicio
 
          FimPara
 
-         //  Pediatras
          Para contador_auxiliar de 1 ate 100 Faça
 
             Se ((turno_manha_Ped < 0) OU (turno_manha_Ped > max_Med)) Então
@@ -135,8 +130,6 @@ Inicio
 
          FimPara
 
-
-         // ---- Cirurgiões ----
          Para contador_auxiliar de 1 ate 100 Faça
 
             Se ((turno_manha_Cir < 0) OU (turno_manha_Cir > max_Med)) Então
@@ -165,8 +158,6 @@ Inicio
             Fimse
 
          FimPara
-
-         // ---- Confirmação ----
 
          LimpaTela()
 
@@ -210,8 +201,6 @@ Inicio
    FimPara
 
    LimpaTela()
-
-   //TURNO DA TARDE
 
    button <- "n"
 
@@ -315,8 +304,6 @@ Inicio
 
          FimPara
 
-         // ---- Confirmação ----
-
          LimpaTela()
 
          Escreval("========================================")
@@ -359,8 +346,6 @@ Inicio
    FimPara
 
    LimpaTela()
-
-   //TURNO DA NOITE
 
    button <- "n"
 
@@ -434,7 +419,6 @@ Inicio
 
          FimPara
 
-
          Para contador_auxiliar de 1 ate 100 Faça
 
             Se ((turno_noite_Cir < 0) OU (turno_noite_Cir > max_Med)) Então
@@ -463,8 +447,6 @@ Inicio
             Fimse
 
          FimPara
-
-         // ---- Confirmação ----
 
          LimpaTela()
 
@@ -570,11 +552,7 @@ Inicio
    soma_noite <- (turno_noite_CG + turno_noite_Ped + turno_noite_Cir)
    soma_geral <- (soma_manha + soma_tarde + soma_noite)
 
-   // Fim do controle de limite máximo
-
    LimpaTela()
-
-   //INDICE 4
 
    Escreval("========================================")
    Escreval("RELATÓRIO GERAL DO PLANTÃO")
@@ -601,8 +579,6 @@ Inicio
    Escreval("TOTAL GERAL DE MÉDICOS: ", soma_geral)
    Escreval()
    Escreval("========================================")
-
-   //FIM INDICE 4
 
    Se (soma_geral <= max_Med) Então
 
