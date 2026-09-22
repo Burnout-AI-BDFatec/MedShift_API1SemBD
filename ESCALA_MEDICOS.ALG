@@ -12,23 +12,27 @@ Algoritmo "Escala_Medicos"
 //DEV - WILLIAM TOLEDO
 
 Var
-   turno_manha_CG, turno_manha_Ped, turno_manha_Cir : real
-   result_CG, result_Ped, result_Cir : real
-   button : caractere
+   turno_manha_CG, turno_manha_Ped, turno_manha_Cir : inteiro
 
-   turno_tarde_CG, turno_tarde_Ped, turno_tarde_Cir : real
-   result_tarde_CG, result_tarde_Ped, result_tarde_Cir : real
+   turno_tarde_CG, turno_tarde_Ped, turno_tarde_Cir : inteiro
 
-   turno_noite_CG, turno_noite_Ped, turno_noite_Cir : real
-   result_noite_CG, result_noite_Ped, result_noite_Cir : real
+   turno_noite_CG, turno_noite_Ped, turno_noite_Cir : inteiro
 
-   min_CG, min_Ped, Min_Cir: real
-   max_Med, min_Med: real
-   valida_manha, valida_tarde, valida_noite: real
+   min_CG, min_Ped, Min_Cir: inteiro
+   
+   max_Med, min_Med: inteiro
+   
+   valida_manha, valida_tarde, valida_noite: inteiro
+   
    log_manha, log_tarde, log_noite: inteiro
-   soma_manha, soma_tarde, soma_noite, soma_geral: real
-   falta_CG, falta_Ped, falta_Cir: real
+   
+   soma_manha, soma_tarde, soma_noite, soma_geral: inteiro
+
+   falta_CG, falta_Ped, falta_Cir: inteiro
+
    contador_supremo, contador_auxiliar: inteiro
+   
+   button : caractere
 
 Inicio
 
@@ -73,10 +77,11 @@ Inicio
 
          //  Clínicos Gerais
          Para contador_auxiliar de 1 ate 100 Faça
-            Se ((turno_manha_CG < 0) OU (turno_manha_CG > max_Med) OU (result_CG > 0)) Então
+
+            Se ((turno_manha_CG < 0) OU (turno_manha_CG > max_Med)) Então
+
                Escreva("Digite o número de CLÍNICOS GERAIS: ")
                Leia(turno_manha_CG)
-               result_CG <- turno_manha_CG mod 1
 
                Se (turno_manha_CG < 0) Então
 
@@ -92,15 +97,6 @@ Inicio
                      Escreval()
                      Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
 
-                  Senão
-
-                     Se (result_CG > 0) Então
-                        LimpaTela()
-                        Escreval()
-                        Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-
-                     Fimse
-
                   Fimse
 
                Fimse
@@ -112,11 +108,10 @@ Inicio
          //  Pediatras
          Para contador_auxiliar de 1 ate 100 Faça
 
-            Se ((turno_manha_Ped < 0) OU (turno_manha_Ped > max_Med) OU (result_Ped > 0)) Então
+            Se ((turno_manha_Ped < 0) OU (turno_manha_Ped > max_Med)) Então
 
                Escreva("Digite o número de PEDIATRAS: ")
                Leia(turno_manha_Ped)
-               result_Ped <- turno_manha_Ped mod 1
 
                Se (turno_manha_Ped < 0) Então
 
@@ -132,15 +127,6 @@ Inicio
                      Escreval()
                      Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
 
-                  Senão
-                     Se (result_Ped > 0) Então
-
-                        LimpaTela()
-                        Escreval()
-                        Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-
-                     Fimse
-
                   Fimse
 
                Fimse
@@ -153,11 +139,10 @@ Inicio
          // ---- Cirurgiões ----
          Para contador_auxiliar de 1 ate 100 Faça
 
-            Se ((turno_manha_Cir < 0) OU (turno_manha_Cir > max_Med) OU (result_Cir > 0)) Então
+            Se ((turno_manha_Cir < 0) OU (turno_manha_Cir > max_Med)) Então
 
                Escreva("Digite o número de CIRURGIÕES: ")
                Leia(turno_manha_Cir)
-               result_Cir <- turno_manha_Cir mod 1
 
                Se (turno_manha_Cir < 0) Então
 
@@ -172,16 +157,6 @@ Inicio
                      LimpaTela()
                      Escreval()
                      Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-
-                  Senão
-
-                     Se (result_Cir > 0) Então
-
-                        LimpaTela()
-                        Escreval()
-                        Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-
-                     Fimse
 
                   Fimse
 
@@ -216,6 +191,7 @@ Inicio
          Leia(button)
 
          Para contador_auxiliar de 1 ate 100 Faça
+
             Se ((button <> "s") E (button <> "S") E (button <> "n") E (button<> "N")) Então
 
                Escreval()
@@ -254,11 +230,10 @@ Inicio
 
          Para contador_auxiliar de 1 ate 100 Faça
 
-            Se ((turno_tarde_CG < 0) OU (turno_tarde_CG > max_Med) OU (result_CG > 0)) Então
+            Se ((turno_tarde_CG < 0) OU (turno_tarde_CG > max_Med)) Então
 
                Escreva("Digite o número de CLÍNICOS GERAIS: ")
                Leia(turno_tarde_CG)
-               result_CG <- turno_tarde_CG mod 1
 
                Se (turno_tarde_CG < 0) Então
 
@@ -274,16 +249,6 @@ Inicio
                      Escreval()
                      Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
 
-                  Senão
-
-                     Se (result_CG > 0) Então
-
-                        LimpaTela()
-                        Escreval()
-                        Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-
-                     Fimse
-
                   Fimse
 
                Fimse
@@ -295,11 +260,10 @@ Inicio
 
          Para contador_auxiliar de 1 ate 100 Faça
 
-            Se ((turno_tarde_Ped < 0) OU (turno_tarde_Ped > max_Med) OU (result_tarde_Ped > 0)) Então
+            Se ((turno_tarde_Ped < 0) OU (turno_tarde_Ped > max_Med)) Então
 
                Escreva("Digite o número de PEDIATRAS: ")
                Leia(turno_tarde_Ped)
-               result_tarde_Ped <- turno_tarde_Ped mod 1
 
                Se (turno_tarde_Ped < 0) Então
 
@@ -314,15 +278,6 @@ Inicio
                      Escreval()
                      Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
 
-                  Senão
-
-                     Se (result_tarde_Ped > 0) Então
-                        LimpaTela()
-                        Escreval()
-                        Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-
-                     Fimse
-
                   Fimse
 
                Fimse
@@ -333,11 +288,10 @@ Inicio
 
          Para contador_auxiliar de 1 ate 100 Faça
 
-            Se ((turno_tarde_Cir < 0) OU (turno_tarde_Cir > max_Med) OU (result_tarde_Cir > 0)) Então
+            Se ((turno_tarde_Cir < 0) OU (turno_tarde_Cir > max_Med)) Então
 
                Escreva("Digite o número de CIRURGIÕES: ")
                Leia(turno_tarde_Cir)
-               result_tarde_Cir <- turno_tarde_Cir mod 1
 
                Se (turno_tarde_Cir < 0) Então
 
@@ -352,15 +306,6 @@ Inicio
                      LimpaTela()
                      Escreval()
                      Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-
-                  Senão
-
-                     Se (result_tarde_Cir > 0) Então
-                        LimpaTela()
-                        Escreval()
-                        Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-
-                     Fimse
 
                   Fimse
 
@@ -434,11 +379,10 @@ Inicio
 
          Para contador_auxiliar de 1 ate 100 Faça
 
-            Se ((turno_noite_CG < 0) OU (turno_noite_CG > max_Med) OU (result_noite_CG > 0)) Então
+            Se ((turno_noite_CG < 0) OU (turno_noite_CG > max_Med)) Então
 
                Escreva("Digite o número de CLÍNICOS GERAIS: ")
                Leia(turno_noite_CG)
-               result_noite_CG <- turno_noite_CG mod 1
 
                Se (turno_noite_CG < 0) Então
 
@@ -454,16 +398,6 @@ Inicio
                      Escreval()
                      Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
 
-                  Senão
-
-                     Se (result_noite_CG > 0) Então
-
-                        LimpaTela()
-                        Escreval()
-                        Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-
-                     Fimse
-
                   Fimse
 
                Fimse
@@ -474,11 +408,10 @@ Inicio
 
          Para contador_auxiliar de 1 ate 100 Faça
 
-            Se ((turno_noite_Ped < 0) OU (turno_noite_Ped > max_Med) OU (result_noite_Ped > 0)) Então
+            Se ((turno_noite_Ped < 0) OU (turno_noite_Ped > max_Med)) Então
 
                Escreva("Digite o número de PEDIATRAS: ")
                Leia(turno_noite_Ped)
-               result_noite_Ped <- turno_noite_Ped mod 1
 
                Se (turno_noite_Ped < 0) Então
 
@@ -493,16 +426,6 @@ Inicio
                      Escreval()
                      Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
 
-                  Senão
-
-                     Se (result_noite_Ped > 0) Então
-
-                        LimpaTela()
-                        Escreval()
-                        Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-
-                     Fimse
-
                   Fimse
 
                Fimse
@@ -514,11 +437,10 @@ Inicio
 
          Para contador_auxiliar de 1 ate 100 Faça
 
-            Se ((turno_noite_Cir < 0) OU (turno_noite_Cir > max_Med) OU (result_noite_Cir > 0)) Então
+            Se ((turno_noite_Cir < 0) OU (turno_noite_Cir > max_Med)) Então
 
                Escreva("Digite o número de CIRURGIÕES: ")
                Leia(turno_noite_Cir)
-               result_noite_Cir <- turno_noite_Cir mod 1
 
                Se (turno_noite_Cir < 0) Então
 
@@ -533,16 +455,6 @@ Inicio
                      LimpaTela()
                      Escreval()
                      Escreval("NÚMERO INVÁLIDO! Quantidade de médicos maior que a quantidade máxima permitida")
-
-                  Senão
-
-                     Se (result_noite_Cir > 0) Então
-
-                        LimpaTela()
-                        Escreval()
-                        Escreval("NÚMERO INVÁLIDO! Quantidade de médicos não pode ser decimal")
-
-                     Fimse
 
                   Fimse
 
