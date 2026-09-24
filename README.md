@@ -71,6 +71,7 @@ A Sprint 1 tem duração de **07/09 a 27/09**, totalizando 21 dias.
 | Jonas Vieira | Dev |
 | Lucas Roberto | Dev |
 | William Diniz | Dev |
+| Gabriel Kodato | Dev |
 
 ## 📅 Planejamento
 
