@@ -20,9 +20,7 @@ Var
 
    min_CG, min_Ped, Min_Cir: inteiro
 
-   max_Med, min_Med: inteiro
-
-   valida_manha, valida_tarde, valida_noite: inteiro
+   max_Med: inteiro
 
    log_manha, log_tarde, log_noite: inteiro
 
