@@ -59,19 +59,18 @@ A Sprint 1 tem duração de **07/09 a 27/09**, totalizando 21 dias.
 - [ ] Manual de uso
 - [ ] Revisão e debug das funcionalidades
 
-
 ## 👥 Equipe
 
-| Nome | Função |
-|---|---|
-| Gustavo Neves | Product Owner |
-| Guilherme Nanni | Scrum Master |
-| Davi William | Dev |
-| Fernando Trone | Dev |
-| Jonas Vieira | Dev |
-| Lucas Roberto | Dev |
-| William Diniz | Dev |
-| Gabriel Kodato | Dev |
+| Nome | Função | GitHub |
+|---|---|---|
+| Gustavo Neves | Product Owner | <a href="https://github.com/gosNeves"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub"></a> |
+| Guilherme Nanni | Scrum Master | <a href="https://github.com/guilhermenanni"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub"></a> |
+| Davi William | Dev | <a href="https://github.com/testagetac"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub"></a> |
+| Fernando Trone | Dev | <a href="https://github.com/ftrone87"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub"></a> |
+| Jonas Vieira | Dev | <a href="https://github.com/jonasvieiras"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub"></a> |
+| Lucas Roberto | Dev | <a href="https://github.com/Lucas-santos33"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub"></a> |
+| William Diniz | Dev | <a href="https://github.com/WilliamDMCToledo"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub"></a> |
+| Gabriel Kodato | Dev | <a href="https://github.com/Kodatoo"><img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white" alt="GitHub"></a> |
 
 ## 📅 Planejamento
 
