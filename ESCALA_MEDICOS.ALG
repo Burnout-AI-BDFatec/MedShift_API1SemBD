@@ -18,7 +18,7 @@ Var
 
    turno_noite_CG, turno_noite_Ped, turno_noite_Cir : inteiro
 
-   min_CG, min_Ped, Min_Cir: inteiro
+   min_CG, min_Ped, min_Cir: inteiro
 
    max_Med: inteiro
 
@@ -47,7 +47,6 @@ Inicio
    soma_manha <- 0
    soma_tarde <- 0
    soma_noite <- 0
-   soma_geral <- max_Med +1
 
    Escreval("========================================")
    Escreval("MEDSHIFT - SISTEMA MÉDICO")
