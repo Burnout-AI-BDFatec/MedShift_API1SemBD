@@ -1,9 +1,7 @@
 Algoritmo "EscalaMedicos_2°sprint"
 // Disciplina   : [Linguagem e Lógica de Programação]
 // Professor   : Antonio Carlos Nicolodi 
-// Descrição   : Aqui você descreve o que o programa faz! (função)
-// Autor(a)    : Nome do(a) aluno(a)
-// Data atual  : 03/10/2026
+
 Var
 opcao_menu:inteiro
 pare: caractere
@@ -33,8 +31,7 @@ Inicio
 
       Se opcao_menu = 1 Entao
 
-         // Coloque aqui seu codigo atual.
-         // Nao repita Var, Inicio ou Fimalgoritmo.
+        Escreval ("cadastro em desenvolvimento")
 
       Senao
          Se opcao_menu = 2 Entao
