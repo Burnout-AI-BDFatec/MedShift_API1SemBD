@@ -1,6 +1,6 @@
 Algoritmo "Escala_Medicos"
 
-//API FATEC - BANCO DE DADOS - 1∫ SEMESTRE
+//API FATEC - BANCO DE DADOS - 1¬∫ SEMESTRE
 //EQUIPE BURNOUT AI
 //P.O. - GUSTAVO NEVES
 //S.M. - GUILHERME NANNI
@@ -34,14 +34,12 @@ Var
 
 Inicio
 
-   log_manha <- 0
-   log_tarde <- 0
-   log_noite <- 0
-   max_Med <- 140
+   Enquanto (analisar_outra_vez <> "n") E (analisar_outra_vez <> "N")Fa√ßa
 
-   min_CG <- 2
-   min_Ped <- 1
-   min_Cir <- 1
+      log_manha <- 0
+      log_tarde <- 0
+      log_noite <- 0
+      max_Med <- 140
 
    button <- "n"
    soma_manha <- 0
@@ -49,46 +47,46 @@ Inicio
    soma_noite <- 0
 
    Escreval("========================================")
-   Escreval("MEDSHIFT - SISTEMA M…DICO")
+   Escreval("MEDSHIFT - SISTEMA M√âDICO")
    Escreval("HOSPITAL SANTA AURORA")
    Escreval("========================================")
    Escreval()
-   Escreval("Ol·, seja muito bem-vindo(a)!")
-   Escreval("Central de ConfiguraÁ„o de Escalas")
+   Escreval("Ol√°, seja muito bem-vindo(a)!")
+   Escreval("Central de Configura√ß√£o de Escalas")
    Escreval()
 
-   Para contador_supremo de 1 ate 100 FaÁa
-      Se ((button <> "s") E (button <>"S")) Ent„o
+   Para contador_supremo de 1 ate 100 Fa√ßa
+      Se ((button <> "s") E (button <>"S")) Ent√£o
 
          turno_manha_CG <- -1
          turno_manha_Ped <- -1
          turno_manha_Cir <- -1
 
          Escreval("========================================")
-         Escreval("       CADASTRO DO TURNO DA MANH√")
+         Escreval("       CADASTRO DO TURNO DA MANH√É")
          Escreval("========================================")
          Escreval()
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((turno_manha_CG < 0) OU (turno_manha_CG > max_Med)) Ent„o
+            Se ((turno_manha_CG < 0) OU (turno_manha_CG > max_Med)) Ent√£o
 
-               Escreva("Digite o n˙mero de CLÕNICOS GERAIS: ")
+               Escreva("Digite o n√∫mero de CL√çNICOS GERAIS: ")
                Leia(turno_manha_CG)
 
-               Se (turno_manha_CG < 0) Ent„o
+               Se (turno_manha_CG < 0) Ent√£o
 
                   LimpaTela()
                   Escreval()
-                  Escreval("N⁄MERO INV¡LIDO! Quantidade n„o pode ser negativa")
+                  Escreval("N√öMERO INV√ÅLIDO! Quantidade n√£o pode ser negativa")
 
-               Sen„o
+               Sen√£o
 
-                  Se (turno_manha_CG > max_Med) Ent„o
+                  Se (turno_manha_CG > max_Med) Ent√£o
 
                      LimpaTela()
                      Escreval()
-                     Escreval("N⁄MERO INV¡LIDO! Quantidade de mÈdicos maior que a quantidade m·xima permitida")
+                     Escreval("N√öMERO INV√ÅLIDO! Quantidade de m√©dicos maior que a quantidade m√°xima permitida")
 
                   Fimse
 
@@ -98,26 +96,26 @@ Inicio
 
          FimPara
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((turno_manha_Ped < 0) OU (turno_manha_Ped > max_Med)) Ent„o
+            Se ((turno_manha_Ped < 0) OU (turno_manha_Ped > max_Med)) Ent√£o
 
-               Escreva("Digite o n˙mero de PEDIATRAS: ")
+               Escreva("Digite o n√∫mero de PEDIATRAS: ")
                Leia(turno_manha_Ped)
 
-               Se (turno_manha_Ped < 0) Ent„o
+               Se (turno_manha_Ped < 0) Ent√£o
 
                   LimpaTela()
                   Escreval()
-                  Escreval("N⁄MERO INV¡LIDO! Quantidade n„o pode ser negativa")
+                  Escreval("N√öMERO INV√ÅLIDO! Quantidade n√£o pode ser negativa")
 
-               Sen„o
+               Sen√£o
 
-                  Se (turno_manha_Ped > max_Med) Ent„o
+                  Se (turno_manha_Ped > max_Med) Ent√£o
 
                      LimpaTela()
                      Escreval()
-                     Escreval("N⁄MERO INV¡LIDO! Quantidade de mÈdicos maior que a quantidade m·xima permitida")
+                     Escreval("N√öMERO INV√ÅLIDO! Quantidade de m√©dicos maior que a quantidade m√°xima permitida")
 
                   Fimse
 
@@ -127,26 +125,26 @@ Inicio
 
          FimPara
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((turno_manha_Cir < 0) OU (turno_manha_Cir > max_Med)) Ent„o
+            Se ((turno_manha_Cir < 0) OU (turno_manha_Cir > max_Med)) Ent√£o
 
-               Escreva("Digite o n˙mero de CIRURGI’ES: ")
+               Escreva("Digite o n√∫mero de CIRURGI√ïES: ")
                Leia(turno_manha_Cir)
 
-               Se (turno_manha_Cir < 0) Ent„o
+               Se (turno_manha_Cir < 0) Ent√£o
 
                   LimpaTela()
                   Escreval()
-                  Escreval("N⁄MERO INV¡LIDO! Quantidade n„o pode ser negativa")
+                  Escreval("N√öMERO INV√ÅLIDO! Quantidade n√£o pode ser negativa")
 
-               Sen„o
+               Sen√£o
 
-                  Se (turno_manha_Cir > max_Med) Ent„o
+                  Se (turno_manha_Cir > max_Med) Ent√£o
 
                      LimpaTela()
                      Escreval()
-                     Escreval("N⁄MERO INV¡LIDO! Quantidade de mÈdicos maior que a quantidade m·xima permitida")
+                     Escreval("N√öMERO INV√ÅLIDO! Quantidade de m√©dicos maior que a quantidade m√°xima permitida")
 
                   Fimse
 
@@ -159,37 +157,37 @@ Inicio
          LimpaTela()
 
          Escreval("========================================")
-         Escreval("       RESUMO DO TURNO DA MANH√")
+         Escreval("       RESUMO DO TURNO DA MANH√É")
          Escreval("========================================")
          Escreval()
-         Escreval(" ClÌnicos Gerais: ", turno_manha_CG)
+         Escreval(" Cl√≠nicos Gerais: ", turno_manha_CG)
          Escreval(" Pediatras:       ", turno_manha_Ped)
-         Escreval(" Cirurgiıes:      ", turno_manha_Cir)
+         Escreval(" Cirurgi√µes:      ", turno_manha_Cir)
          Escreval()
          Escreval("----------------------------------------")
-         Escreval(" Total de mÈdicos: ", turno_manha_CG + turno_manha_Ped + turno_manha_Cir)
+         Escreval(" Total de m√©dicos: ", turno_manha_CG + turno_manha_Ped + turno_manha_Cir)
          Escreval("========================================")
          Escreval()
-         Escreval(" Os dados est„o corretos?")
+         Escreval(" Os dados est√£o corretos?")
          Escreval()
          Escreval(" [S] Sim, confirmar")
-         Escreval(" [N] N„o, corrigir")
+         Escreval(" [N] N√£o, corrigir")
          Escreval()
-         Escreva(" OpÁ„o: ")
+         Escreva(" Op√ß√£o: ")
          Leia(button)
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((button <> "s") E (button <> "S") E (button <> "n") E (button<> "N")) Ent„o
+            Se ((button <> "s") E (button <> "S") E (button <> "n") E (button<> "N")) Ent√£o
 
-               Se (contador_auxiliar < 100) Ent„o
+               Se (contador_auxiliar < 100) Ent√£o
 
                   Escreval()
-                  Escreval("OpÁ„o invalida! Digite novamente.")
-                  Escreva(" OpÁ„o: ")
+                  Escreval("Op√ß√£o invalida! Digite novamente.")
+                  Escreva(" Op√ß√£o: ")
                   leia(button)
 
-               Sen„o
+               Sen√£o
 
                   button <- "s"
 
@@ -207,11 +205,11 @@ Inicio
 
    LimpaTela()
 
-   button <- "n"
+   Enquanto (soma_tarde>max_Med) OU (soma_parcial_tarde>max_Med) Fa√ßa
 
-   Para contador_supremo de 1 ate 100 FaÁa
+   Para contador_supremo de 1 ate 100 Fa√ßa
 
-      Se ((button <> "s") E (button <>"S")) Ent„o
+      Se ((button <> "s") E (button <>"S")) Ent√£o
 
          turno_tarde_CG <- -1
          turno_tarde_Ped <- -1
@@ -222,26 +220,26 @@ Inicio
          Escreval("========================================")
          Escreval()
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((turno_tarde_CG < 0) OU (turno_tarde_CG > max_Med)) Ent„o
+            Se ((turno_tarde_CG < 0) OU (turno_tarde_CG > max_Med)) Ent√£o
 
-               Escreva("Digite o n˙mero de CLÕNICOS GERAIS: ")
+               Escreva("Digite o n√∫mero de CL√çNICOS GERAIS: ")
                Leia(turno_tarde_CG)
 
-               Se (turno_tarde_CG < 0) Ent„o
+               Se (turno_tarde_CG < 0) Ent√£o
 
                   LimpaTela()
                   Escreval()
-                  Escreval("N⁄MERO INV¡LIDO! Quantidade n„o pode ser negativa")
+                  Escreval("N√öMERO INV√ÅLIDO! Quantidade n√£o pode ser negativa")
 
-               Sen„o
+               Sen√£o
 
-                  Se (turno_tarde_CG > max_Med) Ent„o
+                  Se (turno_tarde_CG > max_Med) Ent√£o
 
                      LimpaTela()
                      Escreval()
-                     Escreval("N⁄MERO INV¡LIDO! Quantidade de mÈdicos maior que a quantidade m·xima permitida")
+                     Escreval("N√öMERO INV√ÅLIDO! Quantidade de m√©dicos maior que a quantidade m√°xima permitida")
 
                   Fimse
 
@@ -252,25 +250,25 @@ Inicio
          FimPara
 
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((turno_tarde_Ped < 0) OU (turno_tarde_Ped > max_Med)) Ent„o
+            Se ((turno_tarde_Ped < 0) OU (turno_tarde_Ped > max_Med)) Ent√£o
 
-               Escreva("Digite o n˙mero de PEDIATRAS: ")
+               Escreva("Digite o n√∫mero de PEDIATRAS: ")
                Leia(turno_tarde_Ped)
 
-               Se (turno_tarde_Ped < 0) Ent„o
+               Se (turno_tarde_Ped < 0) Ent√£o
 
                   LimpaTela()
                   Escreval()
-                  Escreval("N⁄MERO INV¡LIDO! Quantidade n„o pode ser negativa")
+                  Escreval("N√öMERO INV√ÅLIDO! Quantidade n√£o pode ser negativa")
 
-               Sen„o
+               Sen√£o
 
-                  Se (turno_tarde_Ped > max_Med) Ent„o
+                  Se (turno_tarde_Ped > max_Med) Ent√£o
                      LimpaTela()
                      Escreval()
-                     Escreval("N⁄MERO INV¡LIDO! Quantidade de mÈdicos maior que a quantidade m·xima permitida")
+                     Escreval("N√öMERO INV√ÅLIDO! Quantidade de m√©dicos maior que a quantidade m√°xima permitida")
 
                   Fimse
 
@@ -280,26 +278,26 @@ Inicio
 
          FimPara
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((turno_tarde_Cir < 0) OU (turno_tarde_Cir > max_Med)) Ent„o
+            Se ((turno_tarde_Cir < 0) OU (turno_tarde_Cir > max_Med)) Ent√£o
 
-               Escreva("Digite o n˙mero de CIRURGI’ES: ")
+               Escreva("Digite o n√∫mero de CIRURGI√ïES: ")
                Leia(turno_tarde_Cir)
 
-               Se (turno_tarde_Cir < 0) Ent„o
+               Se (turno_tarde_Cir < 0) Ent√£o
 
                   LimpaTela()
                   Escreval()
-                  Escreval("N⁄MERO INV¡LIDO! Quantidade n„o pode ser negativa")
+                  Escreval("N√öMERO INV√ÅLIDO! Quantidade n√£o pode ser negativa")
 
-               Sen„o
+               Sen√£o
 
-                  Se (turno_tarde_Cir > max_Med) Ent„o
+                  Se (turno_tarde_Cir > max_Med) Ent√£o
 
                      LimpaTela()
                      Escreval()
-                     Escreval("N⁄MERO INV¡LIDO! Quantidade de mÈdicos maior que a quantidade m·xima permitida")
+                     Escreval("N√öMERO INV√ÅLIDO! Quantidade de m√©dicos maior que a quantidade m√°xima permitida")
 
                   Fimse
 
@@ -315,34 +313,34 @@ Inicio
          Escreval("       RESUMO DO TURNO DA TARDE")
          Escreval("========================================")
          Escreval()
-         Escreval(" ClÌnicos Gerais: ", turno_tarde_CG)
+         Escreval(" Cl√≠nicos Gerais: ", turno_tarde_CG)
          Escreval(" Pediatras:       ", turno_tarde_Ped)
-         Escreval(" Cirurgiıes:      ", turno_tarde_Cir)
+         Escreval(" Cirurgi√µes:      ", turno_tarde_Cir)
          Escreval()
          Escreval("----------------------------------------")
-         Escreval(" Total de mÈdicos: ", turno_tarde_CG + turno_tarde_Ped + turno_tarde_Cir)
+         Escreval(" Total de m√©dicos: ", turno_tarde_CG + turno_tarde_Ped + turno_tarde_Cir)
          Escreval("========================================")
          Escreval()
-         Escreval(" Os dados est„o corretos?")
+         Escreval(" Os dados est√£o corretos?")
          Escreval()
          Escreval(" [S] Sim, confirmar")
-         Escreval(" [N] N„o, corrigir")
+         Escreval(" [N] N√£o, corrigir")
          Escreval()
-         Escreva(" OpÁ„o: ")
+         Escreva(" Op√ß√£o: ")
          Leia(button)
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((button <> "s") E (button <> "S") E (button <> "n") E (button<> "N")) Ent„o
+            Se ((button <> "s") E (button <> "S") E (button <> "n") E (button<> "N")) Ent√£o
 
-               Se (contador_auxiliar < 100) Ent„o
+               Se (contador_auxiliar < 100) Ent√£o
 
                   Escreval()
-                  Escreval("OpÁ„o invalida! Digite novamente.")
-                  Escreva(" OpÁ„o: ")
+                  Escreval("Op√ß√£o invalida! Digite novamente.")
+                  Escreva(" Op√ß√£o: ")
                   leia(button)
 
-               Sen„o
+               Sen√£o
 
                   button <- "s"
 
@@ -360,11 +358,13 @@ Inicio
 
    LimpaTela()
 
-   button <- "n"
+   Enquanto (soma_noite>max_Med) OU (soma_parcial_noite>max_Med) Fa√ßa
 
-   Para contador_supremo de 1 ate 100 FaÁa
+      button <- "n"
 
-      Se ((button <> "s") E (button <> "S")) Ent„o
+   Para contador_supremo de 1 ate 100 Fa√ßa
+
+      Se ((button <> "s") E (button <> "S")) Ent√£o
 
          turno_noite_CG <- -1
          turno_noite_Ped <- -1
@@ -375,26 +375,26 @@ Inicio
          Escreval("========================================")
          Escreval()
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((turno_noite_CG < 0) OU (turno_noite_CG > max_Med)) Ent„o
+            Se ((turno_noite_CG < 0) OU (turno_noite_CG > max_Med)) Ent√£o
 
-               Escreva("Digite o n˙mero de CLÕNICOS GERAIS: ")
+               Escreva("Digite o n√∫mero de CL√çNICOS GERAIS: ")
                Leia(turno_noite_CG)
 
-               Se (turno_noite_CG < 0) Ent„o
+               Se (turno_noite_CG < 0) Ent√£o
 
                   LimpaTela()
                   Escreval()
-                  Escreval("N⁄MERO INV¡LIDO! Quantidade n„o pode ser negativa")
+                  Escreval("N√öMERO INV√ÅLIDO! Quantidade n√£o pode ser negativa")
 
-               Sen„o
+               Sen√£o
 
-                  Se (turno_noite_CG > max_Med) Ent„o
+                  Se (turno_noite_CG > max_Med) Ent√£o
 
                      LimpaTela()
                      Escreval()
-                     Escreval("N⁄MERO INV¡LIDO! Quantidade de mÈdicos maior que a quantidade m·xima permitida")
+                     Escreval("N√öMERO INV√ÅLIDO! Quantidade de m√©dicos maior que a quantidade m√°xima permitida")
 
                   Fimse
 
@@ -404,25 +404,25 @@ Inicio
 
          FimPara
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((turno_noite_Ped < 0) OU (turno_noite_Ped > max_Med)) Ent„o
+            Se ((turno_noite_Ped < 0) OU (turno_noite_Ped > max_Med)) Ent√£o
 
-               Escreva("Digite o n˙mero de PEDIATRAS: ")
+               Escreva("Digite o n√∫mero de PEDIATRAS: ")
                Leia(turno_noite_Ped)
 
-               Se (turno_noite_Ped < 0) Ent„o
+               Se (turno_noite_Ped < 0) Ent√£o
 
                   LimpaTela()
                   Escreval()
-                  Escreval("N⁄MERO INV¡LIDO! Quantidade n„o pode ser negativa")
+                  Escreval("N√öMERO INV√ÅLIDO! Quantidade n√£o pode ser negativa")
 
-               Sen„o
+               Sen√£o
 
-                  Se (turno_noite_Ped > max_Med) Ent„o
+                  Se (turno_noite_Ped > max_Med) Ent√£o
                      LimpaTela()
                      Escreval()
-                     Escreval("N⁄MERO INV¡LIDO! Quantidade de mÈdicos maior que a quantidade m·xima permitida")
+                     Escreval("N√öMERO INV√ÅLIDO! Quantidade de m√©dicos maior que a quantidade m√°xima permitida")
 
                   Fimse
 
@@ -432,26 +432,26 @@ Inicio
 
          FimPara
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((turno_noite_Cir < 0) OU (turno_noite_Cir > max_Med)) Ent„o
+            Se ((turno_noite_Cir < 0) OU (turno_noite_Cir > max_Med)) Ent√£o
 
-               Escreva("Digite o n˙mero de CIRURGI’ES: ")
+               Escreva("Digite o n√∫mero de CIRURGI√ïES: ")
                Leia(turno_noite_Cir)
 
-               Se (turno_noite_Cir < 0) Ent„o
+               Se (turno_noite_Cir < 0) Ent√£o
 
                   LimpaTela()
                   Escreval()
-                  Escreval("N⁄MERO INV¡LIDO! Quantidade n„o pode ser negativa")
+                  Escreval("N√öMERO INV√ÅLIDO! Quantidade n√£o pode ser negativa")
 
-               Sen„o
+               Sen√£o
 
-                  Se (turno_noite_Cir > max_Med) Ent„o
+                  Se (turno_noite_Cir > max_Med) Ent√£o
 
                      LimpaTela()
                      Escreval()
-                     Escreval("N⁄MERO INV¡LIDO! Quantidade de mÈdicos maior que a quantidade m·xima permitida")
+                     Escreval("N√öMERO INV√ÅLIDO! Quantidade de m√©dicos maior que a quantidade m√°xima permitida")
 
                   Fimse
 
@@ -467,34 +467,34 @@ Inicio
          Escreval("       RESUMO DO TURNO DA NOITE")
          Escreval("========================================")
          Escreval()
-         Escreval(" ClÌnicos Gerais: ", turno_noite_CG)
+         Escreval(" Cl√≠nicos Gerais: ", turno_noite_CG)
          Escreval(" Pediatras:       ", turno_noite_Ped)
-         Escreval(" Cirurgiıes:      ", turno_noite_Cir)
+         Escreval(" Cirurgi√µes:      ", turno_noite_Cir)
          Escreval()
          Escreval("----------------------------------------")
-         Escreval(" Total de mÈdicos: ", turno_noite_CG + turno_noite_Ped + turno_noite_Cir)
+         Escreval(" Total de m√©dicos: ", turno_noite_CG + turno_noite_Ped + turno_noite_Cir)
          Escreval("========================================")
          Escreval()
-         Escreval(" Os dados est„o corretos?")
+         Escreval(" Os dados est√£o corretos?")
          Escreval()
          Escreval(" [S] Sim, confirmar")
-         Escreval(" [N] N„o, corrigir")
+         Escreval(" [N] N√£o, corrigir")
          Escreval()
-         Escreva(" OpÁ„o: ")
+         Escreva(" Op√ß√£o: ")
          Leia(button)
 
-         Para contador_auxiliar de 1 ate 100 FaÁa
+         Para contador_auxiliar de 1 ate 100 Fa√ßa
 
-            Se ((button <> "s") E (button <> "S") E (button <> "n") E (button<> "N")) Ent„o
+            Se ((button <> "s") E (button <> "S") E (button <> "n") E (button<> "N")) Ent√£o
 
-               Se (contador_auxiliar < 100) Ent„o
+               Se (contador_auxiliar < 100) Ent√£o
 
                   Escreval()
-                  Escreval("OpÁ„o invalida! Digite novamente.")
-                  Escreva(" OpÁ„o: ")
+                  Escreval("Op√ß√£o invalida! Digite novamente.")
+                  Escreva(" Op√ß√£o: ")
                   leia(button)
 
-               Sen„o
+               Sen√£o
 
                   button <- "s"
 
@@ -514,55 +514,55 @@ Inicio
 
    Escreval()
 
-   Se (turno_manha_CG < 0) Ent„o
+   Se (turno_manha_CG < 0) Ent√£o
 
       turno_manha_CG <- 0
 
    Fimse
 
-   Se (turno_manha_Ped < 0) Ent„o
+   Se (turno_manha_Ped < 0) Ent√£o
 
       turno_manha_Ped <- 0
 
    Fimse
 
-   Se (turno_manha_Cir < 0) Ent„o
+   Se (turno_manha_Cir < 0) Ent√£o
 
       turno_manha_Cir <- 0
 
    Fimse
 
-   Se (turno_tarde_CG < 0) Ent„o
+   Se (turno_tarde_CG < 0) Ent√£o
 
       turno_tarde_CG <- 0
 
    Fimse
 
-   Se (turno_tarde_Ped < 0) Ent„o
+   Se (turno_tarde_Ped < 0) Ent√£o
 
       turno_tarde_Ped <- 0
 
    Fimse
 
-   Se (turno_tarde_Cir < 0) Ent„o
+   Se (turno_tarde_Cir < 0) Ent√£o
 
       turno_tarde_Cir <- 0
 
    Fimse
 
-   Se (turno_noite_CG < 0) Ent„o
+   Se (turno_noite_CG < 0) Ent√£o
 
       turno_noite_CG <- 0
 
    Fimse
 
-   Se (turno_noite_Ped < 0) Ent„o
+   Se (turno_noite_Ped < 0) Ent√£o
 
       turno_noite_Ped <- 0
 
    Fimse
 
-   Se (turno_noite_Cir < 0) Ent„o
+   Se (turno_noite_Cir < 0) Ent√£o
 
       turno_noite_Cir <- 0
 
@@ -576,46 +576,46 @@ Inicio
    LimpaTela()
 
    Escreval("========================================")
-   Escreval("RELAT”RIO GERAL DO PLANT√O")
+   Escreval("RELAT√ìRIO GERAL DO PLANT√ÉO")
    Escreval("========================================")
    Escreval()
-   Escreval("TURNO DA MANH√:")
-   Escreval(" - ClÌnicos Gerais: ",turno_manha_CG)
+   Escreval("TURNO DA MANH√É:")
+   Escreval(" - Cl√≠nicos Gerais: ",turno_manha_CG)
    Escreval(" - Pediatras: ", turno_manha_Ped)
-   Escreval(" - Cirurgiıes: ", turno_manha_Cir)
+   Escreval(" - Cirurgi√µes: ", turno_manha_Cir)
    Escreval(" - Total no turno: ", soma_manha)
    Escreval()
    Escreval("TURNO DA TARDE:")
-   Escreval(" - ClÌnicos Gerais: ", turno_tarde_CG)
+   Escreval(" - Cl√≠nicos Gerais: ", turno_tarde_CG)
    Escreval(" - Pediatras: ", turno_tarde_Ped)
-   Escreval(" - Cirurgiıes: ", turno_tarde_Cir)
+   Escreval(" - Cirurgi√µes: ", turno_tarde_Cir)
    Escreval(" - Total no turno: ", soma_tarde)
    Escreval()
    Escreval("TURNO DA NOITE:")
-   Escreval(" - ClÌnicos Gerais: ", turno_noite_CG)
+   Escreval(" - Cl√≠nicos Gerais: ", turno_noite_CG)
    Escreval(" - Pediatras: ", turno_noite_Ped)
-   Escreval(" - Cirurgiıes: ", turno_noite_Cir)
+   Escreval(" - Cirurgi√µes: ", turno_noite_Cir)
    Escreval(" - Total no turno: ", soma_noite)
    Escreval()
-   Escreval("TOTAL GERAL DE M…DICOS: ", soma_geral)
+   Escreval("TOTAL GERAL DE M√âDICOS: ", soma_geral)
    Escreval()
    Escreval("========================================")
 
-   Se (soma_geral <= max_Med) Ent„o
+   Se (soma_geral <= max_Med) Ent√£o
 
-      Se (turno_manha_CG >= min_CG) E (turno_manha_Ped >= min_Ped) E (turno_manha_Cir >= min_Cir) Ent„o
+      Se (turno_manha_CG >= min_CG) E (turno_manha_Ped >= min_Ped) E (turno_manha_Cir >= min_Cir) Ent√£o
 
          log_manha <- 1
 
       Fimse
 
-      Se (turno_tarde_CG >= min_CG) E (turno_tarde_Ped >= min_Ped) E (turno_tarde_Cir >= min_Cir) Ent„o
+      Se (turno_tarde_CG >= min_CG) E (turno_tarde_Ped >= min_Ped) E (turno_tarde_Cir >= min_Cir) Ent√£o
 
          log_tarde <- 1
 
       Fimse
 
-      Se (turno_noite_CG >= min_CG) E (turno_noite_Ped >= min_Ped) E (turno_noite_Cir >= min_Cir) Ent„o
+      Se (turno_noite_CG >= min_CG) E (turno_noite_Ped >= min_Ped) E (turno_noite_Cir >= min_Cir) Ent√£o
 
          log_noite <- 1
 
@@ -623,46 +623,46 @@ Inicio
 
    Fimse
 
-   Se (soma_geral >max_Med)Ent„o
+   Se (soma_geral >max_Med)Ent√£o
 
       Escreval("===========================================")
-      Escreval("ERRO! N˙mero m·ximo de mÈdicos ultrapassado")
+      Escreval("ERRO! N√∫mero m√°ximo de m√©dicos ultrapassado")
       Escreval("===========================================")
 
    Fimse
 
-   Se (soma_geral <= max_Med) Ent„o
+   Se (soma_geral <= max_Med) Ent√£o
 
-      Se (log_manha = 0) OU (log_tarde = 0) OU (log_noite = 0) Ent„o
+      Se (log_manha = 0) OU (log_tarde = 0) OU (log_noite = 0) Ent√£o
 
-         Escreval(" O PLANT√O N√O PODE SER PUBLICADO! ")
+         Escreval(" O PLANT√ÉO N√ÉO PODE SER PUBLICADO! ")
          Escreval("========================================")
          Escreval()
 
-         Se (log_manha = 0) Ent„o
+         Se (log_manha = 0) Ent√£o
 
             Escreval("========================================")
-            Escreval("   -> Problema(s) no TURNO DA MANH√:    ")
+            Escreval("   -> Problema(s) no TURNO DA MANH√É:    ")
             Escreval()
 
-            Se (turno_manha_CG < min_CG) Ent„o
+            Se (turno_manha_CG < min_CG) Ent√£o
 
                falta_CG <- min_CG - turno_manha_CG
-               Escreval(" - Falta(m): ", falta_CG, " ClÌnico(s) Geral(is)")
+               Escreval(" - Falta(m): ", falta_CG, " Cl√≠nico(s) Geral(is)")
 
             Fimse
 
-            Se (turno_manha_Ped < min_Ped) Ent„o
+            Se (turno_manha_Ped < min_Ped) Ent√£o
 
                falta_Ped <- min_Ped - turno_manha_Ped
                Escreval (" - Falta(m): ", falta_Ped, " Pediatra(s)")
 
             Fimse
 
-            Se (turno_manha_Cir < min_Cir) Ent„o
+            Se (turno_manha_Cir < min_Cir) Ent√£o
 
                falta_Cir <- min_Cir - turno_manha_Cir
-               Escreval (" - Falta(m): ", falta_Cir, " Cirurgi„o(ıes)")
+               Escreval (" - Falta(m): ", falta_Cir, " Cirurgi√£o(√µes)")
 
             Fimse
 
@@ -672,30 +672,30 @@ Inicio
 
          Escreval()
 
-         Se (log_tarde = 0) Ent„o
+         Se (log_tarde = 0) Ent√£o
 
             Escreval("========================================")
             Escreval("   -> Problema(s) no TURNO DA TARDE:    ")
             Escreval()
 
-            Se (turno_tarde_CG < min_CG) Ent„o
+            Se (turno_tarde_CG < min_CG) Ent√£o
 
                falta_CG <- min_CG - turno_tarde_CG
-               Escreval(" - Falta(m): ", falta_CG, " ClÌnico(s) Geral(is)")
+               Escreval(" - Falta(m): ", falta_CG, " Cl√≠nico(s) Geral(is)")
 
             Fimse
 
-            Se (turno_tarde_Ped < min_Ped) Ent„o
+            Se (turno_tarde_Ped < min_Ped) Ent√£o
 
                falta_Ped <- min_Ped - turno_tarde_Ped
                Escreval (" - Falta(m): ", falta_Ped, " Pediatra(s)")
 
             Fimse
 
-            Se (turno_tarde_Cir < min_Cir) Ent„o
+            Se (turno_tarde_Cir < min_Cir) Ent√£o
 
                falta_Cir <- min_Cir - turno_tarde_Cir
-               Escreval (" - Falta(m): ", falta_Cir, " Cirurgi„o(ıes)")
+               Escreval (" - Falta(m): ", falta_Cir, " Cirurgi√£o(√µes)")
 
             Fimse
 
@@ -705,30 +705,30 @@ Inicio
 
          Escreval()
 
-         Se (log_noite = 0) Ent„o
+         Se (log_noite = 0) Ent√£o
 
             Escreval("========================================")
             Escreval("   -> Problema(s) no TURNO DA NOITE:    ")
             Escreval()
 
-            Se (turno_noite_CG < min_CG) Ent„o
+            Se (turno_noite_CG < min_CG) Ent√£o
 
                falta_CG <- min_CG - turno_noite_CG
-               Escreval(" - Falta(m): ", falta_CG, " ClÌnico(s) Geral(is)")
+               Escreval(" - Falta(m): ", falta_CG, " Cl√≠nico(s) Geral(is)")
 
             Fimse
 
-            Se (turno_noite_Ped < min_Ped) Ent„o
+            Se (turno_noite_Ped < min_Ped) Ent√£o
 
                falta_Ped <- min_Ped - turno_noite_Ped
                Escreval (" - Falta(m): ", falta_Ped, " Pediatra(s)")
 
             Fimse
 
-            Se (turno_noite_Cir < min_Cir) Ent„o
+            Se (turno_noite_Cir < min_Cir) Ent√£o
 
                falta_Cir <- min_Cir - turno_noite_Cir
-               Escreval (" - Falta(m): ", falta_Cir, " Cirurgi„o(ıes)")
+               Escreval (" - Falta(m): ", falta_Cir, " Cirurgi√£o(√µes)")
 
             Fimse
 
@@ -740,9 +740,9 @@ Inicio
 
    Fimse
 
-   Se (log_manha = 1) E (log_tarde = 1) E (log_noite = 1) Ent„o
+   Se (log_manha = 1) E (log_tarde = 1) E (log_noite = 1) Ent√£o
 
-      Escreval("O PLANT√O PODE SER PUBLICADO! ")
+      Escreval("O PLANT√ÉO PODE SER PUBLICADO! ")
       Escreval("========================================")
 
    Fimse
