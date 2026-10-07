@@ -7,6 +7,11 @@ const
    max_med = 140
 
 Var
+   //Variáveis referente ao cadastro de escala:
+   turno_manha: vetor[1..max_med] de inteiro
+   turno_tarde: vetor[1..max_med] de inteiro
+   turno_noite: vetor[1..max_med] de inteiro
+
    opcao_menu,opcao_esc,registro_med:inteiro
    pare, button: caractere
 
@@ -18,9 +23,6 @@ Var
    disp_manha: vetor [1..max_med] de caractere
    disp_tarde: vetor [1..max_med] de caractere
    disp_noite: vetor [1..max_med] de caractere
-   turno_manha: vetor[1..max_med] de inteiro
-   turno_tarde: vetor[1..max_med] de inteiro
-   turno_noite: vetor[1..max_med] de inteiro
    i: inteiro
    id: inteiro
    opcao: inteiro
@@ -163,7 +165,7 @@ Inicio
 
                opcao_esc <- 0
 
-               Escreval()
+               Limpatela()
 
                Enquanto (opcao_esc <> 4) Faça
                   Escreval("========================================")
@@ -196,16 +198,23 @@ Inicio
                               escreval("================================")
                            Senao
 
-                              Se (med_Espec[registro_med] <> "Clínico geral") Entao
+                              Se (registro_med <> med_Cod[registro_med]) Então
                                  escreval("================================")
-                                 escreval("Médico com especidalidade errada")
+                                 escreval("   Médico Sem Cadastro   ")
                                  escreval("================================")
                               Senao
 
-                                 Se (disp_manha[registro_med] <> "Sim") Entao
+                                 Se (med_Espec[registro_med] <> "Clínico geral") Entao
                                     escreval("================================")
-                                    escreval("   Médico Sem Disponibilidade   ")
+                                    escreval("Médico com especidalidade errada")
                                     escreval("================================")
+                                 Senao
+
+                                    Se (disp_manha[registro_med] <> "Sim") Entao
+                                       escreval("================================")
+                                       escreval("   Médico Sem Disponibilidade   ")
+                                       escreval("================================")
+                                    Fimse
                                  Fimse
                               Fimse
                            Fimse
@@ -233,16 +242,23 @@ Inicio
                               escreval("================================")
                            Senao
 
-                              Se (med_Espec[registro_med] <> "Pediatras") Entao
+                              Se (registro_med <> med_Cod[registro_med]) Então
                                  escreval("================================")
-                                 escreval("Médico com especidalidade errada")
+                                 escreval("   Médico Sem Cadastro   ")
                                  escreval("================================")
                               Senao
 
-                                 Se (disp_manha[registro_med] <> "Sim") Entao
+                                 Se (med_Espec[registro_med] <> "Pediatras") Entao
                                     escreval("================================")
-                                    escreval("   Médico Sem Disponibilidade   ")
+                                    escreval("Médico com especidalidade errada")
                                     escreval("================================")
+                                 Senao
+
+                                    Se (disp_manha[registro_med] <> "Sim") Entao
+                                       escreval("================================")
+                                       escreval("   Médico Sem Disponibilidade   ")
+                                       escreval("================================")
+                                    Fimse
                                  Fimse
                               Fimse
                            Fimse
@@ -270,16 +286,23 @@ Inicio
                               escreval("================================")
                            Senao
 
-                              Se (med_Espec[registro_med] <> "Cirurgiões") Entao
+                              Se (registro_med <> med_Cod[registro_med]) Então
                                  escreval("================================")
-                                 escreval("Médico com especidalidade errada")
+                                 escreval("   Médico Sem Cadastro   ")
                                  escreval("================================")
                               Senao
 
-                                 Se (disp_manha[registro_med] <> "Sim") Entao
+                                 Se (med_Espec[registro_med] <> "Cirurgiões") Entao
                                     escreval("================================")
-                                    escreval("   Médico Sem Disponibilidade   ")
+                                    escreval("Médico com especidalidade errada")
                                     escreval("================================")
+                                 Senao
+
+                                    Se (disp_manha[registro_med] <> "Sim") Entao
+                                       escreval("================================")
+                                       escreval("   Médico Sem Disponibilidade   ")
+                                       escreval("================================")
+                                    Fimse
                                  Fimse
                               Fimse
                            Fimse
@@ -302,6 +325,7 @@ Inicio
                            Escreva("Digite Novamente: ")
                            leia(button)
                         Fimenquanto
+                        Limpatela()
 
                      Fimenquanto
 
