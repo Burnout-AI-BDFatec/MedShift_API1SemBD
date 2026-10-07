@@ -191,39 +191,44 @@ Inicio
                            Escreval()
                            Escreva("Selecione o Médico: ")
                            leia(registro_med)
+                           
+                           turno_manha[registro_med] <- turno_manha[registro_med] + 1
 
                            Se (registro_med < 1) OU (registro_med > max_Med) Entao
                               escreval("================================")
                               escreval("     Digite um Código Válido    ")
                               escreval("================================")
+                              turno_manha[registro_med] <- turno_manha[registro_med] - 1
                            Senao
 
                               Se (registro_med <> med_Cod[registro_med]) Então
                                  escreval("================================")
                                  escreval("   Médico Sem Cadastro   ")
                                  escreval("================================")
+                                 turno_manha[registro_med] <- turno_manha[registro_med] - 1
                               Senao
 
                                  Se (med_Espec[registro_med] <> "Clínico geral") Entao
                                     escreval("================================")
                                     escreval("Médico com especidalidade errada")
                                     escreval("================================")
+                                    turno_manha[registro_med] <- turno_manha[registro_med] - 1
                                  Senao
 
                                     Se (disp_manha[registro_med] <> "Sim") Entao
                                        escreval("================================")
                                        escreval("   Médico Sem Disponibilidade   ")
                                        escreval("================================")
+                                       turno_manha[registro_med] <- turno_manha[registro_med] - 1
                                     Fimse
                                  Fimse
                               Fimse
                            Fimse
                         Fimenquanto
 
-                        turno_manha[registro_med] <- 1
                         Se (turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med] > 2) Entao
                            Escreval("ERRO: Quantidade Máxima de Plantão Ultrapassado.")
-                           turno_manha[registro_med] <- -1
+                           turno_manha[registro_med] <- turno_manha[registro_med] - 1
                         Fimse
 
                         registro_med <- 0
@@ -235,6 +240,8 @@ Inicio
                            Escreval()
                            Escreva("Selecione o Médico: ")
                            leia(registro_med)
+                           
+                           turno_manha[registro_med] <- turno_manha[registro_med] + 1
 
                            Se (registro_med < 1) OU (registro_med > max_Med) Entao
                               escreval("================================")
@@ -246,28 +253,30 @@ Inicio
                                  escreval("================================")
                                  escreval("   Médico Sem Cadastro   ")
                                  escreval("================================")
+                                 turno_manha[registro_med] <- turno_manha[registro_med] - 1
                               Senao
 
                                  Se (med_Espec[registro_med] <> "Pediatras") Entao
                                     escreval("================================")
                                     escreval("Médico com especidalidade errada")
                                     escreval("================================")
+                                    turno_manha[registro_med] <- turno_manha[registro_med] - 1
                                  Senao
 
                                     Se (disp_manha[registro_med] <> "Sim") Entao
                                        escreval("================================")
                                        escreval("   Médico Sem Disponibilidade   ")
                                        escreval("================================")
+                                       turno_manha[registro_med] <- turno_manha[registro_med] - 1
                                     Fimse
                                  Fimse
                               Fimse
                            Fimse
                         Fimenquanto
 
-                        turno_manha[registro_med] <- 1
                         Se (turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med] > 2) Entao
                            Escreval("ERRO: Quantidade Máxima de Plantão Ultrapassado.")
-                           turno_manha[registro_med] <- -1
+                           turno_manha[registro_med] <- turno_manha[registro_med] - 1
                         Fimse
 
                         registro_med <- 0
@@ -280,38 +289,43 @@ Inicio
                            Escreva("Selecione o Médico: ")
                            leia(registro_med)
 
+                           turno_manha[registro_med] <- turno_manha[registro_med] + 1
+
                            Se (registro_med < 1) OU (registro_med > max_Med) Entao
                               escreval("================================")
                               escreval("     Digite um Código Válido    ")
                               escreval("================================")
+                              turno_manha[registro_med] <- turno_manha[registro_med] - 1
                            Senao
 
                               Se (registro_med <> med_Cod[registro_med]) Então
                                  escreval("================================")
                                  escreval("   Médico Sem Cadastro   ")
                                  escreval("================================")
+                                 turno_manha[registro_med] <- turno_manha[registro_med] - 1
                               Senao
 
                                  Se (med_Espec[registro_med] <> "Cirurgiões") Entao
                                     escreval("================================")
                                     escreval("Médico com especidalidade errada")
                                     escreval("================================")
+                                    turno_manha[registro_med] <- turno_manha[registro_med] - 1
                                  Senao
 
                                     Se (disp_manha[registro_med] <> "Sim") Entao
                                        escreval("================================")
                                        escreval("   Médico Sem Disponibilidade   ")
                                        escreval("================================")
+                                       turno_manha[registro_med] <- turno_manha[registro_med] - 1
                                     Fimse
                                  Fimse
                               Fimse
                            Fimse
                         Fimenquanto
 
-                        turno_manha[registro_med] <- 1
                         Se (turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med] > 2) Entao
                            Escreval("ERRO: Quantidade Máxima de Plantão Ultrapassado.")
-                           turno_manha[registro_med] <- -1
+                           turno_manha[registro_med] <- turno_manha[registro_med] - 1
                         Fimse
 
                         Escreval("Confirma o Cadastro do Turno da Manhã?")
