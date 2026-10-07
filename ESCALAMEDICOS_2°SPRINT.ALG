@@ -158,7 +158,7 @@ Inicio
 
          Senao
 
-            //MONTAGEM ESCALA MEDICA
+            //MONTAGEM ESCALA
             Se opcao_menu = 3 Entao
 
                opcao_esc <- 0
