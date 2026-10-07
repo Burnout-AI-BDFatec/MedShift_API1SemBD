@@ -7,8 +7,8 @@ const
    max_med = 140
 
 Var
-   opcao_menu:inteiro
-   pare: caractere
+   opcao_menu,opcao_esc,registro_med:inteiro
+   pare, button: caractere
 
 
    //variaveis referentes ao cadastro de usuarios:
@@ -18,6 +18,9 @@ Var
    disp_manha: vetor [1..max_med] de caractere
    disp_tarde: vetor [1..max_med] de caractere
    disp_noite: vetor [1..max_med] de caractere
+   turno_manha: vetor[1..max_med] de inteiro
+   turno_tarde: vetor[1..max_med] de inteiro
+   turno_noite: vetor[1..max_med] de inteiro
    i: inteiro
    id: inteiro
    opcao: inteiro
@@ -154,9 +157,175 @@ Inicio
             Escreval("Consulta em desenvolvimento.")
 
          Senao
+
+            //MONTAGEM ESCALA MEDICA
             Se opcao_menu = 3 Entao
 
-               Escreval("Montagem de escala em desenvolvimento.")
+               opcao_esc <- 0
+
+               Escreval()
+
+               Enquanto (opcao_esc <> 4) Faça
+                  Escreval("========================================")
+                  Escreval("           MONTAR ESCALA")
+                  Escreval("========================================")
+                  Escreval("        1 - TURNO DA MANHÃ")
+                  Escreval("        2 - TURNO DA TARDE")
+                  Escreval("        3 - TURNO DA NOITE")
+                  Escreval("        4 - SAIR")
+                  Escreval("========================================")
+                  Escreva("Escolha uma opção: ")
+                  leia(opcao_esc)
+
+                  Se opcao_esc = 1 Entao
+                     button <- "n"
+                     Enquanto (button = "n") OU (button = "N") Faça
+                        registro_med <- 0
+                        Enquanto (registro_med < 1) OU (registro_med > max_Med) Faça
+
+                           Escreval("========================================")
+                           Escreval("      TURNO DA MANHÃ - CLÍNICO GERAL    ")
+                           Escreval("========================================")
+                           Escreval()
+                           Escreva("Selecione o Médico: ")
+                           leia(registro_med)
+
+                           Se (registro_med < 1) OU (registro_med > max_Med) Entao
+                              escreval("================================")
+                              escreval("     Digite um Código Válido    ")
+                              escreval("================================")
+                           Senao
+
+                              Se (med_Espec[registro_med] <> "Clínico geral") Entao
+                                 escreval("================================")
+                                 escreval("Médico com especidalidade errada")
+                                 escreval("================================")
+                              Senao
+
+                                 Se (disp_manha[registro_med] <> "Sim") Entao
+                                    escreval("================================")
+                                    escreval("   Médico Sem Disponibilidade   ")
+                                    escreval("================================")
+                                 Fimse
+                              Fimse
+                           Fimse
+                        Fimenquanto
+
+                        turno_manha[registro_med] <- 1
+                        Se (turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med] > 2) Entao
+                           Escreval("ERRO: Quantidade Máxima de Plantão Ultrapassado.")
+                           turno_manha[registro_med] <- -1
+                        Fimse
+
+                        registro_med <- 0
+                        Enquanto (registro_med < 1) OU (registro_med > max_Med) Faça
+
+                           Escreval("========================================")
+                           Escreval("       TURNO DA MANHÃ - PEDIÁTRA        ")
+                           Escreval("========================================")
+                           Escreval()
+                           Escreva("Selecione o Médico: ")
+                           leia(registro_med)
+
+                           Se (registro_med < 1) OU (registro_med > max_Med) Entao
+                              escreval("================================")
+                              escreval("     Digite um Código Válido    ")
+                              escreval("================================")
+                           Senao
+
+                              Se (med_Espec[registro_med] <> "Pediatras") Entao
+                                 escreval("================================")
+                                 escreval("Médico com especidalidade errada")
+                                 escreval("================================")
+                              Senao
+
+                                 Se (disp_manha[registro_med] <> "Sim") Entao
+                                    escreval("================================")
+                                    escreval("   Médico Sem Disponibilidade   ")
+                                    escreval("================================")
+                                 Fimse
+                              Fimse
+                           Fimse
+                        Fimenquanto
+
+                        turno_manha[registro_med] <- 1
+                        Se (turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med] > 2) Entao
+                           Escreval("ERRO: Quantidade Máxima de Plantão Ultrapassado.")
+                           turno_manha[registro_med] <- -1
+                        Fimse
+
+                        registro_med <- 0
+                        Enquanto (registro_med < 1) OU (registro_med > max_Med) Faça
+
+                           Escreval("========================================")
+                           Escreval("       TURNO DA MANHÃ - CIRURGIÃO       ")
+                           Escreval("========================================")
+                           Escreval()
+                           Escreva("Selecione o Médico: ")
+                           leia(registro_med)
+
+                           Se (registro_med < 1) OU (registro_med > max_Med) Entao
+                              escreval("================================")
+                              escreval("     Digite um Código Válido    ")
+                              escreval("================================")
+                           Senao
+
+                              Se (med_Espec[registro_med] <> "Cirurgiões") Entao
+                                 escreval("================================")
+                                 escreval("Médico com especidalidade errada")
+                                 escreval("================================")
+                              Senao
+
+                                 Se (disp_manha[registro_med] <> "Sim") Entao
+                                    escreval("================================")
+                                    escreval("   Médico Sem Disponibilidade   ")
+                                    escreval("================================")
+                                 Fimse
+                              Fimse
+                           Fimse
+                        Fimenquanto
+
+                        turno_manha[registro_med] <- 1
+                        Se (turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med] > 2) Entao
+                           Escreval("ERRO: Quantidade Máxima de Plantão Ultrapassado.")
+                           turno_manha[registro_med] <- -1
+                        Fimse
+
+                        Escreval("Confirma o Cadastro do Turno da Manhã?")
+                        Escreval("[S] SIM")
+                        Escreval("[N] NÃO")
+                        Escreva("Escolha uma Opção: ")
+                        leia(button)
+
+                        Enquanto (button <> "n") E (button <> "N") E (button <> "s") E (button <> "S") Faça
+                           Escreval("OPÇÃO INVÁLIDA!")
+                           Escreva("Digite Novamente: ")
+                           leia(button)
+                        Fimenquanto
+
+                     Fimenquanto
+
+                  Senao
+                     Se opcao_esc = 2 Entao
+
+                     Senao
+                        Se opcao_esc = 3 Entao
+
+
+                        Senao
+                           Se (opcao_esc = 4) Então
+                              Limpatela()
+                           Fimse
+                        Fimse
+                     Fimse
+                  Fimse
+
+                  Enquanto (opcao_esc < 1 ) OU (opcao_esc > 4) Faca
+                     Escreva("OPÇÃO INVÁLIDA: Escolha Novamente: ")
+                     leia(opcao_esc)
+                  Fimenquanto
+               Fimenquanto
+
 
             Senao
                Se opcao_menu = 4 Entao
