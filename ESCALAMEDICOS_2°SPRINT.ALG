@@ -12,9 +12,13 @@ Var
    turno_manha: vetor[1..max_med] de inteiro
    turno_tarde: vetor[1..max_med] de inteiro
    turno_noite: vetor[1..max_med] de inteiro
+   reg_manha: vetor[1..max_med] de inteiro
+   reg_tarde: vetor[1..max_med] de inteiro
+   reg_noite: vetor[1..max_med] de inteiro
 
    opcao_menu,opcao_esc,registro_med:inteiro
    pare, button, buttonT: caractere
+   repetido: logico
 
 
    //variaveis referentes ao cadastro de usuarios:
@@ -25,7 +29,7 @@ Var
    disp_tarde: vetor [1..max_med] de caractere
    disp_noite: vetor [1..max_med] de caractere
    qtd_turnos_escalados: vetor[1..max_med] de inteiro
-   i: inteiro
+   i, j: inteiro
    id: inteiro
    opcao: inteiro
    continuar: caractere
@@ -625,6 +629,31 @@ Inicio
 
                               Fimse
 
+                              repetido <- falso
+                              j <- 1
+
+                              Para j de 1 até max_Med faça
+                                 Se (reg_manha[j] = registro_med) Então
+                                    repetido <- verdadeiro
+                                 Fimse
+                              Fimpara
+
+                              Se (repetido = verdadeiro) Então
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval("   ERRO! Médico Já Cadastrado!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 turno_manha[registro_med] <- turno_manha[registro_med] - 1
+                              Senão
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 reg_manha[registro_med] <- registro_med
+                              Fimse
+
                               Escreval()
                               Escreval("===================================================")
                               Escreval("      Deseja cadastrar outro CLÍNICO GERAL?  ")
@@ -633,6 +662,7 @@ Inicio
                               Escreval("[N] NÃO")
                               Escreva("Digite a Opção: ")
                               Leia(buttonT)
+                              Limpatela()
 
                               Enquanto (buttonT <> "n") E (buttonT <> "N") E (ButtonT <> "s") E (buttonT <> "S") Faça
                                  Escreval("===================================================")
@@ -779,6 +809,31 @@ Inicio
 
                               Fimse
 
+                              repetido <- falso
+                              j <- 1
+
+                              Para j de 1 até max_Med faça
+                                 Se (reg_manha[j] = registro_med) Então
+                                    repetido <- verdadeiro
+                                 Fimse
+                              Fimpara
+
+                              Se (repetido = verdadeiro) Então
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval("   ERRO! Médico Já Cadastrado!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 turno_manha[registro_med] <- turno_manha[registro_med] - 1
+                              Senão
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 reg_manha[registro_med] <- registro_med
+                              Fimse
+
                               Escreval()
                               Escreval("===================================================")
                               Escreval("      Deseja cadastrar outro PEDIÁTRA?  ")
@@ -787,6 +842,7 @@ Inicio
                               Escreval("[N] NÃO")
                               Escreva("Digite a Opção: ")
                               Leia(buttonT)
+                              Limpatela()
 
                               Enquanto (buttonT <> "n") E (buttonT <> "N") E (ButtonT <> "s") E (buttonT <> "S") Faça
                                  Escreval("===================================================")
@@ -934,6 +990,31 @@ Inicio
 
                               Fimse
 
+                              repetido <- falso
+                              j <- 1
+
+                              Para j de 1 até max_Med faça
+                                 Se (reg_manha[j] = registro_med) Então
+                                    repetido <- verdadeiro
+                                 Fimse
+                              Fimpara
+
+                              Se (repetido = verdadeiro) Então
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval("   ERRO! Médico Já Cadastrado!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 turno_manha[registro_med] <- turno_manha[registro_med] - 1
+                              Senão
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 reg_manha[registro_med] <- registro_med
+                              Fimse
+
                               Escreval()
                               Escreval("===================================================")
                               Escreval("      Deseja cadastrar outro CIRURGIÃO?  ")
@@ -942,6 +1023,7 @@ Inicio
                               Escreval("[N] NÃO")
                               Escreva("Digite a Opção: ")
                               Leia(buttonT)
+                              Limpatela()
 
                               Enquanto (buttonT <> "n") E (buttonT <> "N") E (ButtonT <> "s") E (buttonT <> "S") Faça
                                  Escreval("===================================================")
