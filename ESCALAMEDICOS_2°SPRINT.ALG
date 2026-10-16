@@ -39,6 +39,7 @@ Var
    indice_encontrado: inteiro
    consulta_codigo: inteiro
    encontrado: logico
+   total_cadastrados: inteiro
 
 
 Inicio
@@ -328,14 +329,25 @@ Inicio
 
          Se (opcao_menu = 2) Então
 
-            LimpaTela()
-            Escreval("==================================")
+            // Conta quantos médicos estão cadastrados no vetor
+            total_cadastrados <- 0
+            Para indice_relatorio de 1 ate max_med Faça
+               Se med_Cod[indice_relatorio] <> 0 Então
+                  total_cadastrados <- total_cadastrados + 1
+               FimSe
+            FimPara
+
+            // Exibe a tela com o total logo acima
+           LimpaTela()
+            Escreval("==================================================")
+            Escreval("                 CONSULTA DE MÉDICO               ")
+            Escreval("==================================================")
+            Escreval(" Total de médicos cadastrados no sistema: ", total_cadastrados)
+            Escreval("--------------------------------------------------")
             Escreval()
-            Escreval("Digite o REGISTRO a ser consultado")
+            Escreval(" Digite abaixo o REGISTRO que deseja consultar:")
             Escreval()
-            Escreval("__________________________________")
-            Escreval()
-            Escreva("REGISTRO: ")
+            Escreva(" >>> REGISTRO: ")
             Leia(consulta_codigo)
             LimpaTela()
 
