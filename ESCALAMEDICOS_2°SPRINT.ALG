@@ -338,7 +338,7 @@ Inicio
             FimPara
 
             // Exibe a tela com o total logo acima
-           LimpaTela()
+            LimpaTela()
             Escreval("==================================================")
             Escreval("                 CONSULTA DE MÉDICO               ")
             Escreval("==================================================")
@@ -1086,18 +1086,1153 @@ Inicio
                   Senão
 
                      Se (opcao_esc = 2) Então
+                        Enquanto (registro_med < 1) ou (registro_med > max_Med) Faça
+
+                           buttonT <- "s"
+
+                           Enquanto (buttonT = "s") ou (buttonT = "S") Faça
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                TURNO DA TARDE - CLÍNICO GERAL                              ")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+
+                              //MOSTAR RELATORIOS DE MEDICOS DE CLINICOS GERAL
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                    RELATÓRIO DE MÉDICOS ")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("REGISTRO   NOME              ESPECIALIDADE       MANHA    TARDE    NOITE    TURNOS ESCALADOS")
+                              Escreval("--------------------------------------------------------------------------------------------")
+
+                              Para indice_relatorio de 1 ate max_med Faça
+
+                                 Se (med_Cod[indice_relatorio] <> 0) Então
+
+                                    Se (med_Espec[indice_relatorio] = "Clínico geral") entao
+
+                                       Se (med_Cod[indice_relatorio] < 10) Então
+
+                                          Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "       ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                       Senao
+
+                                          Se (med_Cod[indice_relatorio] < 100) Então
+
+                                             Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "       ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Senao
+
+                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "       ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimpara
+
+                              Escreval("============================================================================================")
+                              Escreval()
+
+                              Escreva("Selecione o Médico pelo NÚMERO DO REGISTRO: ")
+                              Leia(registro_med)
+                              LimpaTela()
+
+                              Se (registro_med < 1) ou (registro_med > max_Med) Então
+
+                                 Escreval("==========================================")
+                                 Escreval()
+                                 Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                 Escreval()
+                                 Escreval("==========================================")
+
+                              Senão
+
+                                 Se (registro_med <> med_Cod[registro_med]) Então
+
+                                    Escreval("================================")
+                                    Escreval()
+                                    Escreval("   ERRO! Médico SEM REGISTRO!   ")
+                                    Escreval()
+                                    Escreval("================================")
+
+                                 Senão
+
+                                    Se (med_Espec[registro_med] <> "Clínico geral") Então
+
+                                       Escreval("=======================================")
+                                       Escreval()
+                                       Escreval("ERRO! Médico com especidalidade errada!")
+                                       Escreval()
+                                       Escreval("=======================================")
+
+                                    Senão
+
+                                       Se (disp_tarde[registro_med] <> "Sim") Então
+
+                                          Escreval("=================================")
+                                          Escreval()
+                                          Escreval("ERRO! Médico Sem Disponibilidade!")
+                                          Escreval()
+                                          Escreval("=================================")
+
+
+                                       Senão
+
+                                          Se ((turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med])= 2) Então
+
+                                             Escreval("====================================================")
+                                             Escreval()
+                                             Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                             Escreval()
+                                             Escreval("====================================================")
+
+                                          Senão
+
+                                             turno_tarde[registro_med] <- turno_tarde[registro_med] + 1
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimse
+
+                              repetido <- falso
+                              j <- 1
+
+                              Para j de 1 até max_Med faça
+                                 Se (reg_tarde[j] = registro_med) Então
+                                    repetido <- verdadeiro
+                                 Fimse
+                              Fimpara
+
+                              Se (repetido = verdadeiro) Então
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval("   ERRO! Médico Já Cadastrado!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 turno_tarde[registro_med] <- turno_tarde[registro_med] - 1
+                              Senão
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 reg_tarde[registro_med] <- registro_med
+                              Fimse
+
+                              Escreval()
+                              Escreval("===================================================")
+                              Escreval("      Deseja cadastrar outro CLÍNICO GERAL?  ")
+                              Escreval("===================================================")
+                              Escreval("[S] SIM")
+                              Escreval("[N] NÃO")
+                              Escreva("Digite a Opção: ")
+                              Leia(buttonT)
+                              Limpatela()
+
+                              Enquanto (buttonT <> "n") E (buttonT <> "N") E (ButtonT <> "s") E (buttonT <> "S") Faça
+                                 Escreval("===================================================")
+                                 Escreval("            DIGITE UMA OPÇÃO VÁLIDA.")
+                                 Escreval("===================================================")
+                                 Escreval("[S] SIM")
+                                 Escreval("[N] NÃO")
+                                 Escreva("Digite a Opção: ")
+                                 Leia(buttonT)
+                                 Limpatela()
+                              Fimenquanto
+
+
+                           Fimenquanto
+
+                        Fimenquanto
+
+                        registro_med <- 0
+
+                        Enquanto (registro_med < 1) ou (registro_med > max_Med) Faça
+
+                           buttonT <- "s"
+
+                           Enquanto (buttonT = "s") ou (buttonT = "S") Faça
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                  TURNO DA TARDE - PEDIATRA                                 ")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+
+                              //MOSTAR RELATORIOS DE MEDICOS DE PEDIATRAS
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                    RELATÓRIO DE MÉDICOS")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("REGISTRO   NOME              ESPECIALIDADE       MANHA    TARDE    NOITE    TURNOS ESCALADOS")
+                              Escreval("--------------------------------------------------------------------------------------------")
+
+                              Para indice_relatorio de 1 ate max_med Faça
+
+                                 Se med_Cod[indice_relatorio] <> 0 Então
+
+                                    Se med_Espec[indice_relatorio] = "Pediatra" Então
+
+                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                          Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "            ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                       Senão
+
+                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                             Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "            ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Senão
+
+                                             Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "            ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimpara
+
+                              Escreval("============================================================================================")
+                              Escreval()
+
+                              Escreva("Selecione o Médico pelo NÚMERO DO REGISTRO: ")
+                              Leia(registro_med)
+                              LimpaTela()
+
+                              Se (registro_med < 1) ou (registro_med > max_Med) Então
+
+                                 Escreval("==========================================")
+                                 Escreval()
+                                 Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                 Escreval()
+                                 Escreval("==========================================")
+
+                              Senão
+
+                                 Se (registro_med <> med_Cod[registro_med]) Então
+
+                                    Escreval("================================")
+                                    Escreval()
+                                    Escreval("   ERRO! Médico SEM REGISTRO!   ")
+                                    Escreval()
+                                    Escreval("================================")
+
+                                 Senão
+
+                                    Se (med_Espec[registro_med] <> "Pediatra") Então
+
+                                       Escreval("=======================================")
+                                       Escreval()
+                                       Escreval("ERRO! Médico com especidalidade errada!")
+                                       Escreval()
+                                       Escreval("=======================================")
+
+                                    Senão
+
+                                       Se (disp_tarde[registro_med] <> "Sim") Então
+
+                                          Escreval("=================================")
+                                          Escreval()
+                                          Escreval("ERRO! Médico Sem Disponibilidade!")
+                                          Escreval()
+                                          Escreval("=================================")
+
+
+                                       Senão
+
+                                          Se ((turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med])= 2) Então
+
+                                             Escreval("====================================================")
+                                             Escreval()
+                                             Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                             Escreval()
+                                             Escreval("====================================================")
+
+                                          Senão
+
+                                             turno_tarde[registro_med] <- turno_tarde[registro_med] + 1
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimse
+
+                              repetido <- falso
+                              j <- 1
+
+                              Para j de 1 até max_Med faça
+                                 Se (reg_manha[j] = registro_med) Então
+                                    repetido <- verdadeiro
+                                 Fimse
+                              Fimpara
+
+                              Se (repetido = verdadeiro) Então
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval("   ERRO! Médico Já Cadastrado!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 turno_tarde[registro_med] <- turno_tarde[registro_med] - 1
+                              Senão
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 reg_tarde[registro_med] <- registro_med
+                              Fimse
+
+                              Escreval()
+                              Escreval("===================================================")
+                              Escreval("      Deseja cadastrar outro PEDIÁTRA?  ")
+                              Escreval("===================================================")
+                              Escreval("[S] SIM")
+                              Escreval("[N] NÃO")
+                              Escreva("Digite a Opção: ")
+                              Leia(buttonT)
+                              Limpatela()
+
+                              Enquanto (buttonT <> "n") E (buttonT <> "N") E (ButtonT <> "s") E (buttonT <> "S") Faça
+                                 Escreval("===================================================")
+                                 Escreval("            DIGITE UMA OPÇÃO VÁLIDA.")
+                                 Escreval("===================================================")
+                                 Escreval("[S] SIM")
+                                 Escreval("[N] NÃO")
+                                 Escreva("Digite a Opção: ")
+                                 Leia(buttonT)
+                                 Limpatela()
+                              Fimenquanto
+
+                           Fimenquanto
+
+                        Fimenquanto
+
+                        registro_med <- 0
+
+                        Enquanto (registro_med < 1) OU (registro_med > max_Med) Faça
+
+                           buttonT <- "s"
+
+                           Enquanto (buttonT = "s") ou (buttonT = "S") Faça
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                  TURNO DA TARDE - CIRURGIÃO                                ")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+
+                              //MOSTAR RELATORIOS DE MEDICOS DE CIRURGIÃO
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                    RELATÓRIO DE MÉDICOS")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("REGISTRO   NOME              ESPECIALIDADE       MANHA    TARDE    NOITE    TURNOS ESCALADOS")
+                              Escreval("--------------------------------------------------------------------------------------------")
+
+
+                              Para indice_relatorio de 1 ate max_med Faça
+
+                                 Se med_Cod[indice_relatorio] <> 0 Então
+
+                                    Se med_Espec[indice_relatorio] = "Cirurgião" Então
+
+                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "           ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                       Senão
+
+                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "           ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Senão
+
+                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "           ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 fimse
+
+                              Fimpara
+
+                              Escreval("============================================================================================")
+                              Escreval
+
+                              Escreva("Selecione o Médico pelo NÚMERO DO REGISTRO: ")
+                              Leia(registro_med)
+                              LimpaTela()
+
+                              Se (registro_med < 1) ou (registro_med > max_Med) Então
+
+                                 Escreval("==========================================")
+                                 Escreval()
+                                 Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                 Escreval()
+                                 Escreval("==========================================")
+
+                              Senão
+
+                                 Se (registro_med <> med_Cod[registro_med]) Então
+
+                                    Escreval("================================")
+                                    Escreval()
+                                    Escreval("   ERRO! Médico SEM REGISTRO!   ")
+                                    Escreval()
+                                    Escreval("================================")
+
+                                 Senão
+
+                                    Se (med_Espec[registro_med] <> "Cirurgião") Então
+
+                                       Escreval("=======================================")
+                                       Escreval()
+                                       Escreval("ERRO! Médico com especidalidade errada!")
+                                       Escreval()
+                                       Escreval("=======================================")
+
+                                    Senão
+
+                                       Se (disp_tarde[registro_med] <> "Sim") Então
+
+                                          Escreval("=================================")
+                                          Escreval()
+                                          Escreval("ERRO! Médico Sem Disponibilidade!")
+                                          Escreval()
+                                          Escreval("=================================")
+
+
+                                       Senão
+
+                                          Se ((turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med])= 2) Então
+
+                                             Escreval("====================================================")
+                                             Escreval()
+                                             Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                             Escreval()
+                                             Escreval("====================================================")
+
+                                          Senão
+
+                                             turno_tarde[registro_med] <- turno_tarde[registro_med] + 1
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimse
+
+                              repetido <- falso
+                              j <- 1
+
+                              Para j de 1 até max_Med faça
+                                 Se (reg_tarde[j] = registro_med) Então
+                                    repetido <- verdadeiro
+                                 Fimse
+                              Fimpara
+
+                              Se (repetido = verdadeiro) Então
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval("   ERRO! Médico Já Cadastrado!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 turno_tarde[registro_med] <- turno_tarde[registro_med] - 1
+                              Senão
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 reg_tarde[registro_med] <- registro_med
+                              Fimse
+
+                              Escreval()
+                              Escreval("===================================================")
+                              Escreval("      Deseja cadastrar outro CIRURGIÃO?  ")
+                              Escreval("===================================================")
+                              Escreval("[S] SIM")
+                              Escreval("[N] NÃO")
+                              Escreva("Digite a Opção: ")
+                              Leia(buttonT)
+                              Limpatela()
+
+                              Enquanto (buttonT <> "n") E (buttonT <> "N") E (ButtonT <> "s") E (buttonT <> "S") Faça
+                                 Escreval("===================================================")
+                                 Escreval("            DIGITE UMA OPÇÃO VÁLIDA.")
+                                 Escreval("===================================================")
+                                 Escreval("[S] SIM")
+                                 Escreval("[N] NÃO")
+                                 Escreva("Digite a Opção: ")
+                                 Leia(buttonT)
+                                 Limpatela()
+                              Fimenquanto
+
+                           Fimenquanto
+
+                        Fimenquanto
+
+                        button <- " "
+
+                        Enquanto (button <> "n") E (button <> "N") E (button <> "s") E (button <> "S") Faça
+
+                           Escreval("========================================")
+                           Escreval()
+                           Escreval("Confirma o Cadastro do Turno da Tarde?")
+                           Escreval("[S] SIM")
+                           Escreval("[N] NÃO")
+                           Escreval()
+                           Escreval("========================================")
+                           Escreval()
+                           Escreva("Escolha uma Opção: ")
+                           Leia(button)
+                           LimpaTela()
+
+                           Se (button <> "n") E (button <> "N") E (button <> "s") E (button <> "S") Então
+
+                              Escreval("=====================")
+                              Escreval()
+                              Escreval("ERRO! OPÇÃO INVÁLIDA!")
+                              Escreval()
+                              Escreval("=====================")
+
+                           Fimse
+
+                        Fimenquanto
+
+
+
+
+                  Senão
+
+                     Se (opcao_esc = 3) Então
+
+                        Enquanto (registro_med < 1) ou (registro_med > max_Med) Faça
+
+                           buttonT <- "s"
+
+                           Enquanto (buttonT = "s") ou (buttonT = "S") Faça
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                TURNO DA NOITE - CLÍNICO GERAL                              ")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+
+                              //MOSTAR RELATORIOS DE MEDICOS DE CLINICOS GERAL
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                    RELATÓRIO DE MÉDICOS ")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("REGISTRO   NOME              ESPECIALIDADE       MANHA    TARDE    NOITE    TURNOS ESCALADOS")
+                              Escreval("--------------------------------------------------------------------------------------------")
+
+                              Para indice_relatorio de 1 ate max_med Faça
+
+                                 Se (med_Cod[indice_relatorio] <> 0) Então
+
+                                    Se (med_Espec[indice_relatorio] = "Clínico geral") entao
+
+                                       Se (med_Cod[indice_relatorio] < 10) Então
+
+                                          Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "       ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                       Senao
+
+                                          Se (med_Cod[indice_relatorio] < 100) Então
+
+                                             Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "       ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Senao
+
+                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "       ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimpara
+
+                              Escreval("============================================================================================")
+                              Escreval()
+
+                              Escreva("Selecione o Médico pelo NÚMERO DO REGISTRO: ")
+                              Leia(registro_med)
+                              LimpaTela()
+
+                              Se (registro_med < 1) ou (registro_med > max_Med) Então
+
+                                 Escreval("==========================================")
+                                 Escreval()
+                                 Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                 Escreval()
+                                 Escreval("==========================================")
+
+                              Senão
+
+                                 Se (registro_med <> med_Cod[registro_med]) Então
+
+                                    Escreval("================================")
+                                    Escreval()
+                                    Escreval("   ERRO! Médico SEM REGISTRO!   ")
+                                    Escreval()
+                                    Escreval("================================")
+
+                                 Senão
+
+                                    Se (med_Espec[registro_med] <> "Clínico geral") Então
+
+                                       Escreval("=======================================")
+                                       Escreval()
+                                       Escreval("ERRO! Médico com especidalidade errada!")
+                                       Escreval()
+                                       Escreval("=======================================")
+
+                                    Senão
+
+                                       Se (disp_noite[registro_med] <> "Sim") Então
+
+                                          Escreval("=================================")
+                                          Escreval()
+                                          Escreval("ERRO! Médico Sem Disponibilidade!")
+                                          Escreval()
+                                          Escreval("=================================")
+
+
+                                       Senão
+
+                                          Se ((turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med])= 2) Então
+
+                                             Escreval("====================================================")
+                                             Escreval()
+                                             Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                             Escreval()
+                                             Escreval("====================================================")
+
+                                          Senão
+
+                                             turno_noite[registro_med] <- turno_noite[registro_med] + 1
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimse
+
+                              repetido <- falso
+                              j <- 1
+
+                              Para j de 1 até max_Med faça
+                                 Se (reg_tarde[j] = registro_med) Então
+                                    repetido <- verdadeiro
+                                 Fimse
+                              Fimpara
+
+                              Se (repetido = verdadeiro) Então
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval("   ERRO! Médico Já Cadastrado!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 turno_noite[registro_med] <- turno_noite[registro_med] - 1
+                              Senão
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 reg_noite[registro_med] <- registro_med
+                              Fimse
+
+                              Escreval()
+                              Escreval("===================================================")
+                              Escreval("      Deseja cadastrar outro CLÍNICO GERAL?  ")
+                              Escreval("===================================================")
+                              Escreval("[S] SIM")
+                              Escreval("[N] NÃO")
+                              Escreva("Digite a Opção: ")
+                              Leia(buttonT)
+                              Limpatela()
+
+                              Enquanto (buttonT <> "n") E (buttonT <> "N") E (ButtonT <> "s") E (buttonT <> "S") Faça
+                                 Escreval("===================================================")
+                                 Escreval("            DIGITE UMA OPÇÃO VÁLIDA.")
+                                 Escreval("===================================================")
+                                 Escreval("[S] SIM")
+                                 Escreval("[N] NÃO")
+                                 Escreva("Digite a Opção: ")
+                                 Leia(buttonT)
+                                 Limpatela()
+                              Fimenquanto
+
+
+                           Fimenquanto
+
+                        Fimenquanto
+
+                        registro_med <- 0
+
+                        Enquanto (registro_med < 1) ou (registro_med > max_Med) Faça
+
+                           buttonT <- "s"
+
+                           Enquanto (buttonT = "s") ou (buttonT = "S") Faça
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                  TURNO DA NOITE - PEDIATRA                                 ")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+
+                              //MOSTAR RELATORIOS DE MEDICOS DE PEDIATRAS
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                    RELATÓRIO DE MÉDICOS")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("REGISTRO   NOME              ESPECIALIDADE       MANHA    TARDE    NOITE    TURNOS ESCALADOS")
+                              Escreval("--------------------------------------------------------------------------------------------")
+
+                              Para indice_relatorio de 1 ate max_med Faça
+
+                                 Se med_Cod[indice_relatorio] <> 0 Então
+
+                                    Se med_Espec[indice_relatorio] = "Pediatra" Então
+
+                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                          Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "            ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                       Senão
+
+                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                             Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "            ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Senão
+
+                                             Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "            ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimpara
+
+                              Escreval("============================================================================================")
+                              Escreval()
+
+                              Escreva("Selecione o Médico pelo NÚMERO DO REGISTRO: ")
+                              Leia(registro_med)
+                              LimpaTela()
+
+                              Se (registro_med < 1) ou (registro_med > max_Med) Então
+
+                                 Escreval("==========================================")
+                                 Escreval()
+                                 Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                 Escreval()
+                                 Escreval("==========================================")
+
+                              Senão
+
+                                 Se (registro_med <> med_Cod[registro_med]) Então
+
+                                    Escreval("================================")
+                                    Escreval()
+                                    Escreval("   ERRO! Médico SEM REGISTRO!   ")
+                                    Escreval()
+                                    Escreval("================================")
+
+                                 Senão
+
+                                    Se (med_Espec[registro_med] <> "Pediatra") Então
+
+                                       Escreval("=======================================")
+                                       Escreval()
+                                       Escreval("ERRO! Médico com especidalidade errada!")
+                                       Escreval()
+                                       Escreval("=======================================")
+
+                                    Senão
+
+                                       Se (disp_noite[registro_med] <> "Sim") Então
+
+                                          Escreval("=================================")
+                                          Escreval()
+                                          Escreval("ERRO! Médico Sem Disponibilidade!")
+                                          Escreval()
+                                          Escreval("=================================")
+
+
+                                       Senão
+
+                                          Se ((turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med])= 2) Então
+
+                                             Escreval("====================================================")
+                                             Escreval()
+                                             Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                             Escreval()
+                                             Escreval("====================================================")
+
+                                          Senão
+
+                                             turno_noite[registro_med] <- turno_noite[registro_med] + 1
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimse
+
+                              repetido <- falso
+                              j <- 1
+
+                              Para j de 1 até max_Med faça
+                                 Se (reg_noite[j] = registro_med) Então
+                                    repetido <- verdadeiro
+                                 Fimse
+                              Fimpara
+
+                              Se (repetido = verdadeiro) Então
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval("   ERRO! Médico Já Cadastrado!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 turno_noite[registro_med] <- turno_noite[registro_med] - 1
+                              Senão
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 reg_noite[registro_med] <- registro_med
+                              Fimse
+
+                              Escreval()
+                              Escreval("===================================================")
+                              Escreval("      Deseja cadastrar outro PEDIÁTRA?  ")
+                              Escreval("===================================================")
+                              Escreval("[S] SIM")
+                              Escreval("[N] NÃO")
+                              Escreva("Digite a Opção: ")
+                              Leia(buttonT)
+                              Limpatela()
+
+                              Enquanto (buttonT <> "n") E (buttonT <> "N") E (ButtonT <> "s") E (buttonT <> "S") Faça
+                                 Escreval("===================================================")
+                                 Escreval("            DIGITE UMA OPÇÃO VÁLIDA.")
+                                 Escreval("===================================================")
+                                 Escreval("[S] SIM")
+                                 Escreval("[N] NÃO")
+                                 Escreva("Digite a Opção: ")
+                                 Leia(buttonT)
+                                 Limpatela()
+                              Fimenquanto
+
+                           Fimenquanto
+
+                        Fimenquanto
+
+                        registro_med <- 0
+
+                        Enquanto (registro_med < 1) OU (registro_med > max_Med) Faça
+
+                           buttonT <- "s"
+
+                           Enquanto (buttonT = "s") ou (buttonT = "S") Faça
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                  TURNO DA NOITE - CIRURGIÃO                                ")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+
+                              //MOSTAR RELATORIOS DE MEDICOS DE CIRURGIÃO
+
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("                                    RELATÓRIO DE MÉDICOS")
+                              Escreval()
+                              Escreval("============================================================================================")
+                              Escreval()
+                              Escreval("REGISTRO   NOME              ESPECIALIDADE       MANHA    TARDE    NOITE    TURNOS ESCALADOS")
+                              Escreval("--------------------------------------------------------------------------------------------")
+
+
+                              Para indice_relatorio de 1 ate max_med Faça
+
+                                 Se med_Cod[indice_relatorio] <> 0 Então
+
+                                    Se med_Espec[indice_relatorio] = "Cirurgião" Então
+
+                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "           ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                       Senão
+
+                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "           ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Senão
+
+                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "           ", disp_manha[indice_relatorio], "      ", disp_tarde[indice_relatorio], "      ", disp_noite[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 fimse
+
+                              Fimpara
+
+                              Escreval("============================================================================================")
+                              Escreval
+
+                              Escreva("Selecione o Médico pelo NÚMERO DO REGISTRO: ")
+                              Leia(registro_med)
+                              LimpaTela()
+
+                              Se (registro_med < 1) ou (registro_med > max_Med) Então
+
+                                 Escreval("==========================================")
+                                 Escreval()
+                                 Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                 Escreval()
+                                 Escreval("==========================================")
+
+                              Senão
+
+                                 Se (registro_med <> med_Cod[registro_med]) Então
+
+                                    Escreval("================================")
+                                    Escreval()
+                                    Escreval("   ERRO! Médico SEM REGISTRO!   ")
+                                    Escreval()
+                                    Escreval("================================")
+
+                                 Senão
+
+                                    Se (med_Espec[registro_med] <> "Cirurgião") Então
+
+                                       Escreval("=======================================")
+                                       Escreval()
+                                       Escreval("ERRO! Médico com especidalidade errada!")
+                                       Escreval()
+                                       Escreval("=======================================")
+
+                                    Senão
+
+                                       Se (disp_noite[registro_med] <> "Sim") Então
+
+                                          Escreval("=================================")
+                                          Escreval()
+                                          Escreval("ERRO! Médico Sem Disponibilidade!")
+                                          Escreval()
+                                          Escreval("=================================")
+
+
+                                       Senão
+
+                                          Se ((turno_manha[registro_med] + turno_tarde[registro_med] + turno_noite[registro_med])= 2) Então
+
+                                             Escreval("====================================================")
+                                             Escreval()
+                                             Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                             Escreval()
+                                             Escreval("====================================================")
+
+                                          Senão
+
+                                             turno_noite[registro_med] <- turno_noite[registro_med] + 1
+
+                                          Fimse
+
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimse
+
+                              repetido <- falso
+                              j <- 1
+
+                              Para j de 1 até max_Med faça
+                                 Se (reg_noite[j] = registro_med) Então
+                                    repetido <- verdadeiro
+                                 Fimse
+                              Fimpara
+
+                              Se (repetido = verdadeiro) Então
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval("   ERRO! Médico Já Cadastrado!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 turno_noite[registro_med] <- turno_noite[registro_med] - 1
+                              Senão
+                                 Escreval("=================================")
+                                 Escreval()
+                                 Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                 Escreval()
+                                 Escreval("=================================")
+                                 reg_noite[registro_med] <- registro_med
+                              Fimse
+
+                              Escreval()
+                              Escreval("===================================================")
+                              Escreval("      Deseja cadastrar outro CIRURGIÃO?  ")
+                              Escreval("===================================================")
+                              Escreval("[S] SIM")
+                              Escreval("[N] NÃO")
+                              Escreva("Digite a Opção: ")
+                              Leia(buttonT)
+                              Limpatela()
+
+                              Enquanto (buttonT <> "n") E (buttonT <> "N") E (ButtonT <> "s") E (buttonT <> "S") Faça
+                                 Escreval("===================================================")
+                                 Escreval("            DIGITE UMA OPÇÃO VÁLIDA.")
+                                 Escreval("===================================================")
+                                 Escreval("[S] SIM")
+                                 Escreval("[N] NÃO")
+                                 Escreva("Digite a Opção: ")
+                                 Leia(buttonT)
+                                 Limpatela()
+                              Fimenquanto
+
+                           Fimenquanto
+
+                        Fimenquanto
+
+                        button <- " "
+
+                        Enquanto (button <> "n") E (button <> "N") E (button <> "s") E (button <> "S") Faça
+
+                           Escreval("========================================")
+                           Escreval()
+                           Escreval("Confirma o Cadastro do Turno da Noite?")
+                           Escreval("[S] SIM")
+                           Escreval("[N] NÃO")
+                           Escreval()
+                           Escreval("========================================")
+                           Escreval()
+                           Escreva("Escolha uma Opção: ")
+                           Leia(button)
+                           LimpaTela()
+
+                           Se (button <> "n") E (button <> "N") E (button <> "s") E (button <> "S") Então
+
+                              Escreval("=====================")
+                              Escreval()
+                              Escreval("ERRO! OPÇÃO INVÁLIDA!")
+                              Escreval()
+                              Escreval("=====================")
+
+                           Fimse
+
+                        Fimenquanto
+
+
+
+
+
 
                      Senão
 
-                        Se (opcao_esc = 3) Então
+                        Se (opcao_esc = 4) Então
 
-                        Senão
-
-                           Se (opcao_esc = 4) Então
-
-                              Limpatela()
-
-                           Fimse
+                           Limpatela()
 
                         Fimse
 
@@ -1105,25 +2240,9 @@ Inicio
 
                   Fimse
 
-                  Se (opcao_esc < 1 ) ou (opcao_esc > 4) Então
+               Fimse
 
-                     Escreval("==========================================")
-                     Escreval()
-                     Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 a 4!")
-                     Escreval()
-                     Escreval("==========================================")
-
-                  Fimse
-
-               Fimenquanto
-
-            Senão
-
-               Se (opcao_menu = 4) Então
-
-                  Escreval("BYE! Programa encerrado!")
-
-               Senão
+               Se (opcao_esc < 1 ) ou (opcao_esc > 4) Então
 
                   Escreval("==========================================")
                   Escreval()
@@ -1131,8 +2250,24 @@ Inicio
                   Escreval()
                   Escreval("==========================================")
 
+               Fimse
 
-               FimSe
+            Fimenquanto
+
+         Senão
+
+            Se (opcao_menu = 4) Então
+
+               Escreval("BYE! Programa encerrado!")
+
+            Senão
+
+               Escreval("==========================================")
+               Escreval()
+               Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 a 4!")
+               Escreval()
+               Escreval("==========================================")
+
 
             FimSe
 
@@ -1140,6 +2275,8 @@ Inicio
 
       FimSe
 
-   FimEnquanto
+   FimSe
+
+FimEnquanto
 
 Fimalgoritmo
