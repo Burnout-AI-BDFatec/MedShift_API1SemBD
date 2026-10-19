@@ -16,7 +16,7 @@ Var
    reg_tarde: vetor[1..max_med] de inteiro
    reg_noite: vetor[1..max_med] de inteiro
 
-   opcao_menu, opcao_esc, registro_med, descadastro : inteiro
+   opcao_menu, opcao_esc, registro_med, cadastrou, descadastro : inteiro
    pare, button, buttonT: caractere
    repetido: logico
 
@@ -55,7 +55,7 @@ Var
 Inicio
 
    opcao_menu <- 0
-   i <- 0
+   i <- 1
    id <- 0
    opcao <- 0
 
@@ -81,38 +81,16 @@ Inicio
 
       Se (opcao_menu = 1) Então
 
-         i <- (i + 1)
-         med_Cod[i] <- i
-         Escreval()
-         Escreval("====================================")
-         Escreval()
-         Escreva("Digite o nome do médico: ")
-         Leia(med_Nome[i])
-         Escreval()
-         Escreval("====================================")
-         Escreval()
-         Escreval("Especialidade do médico: ")
-         Escreval()
-         Escreval("[1] - Clínico geral")
-         Escreval("[2] - Pediatra ")
-         Escreval("[3] - Cirurgião")
-         Escreval()
-         Escreval("____________________________________")
-         Escreval()
-         Escreva("Digite a especialidade do médico: ")
-         Leia(opcao)
-         LimpaTela()
+         Se (i <= max_med) Então
 
-         Enquanto (opcao < 1) ou (opcao > 3) Faça
-
-            Escreval("===========================================")
-            Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 até 3")
-            Escreval("===========================================")
+            med_Cod[i] <- i
             Escreval()
-            Escreval("- Dr.(a): ", med_Nome[i])
-            Escreval("- Registro: ", med_Cod[i])
+            Escreval("====================================")
             Escreval()
-            Escreval("===========================================")
+            Escreva("Digite o nome do médico: ")
+            Leia(med_Nome[i])
+            Escreval()
+            Escreval("====================================")
             Escreval()
             Escreval("Especialidade do médico: ")
             Escreval()
@@ -120,58 +98,61 @@ Inicio
             Escreval("[2] - Pediatra ")
             Escreval("[3] - Cirurgião")
             Escreval()
-            Escreval("___________________________________________")
+            Escreval("____________________________________")
             Escreval()
             Escreva("Digite a especialidade do médico: ")
             Leia(opcao)
             LimpaTela()
 
-         Fimenquanto
+            Enquanto (opcao < 1) ou (opcao > 3) Faça
 
-         Se (opcao = 1) Então
+               Escreval("===========================================")
+               Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 até 3")
+               Escreval("===========================================")
+               Escreval()
+               Escreval("- Dr.(a): ", med_Nome[i])
+               Escreval("- Registro: ", med_Cod[i])
+               Escreval()
+               Escreval("===========================================")
+               Escreval()
+               Escreval("Especialidade do médico: ")
+               Escreval()
+               Escreval("[1] - Clínico geral")
+               Escreval("[2] - Pediatra ")
+               Escreval("[3] - Cirurgião")
+               Escreval()
+               Escreval("___________________________________________")
+               Escreval()
+               Escreva("Digite a especialidade do médico: ")
+               Leia(opcao)
+               LimpaTela()
 
-            med_Espec[i] <- "Clínico geral"
+            Fimenquanto
 
-         Senão
+            Se (opcao = 1) Então
 
-            Se (opcao = 2) Então
-
-               med_Espec[i] <- "Pediatra"
+               med_Espec[i] <- "Clínico geral"
 
             Senão
 
-               Se (opcao = 3) Então
+               Se (opcao = 2) Então
 
-                  med_Espec[i] <- "Cirurgião"
+                  med_Espec[i] <- "Pediatra"
+
+               Senão
+
+                  Se (opcao = 3) Então
+
+                     med_Espec[i] <- "Cirurgião"
+
+                  Fimse
 
                Fimse
 
             Fimse
 
-         Fimse
-
-         Escreval()
-         Escreval("==============================")
-         Escreval()
-         Escreval("- Dr.(a): ", med_Nome[i])
-         Escreval("- Especialidade: ",med_Espec[i])
-         Escreval("- Registro: ", med_Cod[i])
-         Escreval()
-         Escreval("Tem disponibilidade de MANHÃ: ")
-         Escreval("[1] Sim")
-         Escreval("[2] Não")
-         Escreval()
-         Escreval("______________________________")
-         Escreval()
-         Escreva("Opção: ")
-         Leia(opcao)
-         LimpaTela()
-
-         Enquanto (opcao < 1) ou (opcao > 2) Faça
-
-            Escreval("=========================================")
-            Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 e 2")
-            Escreval("=========================================")
+            Escreval()
+            Escreval("==============================")
             Escreval()
             Escreval("- Dr.(a): ", med_Nome[i])
             Escreval("- Especialidade: ",med_Espec[i])
@@ -181,51 +162,51 @@ Inicio
             Escreval("[1] Sim")
             Escreval("[2] Não")
             Escreval()
-            Escreval("_________________________________________")
+            Escreval("______________________________")
             Escreval()
             Escreva("Opção: ")
             Leia(opcao)
             LimpaTela()
 
+            Enquanto (opcao < 1) ou (opcao > 2) Faça
 
-         Fimenquanto
+               Escreval("=========================================")
+               Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 e 2")
+               Escreval("=========================================")
+               Escreval()
+               Escreval("- Dr.(a): ", med_Nome[i])
+               Escreval("- Especialidade: ",med_Espec[i])
+               Escreval("- Registro: ", med_Cod[i])
+               Escreval()
+               Escreval("Tem disponibilidade de MANHÃ: ")
+               Escreval("[1] Sim")
+               Escreval("[2] Não")
+               Escreval()
+               Escreval("_________________________________________")
+               Escreval()
+               Escreva("Opção: ")
+               Leia(opcao)
+               LimpaTela()
 
-         Se (opcao = 1) Então
 
-            disp_manha[i] <- "Sim"
+            Fimenquanto
 
-         Senão
+            Se (opcao = 1) Então
 
-            Se (opcao = 2) Então
+               disp_manha[i] <- "Sim"
 
-               disp_manha[i] <- "Não"
+            Senão
+
+               Se (opcao = 2) Então
+
+                  disp_manha[i] <- "Não"
+
+               Fimse
 
             Fimse
 
-         Fimse
-
-         Escreval()
-         Escreval("==============================")
-         Escreval()
-         Escreval("- Dr.(a): ", med_Nome[i])
-         Escreval("- Especialidade: ",med_Espec[i])
-         Escreval("- Registro: ", med_Cod[i])
-         Escreval()
-         Escreval("Tem disponibilidade de TARDE: ")
-         Escreval("[1] Sim")
-         Escreval("[2] Não")
-         Escreval()
-         Escreval("______________________________")
-         Escreval()
-         Escreva("Opção: ")
-         Leia(opcao)
-         LimpaTela()
-
-         Enquanto (opcao < 1) ou (opcao > 2) Faça
-
-            Escreval("=========================================")
-            Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 e 2")
-            Escreval("=========================================")
+            Escreval()
+            Escreval("==============================")
             Escreval()
             Escreval("- Dr.(a): ", med_Nome[i])
             Escreval("- Especialidade: ",med_Espec[i])
@@ -235,51 +216,51 @@ Inicio
             Escreval("[1] Sim")
             Escreval("[2] Não")
             Escreval()
-            Escreval("_________________________________________")
+            Escreval("______________________________")
             Escreval()
             Escreva("Opção: ")
             Leia(opcao)
             LimpaTela()
 
-         Fimenquanto
+            Enquanto (opcao < 1) ou (opcao > 2) Faça
 
-         Se (opcao = 1) Então
+               Escreval("=========================================")
+               Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 e 2")
+               Escreval("=========================================")
+               Escreval()
+               Escreval("- Dr.(a): ", med_Nome[i])
+               Escreval("- Especialidade: ",med_Espec[i])
+               Escreval("- Registro: ", med_Cod[i])
+               Escreval()
+               Escreval("Tem disponibilidade de TARDE: ")
+               Escreval("[1] Sim")
+               Escreval("[2] Não")
+               Escreval()
+               Escreval("_________________________________________")
+               Escreval()
+               Escreva("Opção: ")
+               Leia(opcao)
+               LimpaTela()
 
-            disp_tarde[i] <- "Sim"
+            Fimenquanto
 
-         Senao
+            Se (opcao = 1) Então
 
-            Se (opcao = 2) Então
+               disp_tarde[i] <- "Sim"
 
-               disp_tarde[i] <- "Não"
+            Senao
+
+               Se (opcao = 2) Então
+
+                  disp_tarde[i] <- "Não"
+
+               Fimse
 
             Fimse
 
-         Fimse
 
-
-         Escreval()
-         Escreval("==============================")
-         Escreval()
-         Escreval("- Dr.(a): ", med_Nome[i])
-         Escreval("- Especialidade: ",med_Espec[i])
-         Escreval("- Registro: ", med_Cod[i])
-         Escreval()
-         Escreval("Tem disponibilidade de NOITE: ")
-         Escreval("[1] Sim")
-         Escreval("[2] Não")
-         Escreval()
-         Escreval("______________________________")
-         Escreval()
-         Escreva("Opção: ")
-         Leia(opcao)
-         LimpaTela()
-
-         Enquanto (opcao < 1) ou (opcao > 2) Faça
-
-            Escreval("=========================================")
-            Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 e 2")
-            Escreval("=========================================")
+            Escreval()
+            Escreval("==============================")
             Escreval()
             Escreval("- Dr.(a): ", med_Nome[i])
             Escreval("- Especialidade: ",med_Espec[i])
@@ -289,52 +270,88 @@ Inicio
             Escreval("[1] Sim")
             Escreval("[2] Não")
             Escreval()
-            Escreval("_________________________________________")
+            Escreval("______________________________")
             Escreval()
             Escreva("Opção: ")
             Leia(opcao)
             LimpaTela()
 
-         Fimenquanto
+            Enquanto (opcao < 1) ou (opcao > 2) Faça
 
-         Se (opcao = 1) Então
+               Escreval("=========================================")
+               Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 e 2")
+               Escreval("=========================================")
+               Escreval()
+               Escreval("- Dr.(a): ", med_Nome[i])
+               Escreval("- Especialidade: ",med_Espec[i])
+               Escreval("- Registro: ", med_Cod[i])
+               Escreval()
+               Escreval("Tem disponibilidade de NOITE: ")
+               Escreval("[1] Sim")
+               Escreval("[2] Não")
+               Escreval()
+               Escreval("_________________________________________")
+               Escreval()
+               Escreva("Opção: ")
+               Leia(opcao)
+               LimpaTela()
 
-            disp_noite[i] <- "Sim"
+            Fimenquanto
 
-         Senão
+            Se (opcao = 1) Então
 
-            Se (opcao = 2) Então
+               disp_noite[i] <- "Sim"
 
-               disp_noite[i] <- "Não"
+            Senão
+
+               Se (opcao = 2) Então
+
+                  disp_noite[i] <- "Não"
+
+               Fimse
 
             Fimse
 
+            //Relatorio final do cadastro de uma unidade de medico
+
+
+
+            Escreval()
+            Escreval("===============================================")
+            Escreval()
+            Escreval("CADASTRO DO(A) MÉDICO(A) REALIZADO COM SUCESSO!")
+            Escreval()
+            Escreval("- Dr.(a): ", med_Nome[i])
+            Escreval("- Especialidade: ", med_Espec[i])
+            Escreval("- Registro: ", med_Cod[i])
+            Escreval()
+            Escreval("- Disponibilidade de manhã: ", disp_manha[i])
+            Escreval("- Disponibilidade de tarde: ", disp_tarde[i])
+            Escreval("- Disponibilidade de noite: ", disp_noite[i])
+            Escreval()
+            Escreval("===============================================")
+
+            Escreval()
+            Escreval("APERTE [ENTER] OU QUALQUER TECLA PARA CONTINUAR")
+            Escreval()
+            Leia(continuar)
+            LimpaTela()
+
+            i <- (i + 1)
+
+         Senão
+
+            // SE USUARIO FOR ULTRAPASSAR O CADASTRO DE 140 MEDICOS
+
+
+
+            Escreval()
+            Escreval("=============================================")
+            Escreval()
+            Escreval("  ERRO! NÚMERO MÁXIMO DE MÉDICOS ATINGIDOS: ", max_med)
+            Escreval()
+            Escreval("=============================================")
          Fimse
-
-         //Relatorio final do cadastro de uma unidade de medico
-
-
-
-         Escreval()
-         Escreval("===============================================")
-         Escreval()
-         Escreval("CADASTRO DO(A) MÉDICO(A) REALIZADO COM SUCESSO!")
-         Escreval()
-         Escreval("- Dr.(a): ", med_Nome[i])
-         Escreval("- Especialidade: ", med_Espec[i])
-         Escreval("- Registro: ", med_Cod[i])
-         Escreval()
-         Escreval("- Disponibilidade de manhã: ", disp_manha[i])
-         Escreval("- Disponibilidade de tarde: ", disp_tarde[i])
-         Escreval("- Disponibilidade de noite: ", disp_noite[i])
-         Escreval()
-         Escreval("===============================================")
-
-         Escreval()
-         Escreval("APERTE [ENTER] OU QUALQUER TECLA PARA CONTINUAR")
-         Escreval()
-         Leia(continuar)
-         LimpaTela()
 
       Senão
 
@@ -1122,7 +1139,7 @@ Inicio
 
                            Senão
 
-                              Se (button = "s") ou (button = "S")
+                              Se (button = "s") ou (button = "S") Então
 
                                  Escreval("====================================================")
                                  Escreval()
@@ -1130,9 +1147,17 @@ Inicio
                                  Escreval()
                                  Escreval("====================================================")
 
+                                 //limpa as marcacoes temporarias da escala confirmada
+
+                                 Para cadastrou de 1 até max_med Faça
+
+                                    reg_manha[cadastrou] <- 0
+
+                                 Fimpara
+
                               Senão
 
-                                 Se (button = "n") ou (button = "N")
+                                 Se (button = "n") ou (button = "N") Então
 
                                     Escreval("====================================================")
                                     Escreval()
@@ -1141,6 +1166,8 @@ Inicio
                                     Escreval("====================================================")
 
                                     Para descadastro de 1 até max_med Faça
+
+                                       //apaga as marcacoes da escala nao confirmada
 
                                        Se (reg_manha[descadastro] = 1) Então
 
@@ -1768,7 +1795,7 @@ Inicio
 
                               Senão
 
-                                 Se (button = "s") ou (button = "S")
+                                 Se (button = "s") ou (button = "S") Então
 
                                     Escreval("====================================================")
                                     Escreval()
@@ -1776,15 +1803,25 @@ Inicio
                                     Escreval()
                                     Escreval("====================================================")
 
+                                    //limpa as marcacoes temporarias da escala confirmada
+
+                                    Para cadastrou de 1 até max_med Faça
+
+                                       reg_tarde[cadastrou] <- 0
+
+                                    Fimpara
+
                                  Senão
 
-                                    Se (button = "n") ou (button = "N")
+                                    Se (button = "n") ou (button = "N") Então
 
                                        Escreval("====================================================")
                                        Escreval()
                                        Escreval("     CADASTRO DO TURNO DA TARDE NÃO CONFIRMADO!     ")
                                        Escreval()
                                        Escreval("====================================================")
+
+                                       //apaga as marcacoes da escala nao confirmada
 
                                        Para descadastro de 1 até max_med Faça
 
@@ -2416,7 +2453,7 @@ Inicio
 
                                  Senão
 
-                                    Se (button = "s") ou (button = "S")
+                                    Se (button = "s") ou (button = "S") Então
 
                                        Escreval("====================================================")
                                        Escreval()
@@ -2424,15 +2461,25 @@ Inicio
                                        Escreval()
                                        Escreval("====================================================")
 
+                                       //limpa as marcacoes temporarias da escala confirmada
+
+                                       Para cadastrou de 1 até max_med Faça
+
+                                          reg_noite[cadastrou] <- 0
+
+                                       Fimpara
+
                                     Senão
 
-                                       Se (button = "n") ou (button = "N")
+                                       Se (button = "n") ou (button = "N") Então
 
                                           Escreval("====================================================")
                                           Escreval()
                                           Escreval("     CADASTRO DO TURNO DA NOITE NÃO CONFIRMADO!     ")
                                           Escreval()
                                           Escreval("====================================================")
+
+                                          //apaga as marcacoes da escala nao confirmada
 
                                           Para descadastro de 1 até max_med Faça
 
@@ -2551,19 +2598,19 @@ Inicio
 
                            Se (turno_manha[contador_escala] = 1) Então
 
-                              Se (med_Esp[contador_escala] = "Clínico geral") Então
+                              Se (med_Espec[contador_escala] = "Clínico geral") Então
 
                                  valida_cg_manha <- (valida_cg_manha + 1)
 
                               Senão
 
-                                 Se (med_Esp[contador_escala] = "Pediatra") Então
+                                 Se (med_Espec[contador_escala] = "Pediatra") Então
 
                                     valida_p_manha <- (valida_p_manha + 1)
 
                                  Senão
 
-                                    Se (med_Esp[contador_escala] = "Cirurgião") Então
+                                    Se (med_Espec[contador_escala] = "Cirurgião") Então
 
                                        valida_c_manha <- (valida_c_manha + 1)
 
@@ -2597,9 +2644,23 @@ Inicio
                            Escreval("===========================================")
                            Escreval()
 
-                           falta_cg_manha <- (2 - valida_cg_manha)
-                           falta_p_manha <- (1 - valida_p_manha)
-                           falta_c_manha <- (1 - valida_c_manha)
+                           Se (valida_cg_manha < 2) Então
+
+                              falta_cg_manha <- (2 - valida_cg_manha)
+
+                           Fimse
+
+                           Se (valida_p_manha < 1) Então
+
+                              falta_p_manha <- (1 - valida_p_manha)
+
+                           Fimse
+
+                           Se (valida_c_manha < 1) Então
+
+                              falta_c_manha <- (1 - valida_c_manha)
+
+                           Fimse
 
                            Escreval()
                            Escreval("===================================================")
@@ -2631,19 +2692,19 @@ Inicio
 
                               Se (turno_tarde[contador_escala] = 1) Então
 
-                                 Se (med_Esp[contador_escala] = "Clínico geral") Então
+                                 Se (med_Espec[contador_escala] = "Clínico geral") Então
 
                                     valida_cg_tarde <- (valida_cg_tarde + 1)
 
                                  Senão
 
-                                    Se (med_Esp[contador_escala] = "Pediatra") Então
+                                    Se (med_Espec[contador_escala] = "Pediatra") Então
 
                                        valida_p_tarde <- (valida_p_tarde + 1)
 
                                     Senão
 
-                                       Se (med_Esp[contador_escala] = "Cirurgião") Então
+                                       Se (med_Espec[contador_escala] = "Cirurgião") Então
 
                                           valida_c_tarde <- (valida_c_tarde + 1)
 
@@ -2674,9 +2735,23 @@ Inicio
                               Escreval("===========================================")
                               Escreval()
 
-                              falta_cg_tarde <- (2 - valida_cg_tarde)
-                              falta_p_tarde <- (1 - valida_p_tarde)
-                              falta_c_tarde <- (1 - valida_c_tarde)
+                              Se (valida_cg_tarde < 2) Então
+
+                                 falta_cg_tarde <- (2 - valida_cg_tarde)
+
+                              Fimse
+
+                              Se (valida_p_tarde < 1) Então
+
+                                 falta_p_tarde <- (1 - valida_p_tarde)
+
+                              Fimse
+
+                              Se (valida_c_tarde < 1) Então
+
+                                 falta_c_tarde <- (1 - valida_c_tarde)
+
+                              Fimse
 
                               Escreval()
                               Escreval("===================================================")
@@ -2700,24 +2775,27 @@ Inicio
                               valida_cg_noite <- 0
                               valida_p_noite <- 0
                               valida_c_noite <- 0
+                              falta_cg_noite <- 0
+                              falta_p_noite <- 0
+                              falta_c_noite <- 0
 
                               Para contador_escala de 1 até max_med Faça
 
                                  Se (turno_noite[contador_escala] = 1) Então
 
-                                    Se (med_Esp[contador_escala] = "Clínico geral") Então
+                                    Se (med_Espec[contador_escala] = "Clínico geral") Então
 
                                        valida_cg_noite <- (valida_cg_noite + 1)
 
                                     Senão
 
-                                       Se (med_Esp[contador_escala] = "Pediatra") Então
+                                       Se (med_Espec[contador_escala] = "Pediatra") Então
 
                                           valida_p_noite <- (valida_p_noite + 1)
 
                                        Senão
 
-                                          Se (med_Esp[contador_escala] = "Cirurgião") Então
+                                          Se (med_Espec[contador_escala] = "Cirurgião") Então
 
                                              valida_c_noite <- (valida_c_noite + 1)
 
@@ -2747,9 +2825,23 @@ Inicio
                                  Escreval()
                                  Escreval("===========================================")
 
-                                 falta_cg_noite <- 2 - valida_cg_noite
-                                 falta_p_noite <- 1 - valida_p_noite
-                                 falta_c_noite <- 1 - valida_c_noite
+                                 Se (valida_cg_noite < 2) Então
+
+                                    falta_cg_noite <- (2 - valida_cg_noite)
+
+                                 Fimse
+
+                                 Se (valida_p_noite < 1) Então
+
+                                    falta_p_noite <- (1 - valida_p_noite)
+
+                                 Fimse
+
+                                 Se (valida_c_noite < 1) Então
+
+                                    falta_c_noite <- (1 - valida_c_noite)
+
+                                 Fimse
 
                                  Escreval()
                                  Escreval("===================================================")
@@ -2793,19 +2885,19 @@ Inicio
 
                                     Se (turno_manha[contador_escala] = 1) Então
 
-                                       Se (med_Esp[contador_escala] = "Clínico geral") Então
+                                       Se (med_Espec[contador_escala] = "Clínico geral") Então
 
                                           valida_cg_manha <- (valida_cg_manha + 1)
 
                                        Senão
 
-                                          Se (med_Esp[contador_escala] = "Pediatra") Então
+                                          Se (med_Espec[contador_escala] = "Pediatra") Então
 
                                              valida_p_manha <- (valida_p_manha + 1)
 
                                           Senão
 
-                                             Se (med_Esp[contador_escala] = "Cirurgião") Então
+                                             Se (med_Espec[contador_escala] = "Cirurgião") Então
 
                                                 valida_c_manha <- (valida_c_manha + 1)
 
@@ -2820,19 +2912,19 @@ Inicio
 
                                     Se (turno_tarde[contador_escala] = 1) Então
 
-                                       Se (med_Esp[contador_escala] = "Clínico geral") Então
+                                       Se (med_Espec[contador_escala] = "Clínico geral") Então
 
                                           valida_cg_tarde <- (valida_cg_tarde + 1)
 
                                        Senão
 
-                                          Se (med_Esp[contador_escala] = "Pediatra") Então
+                                          Se (med_Espec[contador_escala] = "Pediatra") Então
 
                                              valida_p_tarde <- (valida_p_tarde + 1)
 
                                           Senão
 
-                                             Se (med_Esp[contador_escala] = "Cirurgião") Então
+                                             Se (med_Espec[contador_escala] = "Cirurgião") Então
 
                                                 valida_c_tarde <- (valida_c_tarde + 1)
 
@@ -2847,19 +2939,19 @@ Inicio
 
                                     Se (turno_noite[contador_escala] = 1) Então
 
-                                       Se (med_Esp[contador_escala] = "Clínico geral") Então
+                                       Se (med_Espec[contador_escala] = "Clínico geral") Então
 
                                           valida_cg_noite <- (valida_cg_noite + 1)
 
                                        Senão
 
-                                          Se (med_Esp[contador_escala] = "Pediatra") Então
+                                          Se (med_Espec[contador_escala] = "Pediatra") Então
 
                                              valida_p_noite <- (valida_p_noite + 1)
 
                                           Senão
 
-                                             Se (med_Esp[contador_escala] = "Cirurgião") Então
+                                             Se (med_Espec[contador_escala] = "Cirurgião") Então
 
                                                 valida_c_noite <- (valida_c_noite + 1)
 
@@ -2889,9 +2981,23 @@ Inicio
                                     Escreval()
                                     Escreval("============================================")
 
-                                    falta_cg_manha <- (2 - valida_cg_manha)
-                                    falta_p_manha <- (1 - valida_p_manha)
-                                    falta_c_manha <- (1 - valida_c_manha)
+                                    Se (valida_cg_manha < 2) Então
+
+                                       falta_cg_manha <- (2 - valida_cg_manha)
+
+                                    Fimse
+
+                                    Se (valida_p_manha < 1) Então
+
+                                       falta_p_manha <- (1 - valida_p_manha)
+
+                                    Fimse
+
+                                    Se (valida_c_manha < 1) Então
+
+                                       falta_c_manha <- (1 - valida_c_manha)
+
+                                    Fimse
 
                                     Escreval()
                                     Escreval("===================================================")
@@ -2904,9 +3010,23 @@ Inicio
                                     Escreval(" - FALTAM: ", falta_c_manha, " CIRURGIÃO")
                                     Escreval()
 
-                                    falta_cg_tarde <- (2 - valida_cg_tarde)
-                                    falta_p_tarde <- (1 - valida_p_tarde)
-                                    falta_c_tarde <- (1 - valida_c_tarde)
+                                    Se (valida_cg_tarde < 2) Então
+
+                                       falta_cg_tarde <- (2 - valida_cg_tarde)
+
+                                    Fimse
+
+                                    Se (valida_p_tarde < 1) Então
+
+                                       falta_p_tarde <- (1 - valida_p_tarde)
+
+                                    Fimse
+
+                                    Se (valida_c_tarde < 1) Então
+
+                                       falta_c_tarde <- (1 - valida_c_tarde)
+
+                                    Fimse
 
                                     Escreval()
                                     Escreval("===================================================")
@@ -2919,9 +3039,23 @@ Inicio
                                     Escreval(" - FALTAM: ", falta_c_tarde, " CIRURGIÃO")
                                     Escreval()
 
-                                    falta_cg_noite <- (2 - valida_cg_noite)
-                                    falta_p_noite <- (1 - valida_p_noite)
-                                    falta_c_noite <- (1 - valida_c_noite)
+                                    Se (valida_cg_noite < 2) Então
+
+                                       falta_cg_noite <- (2 - valida_cg_noite)
+
+                                    Fimse
+
+                                    Se (valida_p_noite < 1) Então
+
+                                       falta_p_noite <- (1 - valida_p_noite)
+
+                                    Fimse
+
+                                    Se (valida_c_noite < 1) Então
+
+                                       falta_c_noite <- (1 - valida_c_noite)
+
+                                    Fimse
 
                                     Escreval()
                                     Escreval("===================================================")
@@ -2987,17 +3121,17 @@ Inicio
 
                      Escreval("==========================================")
                      Escreval()
-                     Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 a 4!")
+                     Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 a 5!")
                      Escreval()
                      Escreval("==========================================")
 
-                  FimSe
+                  Fimse
 
-               FimSe
+               Fimse
 
-            FimSe
+            Fimse
 
-         FimSe
+         Fimse
 
       Fimse
 
