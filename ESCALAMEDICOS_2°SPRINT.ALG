@@ -1,7 +1,15 @@
 Algoritmo "EscalaMedicos_2°sprint"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
 
+//API FATEC - BANCO DE DADOS - 1º SEMESTRE
+//EQUIPE BURNOUT AI
+//P.O. - GUSTAVO NEVES
+//S.M. - GUILHERME NANNI
+//DEV - DAVI WILLIAM
+//DEV - FERNANDO TRONE
+//DEV - GABRIEL KODATO
+//DEV - JONAS VIEIRA
+//DEV - LUCAS ROBERTO
+//DEV - WILLIAM TOLEDO
 
 Const
 
@@ -381,11 +389,11 @@ Inicio
 
             // CONSULTA DE CADASTRO MÉDICO
 
-            se   (consulta_codigo = 0)  entao
+            se   (consulta_codigo <= 0)  entao
                Escreval("==================================================")
                Escreval("                      VALOR INVÁLIDO              ")
                Escreval("==================================================")
-               Escreval("Digite apenas números")
+               Escreval("Digite apenas números válidos")
                Escreval("--------------------------------------------------")
             senao
 
@@ -407,25 +415,17 @@ Inicio
                   LimpaTela()
 
                   Escreval("============================================================================================")
-                  Escreval()
                   Escreval("                              MÉDICO NÃO CADASTRADO")
-                  Escreval()
                   Escreval("============================================================================================")
-                  Escreval()
                   Escreval("O REGISTRO: ", consulta_codigo, " não está cadastrado.")
-                  Escreval()
                   Escreval("============================================================================================")
 
                Senão
 
                   Escreval("============================================================================================")
-                  Escreval()
                   Escreval("                                    RELATÓRIO DE MÉDICOS")
-                  Escreval()
                   EscrevaL("============================================================================================")
-                  Escreval()
                   Escreval("REGISTRO  NOME              ESPECIALIDADE       MANHA    TARDE    NOITE    TURNOS ESCALADOS")
-                  Escreval()
                   Escreval("--------------------------------------------------------------------------------------------")
 
 
