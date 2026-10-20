@@ -210,7 +210,7 @@ Inicio
 
             Senão
 
-                  disp_manha[i] <- "Não"
+               disp_manha[i] <- "Não"
 
             Fimse
 
@@ -261,7 +261,7 @@ Inicio
 
             Senao
 
-                  disp_tarde[i] <- "Não"
+               disp_tarde[i] <- "Não"
 
             Fimse
 
@@ -312,7 +312,7 @@ Inicio
 
             Senão
 
-                  disp_noite[i] <- "Não"
+               disp_noite[i] <- "Não"
 
             Fimse
 
@@ -363,10 +363,15 @@ Inicio
 
             // Conta quantos médicos estão cadastrados no vetor
             total_cadastrados <- 0
+
             Para indice_relatorio de 1 ate max_med Faça
+
                Se med_Cod[indice_relatorio] <> 0 Então
+
                   total_cadastrados <- total_cadastrados + 1
+
                FimSe
+
             FimPara
 
             // Exibe a tela com o total logo acima
@@ -389,21 +394,16 @@ Inicio
 
             // CONSULTA DE CADASTRO MÉDICO.
 
-            se   (consulta_codigo <= 0)  entao
-               Escreval("==================================================")
+            se   (consulta_codigo <= 0) ou (consulta_codigo > max_med)  entao
+
+               Escreval("===========================================================")
                Escreval()
-               Escreval("                      VALOR INVÁLIDO              ")
+               Escreval("        ERRO! VALOR INVÁLIDO! DIGITE APENAS NÚMEROS        ")
+               Escreval("                        ENTRE 1 A ", max_med)
                Escreval()
-               Escreval("==================================================")
-<<<<<<< HEAD
-               Escreval()
-               Escreval("Digite apenas números")
-               Escreval()
-               Escreval("==================================================")
-=======
-               Escreval("Digite apenas números válidos")
-               Escreval("--------------------------------------------------")
->>>>>>> b511fae3d1a3acb360b52572f28d3ed5662b8193
+               Escreval("===========================================================")
+
+
             senao
 
                encontrado <- falso
@@ -566,6 +566,20 @@ Inicio
 
 
                   Se (opcao_esc = 1) Então
+
+                     Para descadastro de 1 até max_med Faça
+
+                        //apaga as marcacoes da escala
+
+                        Se (reg_manha[descadastro] = 1) Então
+
+                           reg_manha[descadastro] <- 0
+                           turno_manha[descadastro] <- 0
+                           qtd_turnos_escalados[descadastro] <- (qtd_turnos_escalados[descadastro] - 1)
+
+                        Fimse
+
+                     Fimpara
 
                      button <- "n"
 
@@ -768,7 +782,7 @@ Inicio
 
                         registro_med <- 0
                         buttonT <- "s"
-                        
+
                         //REGISTRAR OS PEDIATRAS DO TURNO DA MANHÃ
 
                         Enquanto ((registro_med < 1) ou (registro_med > max_med)) e ((buttonT = "s") ou (buttonT = "S")) Faça
@@ -1234,6 +1248,20 @@ Inicio
                      Se (opcao_esc = 2) Então
                         button <- "n"
 
+                        Para descadastro de 1 até max_med Faça
+
+                           //apaga as marcacoes da escala
+
+                           Se (reg_tarde[descadastro] = 1) Então
+
+                              reg_tarde[descadastro] <- 0
+                              turno_tarde[descadastro] <- 0
+                              qtd_turnos_escalados[descadastro] <- (qtd_turnos_escalados[descadastro] - 1)
+
+                           Fimse
+
+                        Fimpara
+
                         Enquanto (button = "n") ou (button = "N") Faça
 
                            registro_med <- 0
@@ -1623,7 +1651,7 @@ Inicio
 
                            registro_med <- 0
                            buttonT <- "s"
-                           
+
                            //REGISTRAR OS CIRURGIÕES DO TURNO DA TARDE
 
                            Enquanto ((registro_med < 1) OU (registro_med > max_med)) e ((buttonT = "s") ou (buttonT = "S")) Faça
@@ -1901,6 +1929,20 @@ Inicio
                         Se (opcao_esc = 3) Então
 
                            button <- "n"
+
+                           Para descadastro de 1 até max_med Faça
+
+                              //apaga as marcacoes da escala nao confirmada e de turnos pre cadastrados
+
+                              Se (reg_noite[descadastro] = 1) Então
+
+                                 reg_noite[descadastro] <- 0
+                                 turno_noite[descadastro] <- 0
+                                 qtd_turnos_escalados[descadastro] <- (qtd_turnos_escalados[descadastro] - 1)
+
+                              Fimse
+
+                           Fimpara
 
                            Enquanto (button = "n") ou (button = "N") Faça
 
@@ -2924,7 +2966,7 @@ Inicio
                      Senão
 
 
-                     //VALIDAR TARDE
+                        //VALIDAR TARDE
 
 
                         Se (opcao_esc = 2) Então
