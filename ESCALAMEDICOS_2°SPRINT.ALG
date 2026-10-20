@@ -381,73 +381,57 @@ Inicio
 
             // CONSULTA DE CADASTRO MÉDICO
 
-            encontrado <- falso
+            se   (consulta_codigo = 0)  entao
+               Escreval("==================================================")
+               Escreval("                      VALOR INVÁLIDO              ")
+               Escreval("==================================================")
+               Escreval("Digite apenas números")
+               Escreval("--------------------------------------------------")
+            senao
 
-            Para indice_relatorio de 1 ate max_med Faça
+               encontrado <- falso
 
-               Se (med_Cod[indice_relatorio] <> 0) e (med_Cod[indice_relatorio] = consulta_codigo)  Então
+               Para indice_relatorio de 1 ate max_med Faça
 
-                  encontrado <- verdadeiro
-                  indice_encontrado <- indice_relatorio
+                  Se (med_Cod[indice_relatorio] <> 0) e (med_Cod[indice_relatorio] = consulta_codigo)  Então
 
-               FimSe
+                     encontrado <- verdadeiro
+                     indice_encontrado <- indice_relatorio
 
-            FimPara
+                  FimSe
 
-            Se (encontrado = falso) Então
+               FimPara
 
-               LimpaTela()
+               Se (encontrado = falso) Então
 
-               Escreval("============================================================================================")
-               Escreval()
-               Escreval("                              MÉDICO NÃO CADASTRADO")
-               Escreval()
-               Escreval("============================================================================================")
-               Escreval()
-               Escreval("O REGISTRO: ", consulta_codigo, " não está cadastrado.")
-               Escreval()
-               Escreval("============================================================================================")
+                  LimpaTela()
 
-            Senão
-
-               Escreval("============================================================================================")
-               Escreval()
-               Escreval("                                    RELATÓRIO DE MÉDICOS")
-               Escreval()
-               EscrevaL("============================================================================================")
-               Escreval()
-               Escreval("REGISTRO  NOME              ESPECIALIDADE       MANHA    TARDE    NOITE    TURNOS ESCALADOS")
-               Escreval()
-               Escreval("--------------------------------------------------------------------------------------------")
-
-
-               Se (med_Cod[indice_encontrado] < 10) Então
-
-                  Escreval("  ",med_Cod[indice_encontrado], "      ", med_Nome[indice_encontrado])
-
-                  Se (med_Espec[indice_encontrado] = "Clínico geral") Então
-
-                     Escreval("                           ", med_Espec[indice_encontrado], "       ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
-
-                  Fimse
-
-                  Se (med_Espec[indice_encontrado] = "Pediatra") Então
-
-                     Escreval("                           ", med_Espec[indice_encontrado], "            ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
-
-                  Fimse
-
-                  Se (med_Espec[indice_encontrado] = "Cirurgião") Então
-
-                     Escreval("                           ", med_Espec[indice_encontrado], "           ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
-
-                  Fimse
+                  Escreval("============================================================================================")
+                  Escreval()
+                  Escreval("                              MÉDICO NÃO CADASTRADO")
+                  Escreval()
+                  Escreval("============================================================================================")
+                  Escreval()
+                  Escreval("O REGISTRO: ", consulta_codigo, " não está cadastrado.")
+                  Escreval()
+                  Escreval("============================================================================================")
 
                Senão
 
-                  Se (med_Cod[indice_encontrado] < 100) Então
+                  Escreval("============================================================================================")
+                  Escreval()
+                  Escreval("                                    RELATÓRIO DE MÉDICOS")
+                  Escreval()
+                  EscrevaL("============================================================================================")
+                  Escreval()
+                  Escreval("REGISTRO  NOME              ESPECIALIDADE       MANHA    TARDE    NOITE    TURNOS ESCALADOS")
+                  Escreval()
+                  Escreval("--------------------------------------------------------------------------------------------")
 
-                     Escreval(" ",med_Cod[indice_encontrado], "      ", med_Nome[indice_encontrado])
+
+                  Se (med_Cod[indice_encontrado] < 10) Então
+
+                     Escreval("  ",med_Cod[indice_encontrado], "      ", med_Nome[indice_encontrado])
 
                      Se (med_Espec[indice_encontrado] = "Clínico geral") Então
 
@@ -469,33 +453,59 @@ Inicio
 
                   Senão
 
-                     Escreval(med_Cod[indice_encontrado], "      ", med_Nome[indice_encontrado])
+                     Se (med_Cod[indice_encontrado] < 100) Então
 
-                     Se   (med_Espec[indice_encontrado] = "Clínico geral") Então
+                        Escreval(" ",med_Cod[indice_encontrado], "      ", med_Nome[indice_encontrado])
 
-                        Escreval("                           ", med_Espec[indice_encontrado], "       ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
+                        Se (med_Espec[indice_encontrado] = "Clínico geral") Então
 
-                     Fimse
+                           Escreval("                           ", med_Espec[indice_encontrado], "       ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
 
-                     Se   (med_Espec[indice_encontrado] = "Pediatra") Então
+                        Fimse
 
-                        Escreval("                           ", med_Espec[indice_encontrado], "            ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
+                        Se (med_Espec[indice_encontrado] = "Pediatra") Então
 
-                     Fimse
+                           Escreval("                           ", med_Espec[indice_encontrado], "            ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
 
-                     Se   (med_Espec[indice_encontrado] = "Cirurgião") Então
+                        Fimse
 
-                        Escreval("                           ", med_Espec[indice_encontrado], "           ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
+                        Se (med_Espec[indice_encontrado] = "Cirurgião") Então
+
+                           Escreval("                           ", med_Espec[indice_encontrado], "           ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
+
+                        Fimse
+
+                     Senão
+
+                        Escreval(med_Cod[indice_encontrado], "      ", med_Nome[indice_encontrado])
+
+                        Se   (med_Espec[indice_encontrado] = "Clínico geral") Então
+
+                           Escreval("                           ", med_Espec[indice_encontrado], "       ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
+
+                        Fimse
+
+                        Se   (med_Espec[indice_encontrado] = "Pediatra") Então
+
+                           Escreval("                           ", med_Espec[indice_encontrado], "            ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
+
+                        Fimse
+
+                        Se   (med_Espec[indice_encontrado] = "Cirurgião") Então
+
+                           Escreval("                           ", med_Espec[indice_encontrado], "           ", disp_manha[indice_encontrado], "      ", disp_tarde[indice_encontrado], "      ", disp_noite[indice_encontrado], "           ",qtd_turnos_escalados[indice_encontrado])
+
+                        Fimse
 
                      Fimse
 
                   Fimse
 
+                  EscrevaL("============================================================================================")
+
                Fimse
 
-               EscrevaL("============================================================================================")
-
-            Fimse
+            fimse
 
             Escreval()
             Escreval("APERTE [ENTER] OU QUALQUER TECLA PARA CONTINUAR")
