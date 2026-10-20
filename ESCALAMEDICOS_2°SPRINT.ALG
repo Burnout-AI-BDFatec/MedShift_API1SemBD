@@ -32,6 +32,7 @@ Var
    i, j: inteiro
    id: inteiro
    opcao: inteiro
+   opcao2: caractere
    continuar: caractere
 
    //variaveis para consulta
@@ -62,7 +63,9 @@ Inicio
    Enquanto (opcao_menu <> 5) Faça
 
       Escreval("=========================================")
+      Escreval()
       Escreval("       MEDSHIFT - MENU PRINCIPAL")
+      Escreval()
       Escreval("=========================================")
       Escreval()
       Escreval("        1 - CADASTRAR MÉDICOS")
@@ -71,7 +74,7 @@ Inicio
       Escreval("        4 - VALIDAR PLANTÃO")
       Escreval("        5 - ENCERRAR PROGRAMA")
       Escreval()
-      Escreval("_________________________________________")
+      Escreval("=========================================")
       Escreval()
       Escreva("Escolha uma opção: ")
       Leia(opcao_menu)
@@ -98,7 +101,7 @@ Inicio
             Escreval("[2] - Pediatra ")
             Escreval("[3] - Cirurgião")
             Escreval()
-            Escreval("____________________________________")
+            Escreval("====================================")
             Escreval()
             Escreva("Digite a especialidade do médico: ")
             Leia(opcao)
@@ -121,7 +124,7 @@ Inicio
                Escreval("[2] - Pediatra ")
                Escreval("[3] - Cirurgião")
                Escreval()
-               Escreval("___________________________________________")
+               Escreval("===========================================")
                Escreval()
                Escreva("Digite a especialidade do médico: ")
                Leia(opcao)
@@ -159,19 +162,21 @@ Inicio
             Escreval("- Registro: ", med_Cod[i])
             Escreval()
             Escreval("Tem disponibilidade de MANHÃ: ")
-            Escreval("[1] Sim")
-            Escreval("[2] Não")
+            Escreval("[S] Sim")
+            Escreval("[N] Não")
             Escreval()
-            Escreval("______________________________")
+            Escreval("==============================")
             Escreval()
             Escreva("Opção: ")
-            Leia(opcao)
+            Leia(opcao2)
             LimpaTela()
 
-            Enquanto (opcao < 1) ou (opcao > 2) Faça
+            Enquanto (opcao2 <> "n") e (opcao2 <> "N") e (opcao2 <> "s") e (opcao2 <> "S") Faça
 
                Escreval("=========================================")
-               Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 e 2")
+               Escreval()
+               Escreval(          "ERRO! OPÇÃO INVÁLIDA! ")
+               Escreval()
                Escreval("=========================================")
                Escreval()
                Escreval("- Dr.(a): ", med_Nome[i])
@@ -179,29 +184,25 @@ Inicio
                Escreval("- Registro: ", med_Cod[i])
                Escreval()
                Escreval("Tem disponibilidade de MANHÃ: ")
-               Escreval("[1] Sim")
-               Escreval("[2] Não")
+               Escreval("[S] Sim")
+               Escreval("[N] Não")
                Escreval()
-               Escreval("_________________________________________")
+               Escreval("=========================================")
                Escreval()
                Escreva("Opção: ")
-               Leia(opcao)
+               Leia(opcao2)
                LimpaTela()
 
 
             Fimenquanto
 
-            Se (opcao = 1) Então
+            Se (opcao2 = "s") ou (opcao2 = "S") Então
 
                disp_manha[i] <- "Sim"
 
             Senão
 
-               Se (opcao = 2) Então
-
                   disp_manha[i] <- "Não"
-
-               Fimse
 
             Fimse
 
@@ -213,19 +214,21 @@ Inicio
             Escreval("- Registro: ", med_Cod[i])
             Escreval()
             Escreval("Tem disponibilidade de TARDE: ")
-            Escreval("[1] Sim")
-            Escreval("[2] Não")
+            Escreval("[S] Sim")
+            Escreval("[N] Não")
             Escreval()
-            Escreval("______________________________")
+            Escreval("==============================")
             Escreval()
             Escreva("Opção: ")
-            Leia(opcao)
+            Leia(opcao2)
             LimpaTela()
 
-            Enquanto (opcao < 1) ou (opcao > 2) Faça
+            Enquanto (opcao2 <> "n") e (opcao2 <> "N") e (opcao2 <> "s") e (opcao2 <> "S") Faça
 
                Escreval("=========================================")
-               Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 e 2")
+               Escreval()
+               Escreval(          "ERRO! OPÇÃO INVÁLIDA! ")
+               Escreval()
                Escreval("=========================================")
                Escreval()
                Escreval("- Dr.(a): ", med_Nome[i])
@@ -233,31 +236,26 @@ Inicio
                Escreval("- Registro: ", med_Cod[i])
                Escreval()
                Escreval("Tem disponibilidade de TARDE: ")
-               Escreval("[1] Sim")
-               Escreval("[2] Não")
+               Escreval("[S] Sim")
+               Escreval("[N] Não")
                Escreval()
-               Escreval("_________________________________________")
+               Escreval("========================================")
                Escreval()
                Escreva("Opção: ")
-               Leia(opcao)
+               Leia(opcao2)
                LimpaTela()
 
             Fimenquanto
 
-            Se (opcao = 1) Então
+            Se (opcao2 = "s") ou (opcao2 = "S") Então
 
                disp_tarde[i] <- "Sim"
 
             Senao
 
-               Se (opcao = 2) Então
-
                   disp_tarde[i] <- "Não"
 
-               Fimse
-
             Fimse
-
 
             Escreval()
             Escreval("==============================")
@@ -267,19 +265,21 @@ Inicio
             Escreval("- Registro: ", med_Cod[i])
             Escreval()
             Escreval("Tem disponibilidade de NOITE: ")
-            Escreval("[1] Sim")
-            Escreval("[2] Não")
+            Escreval("[S] Sim")
+            Escreval("[N] Não")
             Escreval()
-            Escreval("______________________________")
+            Escreval("==============================")
             Escreval()
             Escreva("Opção: ")
-            Leia(opcao)
+            Leia(opcao2)
             LimpaTela()
 
-            Enquanto (opcao < 1) ou (opcao > 2) Faça
+            Enquanto (opcao2 <> "n") e (opcao2 <> "N") e (opcao2 <> "s") e (opcao2 <> "S") Faça
 
                Escreval("=========================================")
-               Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 e 2")
+               Escreval()
+               Escreval(          "ERRO! OPÇÃO INVÁLIDA! ")
+               Escreval()
                Escreval("=========================================")
                Escreval()
                Escreval("- Dr.(a): ", med_Nome[i])
@@ -287,28 +287,24 @@ Inicio
                Escreval("- Registro: ", med_Cod[i])
                Escreval()
                Escreval("Tem disponibilidade de NOITE: ")
-               Escreval("[1] Sim")
-               Escreval("[2] Não")
+               Escreval("[S] Sim")
+               Escreval("[N] Não")
                Escreval()
-               Escreval("_________________________________________")
+               Escreval("=========================================")
                Escreval()
                Escreva("Opção: ")
-               Leia(opcao)
+               Leia(opcao2)
                LimpaTela()
 
             Fimenquanto
 
-            Se (opcao = 1) Então
+            Se (opcao2 = "s") ou (opcao2 = "S") Então
 
                disp_noite[i] <- "Sim"
 
             Senão
 
-               Se (opcao = 2) Então
-
                   disp_noite[i] <- "Não"
-
-               Fimse
 
             Fimse
 
@@ -368,10 +364,14 @@ Inicio
             // Exibe a tela com o total logo acima
             LimpaTela()
             Escreval("==================================================")
+            Escreval()
             Escreval("                 CONSULTA DE MÉDICO               ")
+            Escreval()
             Escreval("==================================================")
+            Escreval()
             Escreval(" Total de médicos cadastrados no sistema: ", total_cadastrados)
-            Escreval("--------------------------------------------------")
+            Escreval()
+            Escreval("==================================================")
             Escreval()
             Escreval(" Digite abaixo o REGISTRO que deseja consultar:")
             Escreval()
@@ -383,10 +383,14 @@ Inicio
 
             se   (consulta_codigo = 0)  entao
                Escreval("==================================================")
+               Escreval()
                Escreval("                      VALOR INVÁLIDO              ")
+               Escreval()
                Escreval("==================================================")
+               Escreval()
                Escreval("Digite apenas números")
-               Escreval("--------------------------------------------------")
+               Escreval()
+               Escreval("==================================================")
             senao
 
                encontrado <- falso
@@ -533,14 +537,14 @@ Inicio
 
                   Escreval("========================================")
                   Escreval()
-                  Escreval("           MONTAR ESCALA")
+                  Escreval("             MONTAR ESCALA")
                   Escreval()
                   Escreval("========================================")
                   Escreval()
-                  Escreval("        1 - TURNO DA MANHÃ")
-                  Escreval("        2 - TURNO DA TARDE")
-                  Escreval("        3 - TURNO DA NOITE")
-                  Escreval("        4 - SAIR")
+                  Escreval("          1 - TURNO DA MANHÃ")
+                  Escreval("          2 - TURNO DA TARDE")
+                  Escreval("          3 - TURNO DA NOITE")
+                  Escreval("          4 - SAIR")
                   Escreval()
                   Escreval("========================================")
                   Escreval()
@@ -633,11 +637,11 @@ Inicio
 
                               Se (registro_med < 1) ou (registro_med > max_med) Então
 
-                                 Escreval("==========================================")
+                                 Escreval("==============================================")
                                  Escreval()
-                                 Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                 Escreval(  "ERRO! Digite um número de REGISTRO VÁLIDO!")
                                  Escreval()
-                                 Escreval("==========================================")
+                                 Escreval("==============================================")
 
                               Senão
 
@@ -653,21 +657,21 @@ Inicio
 
                                     Se (med_Espec[registro_med] <> "Clínico geral") Então
 
-                                       Escreval("=======================================")
+                                       Escreval("===========================================")
                                        Escreval()
-                                       Escreval("ERRO! Médico com especidalidade errada!")
+                                       Escreval(  "ERRO! Médico com ESPECIALIDADE ERRADA!")
                                        Escreval()
-                                       Escreval("=======================================")
+                                       Escreval("===========================================")
 
                                     Senão
 
                                        Se (disp_manha[registro_med] <> "Sim") Então
 
-                                          Escreval("=================================")
+                                          Escreval("=====================================")
                                           Escreval()
-                                          Escreval("ERRO! Médico Sem Disponibilidade!")
+                                          Escreval(  "ERRO! Médico SEM DISPONIBILIDADE!")
                                           Escreval()
-                                          Escreval("=================================")
+                                          Escreval("=====================================")
 
                                        Senão
 
@@ -675,7 +679,7 @@ Inicio
 
                                              Escreval("=================================")
                                              Escreval()
-                                             Escreval("ERRO! Médico JÁ CADASTRADO!")
+                                             Escreval(   "ERRO! Médico JÁ CADASTRADO!")
                                              Escreval()
                                              Escreval("=================================")
 
@@ -683,19 +687,19 @@ Inicio
 
                                              Se (qtd_turnos_escalados[registro_med] = 2) Então
 
-                                                Escreval("====================================================")
+                                                Escreval("========================================================")
                                                 Escreval()
-                                                Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                                Escreval(  "ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
                                                 Escreval()
-                                                Escreval("====================================================")
+                                                Escreval("========================================================")
 
                                              Senão
 
-                                                Escreval("=================================")
+                                                Escreval("===================================")
                                                 Escreval()
-                                                Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                                Escreval(  "MÉDICO CADASTRADO COM SUCESSO!")
                                                 Escreval()
-                                                Escreval("=================================")
+                                                Escreval("===================================")
 
                                                 reg_manha[registro_med] <- 1
                                                 turno_manha[registro_med] <- 1
@@ -715,7 +719,9 @@ Inicio
 
                               Escreval()
                               Escreval("===================================================")
+                              Escreval()
                               Escreval("      Deseja cadastrar outro CLÍNICO GERAL?  ")
+                              Escreval()
                               Escreval("===================================================")
                               Escreval()
                               Escreval("[S] SIM")
@@ -730,9 +736,13 @@ Inicio
                               Enquanto (buttonT <> "n") E (buttonT <> "N") E (buttonT <> "s") E (buttonT <> "S") Faça
 
                                  Escreval("===================================================")
+                                 Escreval()
                                  Escreval("          ERRO! DIGITE UMA OPÇÃO VÁLIDA!.          ")
+                                 Escreval()
                                  Escreval("===================================================")
+                                 Escreval()
                                  Escreval("      Deseja cadastrar outro CLÍNICO GERAL?  ")
+                                 Escreval()
                                  Escreval("===================================================")
                                  Escreval()
                                  Escreval("[S] SIM")
@@ -820,11 +830,11 @@ Inicio
 
                               Se (registro_med < 1) ou (registro_med > max_med) Então
 
-                                 Escreval("==========================================")
+                                 Escreval("==============================================")
                                  Escreval()
-                                 Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                 Escreval(  "ERRO! Digite um número de REGISTRO VÁLIDO!")
                                  Escreval()
-                                 Escreval("==========================================")
+                                 Escreval("==============================================")
 
                               Senão
 
@@ -840,21 +850,21 @@ Inicio
 
                                     Se (med_Espec[registro_med] <> "Pediatra") Então
 
-                                       Escreval("=======================================")
+                                       Escreval("===========================================")
                                        Escreval()
-                                       Escreval("ERRO! Médico com especidalidade errada!")
+                                       Escreval(  "ERRO! Médico com especidalidade errada!")
                                        Escreval()
-                                       Escreval("=======================================")
+                                       Escreval("===========================================")
 
                                     Senão
 
                                        Se (disp_manha[registro_med] <> "Sim") Então
 
-                                          Escreval("=================================")
+                                          Escreval("=====================================")
                                           Escreval()
-                                          Escreval("ERRO! Médico Sem Disponibilidade!")
+                                          Escreval(  "ERRO! Médico Sem Disponibilidade!")
                                           Escreval()
-                                          Escreval("=================================")
+                                          Escreval("=====================================")
 
                                        Senão
 
@@ -862,7 +872,7 @@ Inicio
 
                                              Escreval("=================================")
                                              Escreval()
-                                             Escreval("ERRO! Médico JÁ CADASTRADO!")
+                                             Escreval(  "ERRO! Médico JÁ CADASTRADO!")
                                              Escreval()
                                              Escreval("=================================")
 
@@ -870,18 +880,18 @@ Inicio
 
                                              Se (qtd_turnos_escalados[registro_med] = 2) Então
 
-                                                Escreval("====================================================")
+                                                Escreval("========================================================")
                                                 Escreval()
-                                                Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                                Escreval(  "ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
                                                 Escreval()
-                                                Escreval("====================================================")
+                                                Escreval("========================================================")
 
                                              Senão
-                                                Escreval("=================================")
+                                                Escreval("=====================================")
                                                 Escreval()
-                                                Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                                Escreval(   "MÉDICO CADASTRADO COM SUCESSO!")
                                                 Escreval()
-                                                Escreval("=================================")
+                                                Escreval("=====================================")
 
                                                 reg_manha[registro_med] <- 1
                                                 turno_manha[registro_med] <- 1
@@ -901,7 +911,9 @@ Inicio
 
                               Escreval()
                               Escreval("===================================================")
+                              Escreval()
                               Escreval("      Deseja cadastrar outro PEDIATRA?  ")
+                              Escreval()
                               Escreval("===================================================")
                               Escreval()
                               Escreval("[S] SIM")
@@ -916,9 +928,13 @@ Inicio
                               Enquanto (buttonT <> "n") E (buttonT <> "N") E (buttonT <> "s") E (buttonT <> "S") Faça
 
                                  Escreval("===================================================")
+                                 Escreval()
                                  Escreval("          ERRO! DIGITE UMA OPÇÃO VÁLIDA!.          ")
+                                 Escreval()
                                  Escreval("===================================================")
+                                 Escreval()
                                  Escreval("      Deseja cadastrar outro PEDIATRA?  ")
+                                 Escreval()
                                  Escreval("===================================================")
                                  Escreval()
                                  Escreval("[S] SIM")
@@ -1007,11 +1023,11 @@ Inicio
 
                               Se (registro_med < 1) ou (registro_med > max_med) Então
 
-                                 Escreval("==========================================")
+                                 Escreval("==============================================")
                                  Escreval()
-                                 Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                 Escreval(  "ERRO! Digite um número de REGISTRO VÁLIDO!")
                                  Escreval()
-                                 Escreval("==========================================")
+                                 Escreval("==============================================")
 
                               Senão
 
@@ -1027,21 +1043,21 @@ Inicio
 
                                     Se (med_Espec[registro_med] <> "Cirurgião") Então
 
-                                       Escreval("=======================================")
+                                       Escreval("===========================================")
                                        Escreval()
-                                       Escreval("ERRO! Médico com especidalidade errada!")
+                                       Escreval(  "ERRO! Médico com ESPECIALIDADE ERRADA!")
                                        Escreval()
-                                       Escreval("=======================================")
+                                       Escreval("===========================================")
 
                                     Senão
 
                                        Se (disp_manha[registro_med] <> "Sim") Então
 
-                                          Escreval("=================================")
+                                          Escreval("=====================================")
                                           Escreval()
-                                          Escreval("ERRO! Médico Sem Disponibilidade!")
+                                          Escreval(  "ERRO! Médico SEM DISPONIBILIDADE!")
                                           Escreval()
-                                          Escreval("=================================")
+                                          Escreval("=====================================")
 
                                        Senão
 
@@ -1049,7 +1065,7 @@ Inicio
 
                                              Escreval("=================================")
                                              Escreval()
-                                             Escreval("ERRO! Médico JÁ CADASTRADO!")
+                                             Escreval(  "ERRO! Médico JÁ CADASTRADO!")
                                              Escreval()
                                              Escreval("=================================")
 
@@ -1058,19 +1074,19 @@ Inicio
 
                                              Se (qtd_turnos_escalados[registro_med] = 2) Então
 
-                                                Escreval("====================================================")
+                                                Escreval("========================================================")
                                                 Escreval()
-                                                Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                                Escreval(  "ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
                                                 Escreval()
-                                                Escreval("====================================================")
+                                                Escreval("========================================================")
 
                                              Senão
 
-                                                Escreval("=================================")
+                                                Escreval("===================================")
                                                 Escreval()
-                                                Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                                Escreval(   "MÉDICO CADASTRADO COM SUCESSO!")
                                                 Escreval()
-                                                Escreval("=================================")
+                                                Escreval("===================================")
 
                                                 reg_manha[registro_med] <- 1
                                                 turno_manha[registro_med] <- 1
@@ -1090,7 +1106,9 @@ Inicio
 
                               Escreval()
                               Escreval("===================================================")
+                              Escreval()
                               Escreval("      Deseja cadastrar outro CIRURGIÃO?  ")
+                              Escreval()
                               Escreval("===================================================")
                               Escreval()
                               Escreval("[S] SIM")
@@ -1105,9 +1123,13 @@ Inicio
                               Enquanto (buttonT <> "n") E (buttonT <> "N") E (buttonT <> "s") E (buttonT <> "S") Faça
 
                                  Escreval("===================================================")
+                                 Escreval()
                                  Escreval("          ERRO! DIGITE UMA OPÇÃO VÁLIDA!.          ")
+                                 Escreval()
                                  Escreval("===================================================")
+                                 Escreval()
                                  Escreval("      Deseja cadastrar outro CIRURGIÃO?  ")
+                                 Escreval()
                                  Escreval("===================================================")
                                  Escreval()
                                  Escreval("[S] SIM")
@@ -1133,6 +1155,8 @@ Inicio
                            Escreval()
                            Escreval("Confirma o Cadastro do Turno da Manhã?")
                            Escreval()
+                           Escreval("========================================")
+                           Escreval()
                            Escreval("[S] SIM")
                            Escreval("[N] NÃO")
                            Escreval()
@@ -1144,11 +1168,11 @@ Inicio
 
                            Se (button <> "n") E (button <> "N") E (button <> "s") E (button <> "S") Então
 
-                              Escreval("=====================")
+                              Escreval("=========================")
                               Escreval()
-                              Escreval("ERRO! OPÇÃO INVÁLIDA!")
+                              Escreval(  "ERRO! OPÇÃO INVÁLIDA!")
                               Escreval()
-                              Escreval("=====================")
+                              Escreval("=========================")
 
                            Senão
 
@@ -1276,11 +1300,11 @@ Inicio
 
                                  Se (registro_med < 1) ou (registro_med > max_med) Então
 
-                                    Escreval("==========================================")
+                                    Escreval("==============================================")
                                     Escreval()
-                                    Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                    Escreval(  "ERRO! Digite um número de REGISTRO VÁLIDO!")
                                     Escreval()
-                                    Escreval("==========================================")
+                                    Escreval("==============================================")
 
                                  Senão
 
@@ -1296,21 +1320,21 @@ Inicio
 
                                        Se (med_Espec[registro_med] <> "Clínico geral") Então
 
-                                          Escreval("=======================================")
+                                          Escreval("===========================================")
                                           Escreval()
-                                          Escreval("ERRO! Médico com especidalidade errada!")
+                                          Escreval(  "ERRO! Médico com ESPECIALIDADE ERRADA!")
                                           Escreval()
-                                          Escreval("=======================================")
+                                          Escreval("===========================================")
 
                                        Senão
 
                                           Se (disp_tarde[registro_med] <> "Sim") Então
 
-                                             Escreval("=================================")
+                                             Escreval("=====================================")
                                              Escreval()
-                                             Escreval("ERRO! Médico Sem Disponibilidade!")
+                                             Escreval(  "ERRO! Médico SEM DISPONIBILIDADE!")
                                              Escreval()
-                                             Escreval("=================================")
+                                             Escreval("=====================================")
 
                                           Senão
 
@@ -1318,7 +1342,7 @@ Inicio
 
                                                 Escreval("=================================")
                                                 Escreval()
-                                                Escreval("ERRO! Médico JÁ CADASTRADO!")
+                                                Escreval(   "ERRO! Médico JÁ CADASTRADO!")
                                                 Escreval()
                                                 Escreval("=================================")
 
@@ -1326,19 +1350,19 @@ Inicio
 
                                                 Se (qtd_turnos_escalados[registro_med] = 2) Então
 
-                                                   Escreval("====================================================")
+                                                   Escreval("========================================================")
                                                    Escreval()
-                                                   Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                                   Escreval(  "ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
                                                    Escreval()
-                                                   Escreval("====================================================")
+                                                   Escreval("========================================================")
 
                                                 Senão
 
-                                                   Escreval("=================================")
+                                                   Escreval("====================================")
                                                    Escreval()
-                                                   Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                                   Escreval(   "MÉDICO CADASTRADO COM SUCESSO!")
                                                    Escreval()
-                                                   Escreval("=================================")
+                                                   Escreval("====================================")
 
                                                    reg_tarde[registro_med] <- 1
                                                    turno_tarde[registro_med] <- 1
@@ -1358,7 +1382,9 @@ Inicio
 
                                  Escreval()
                                  Escreval("===================================================")
+                                 Escreval()
                                  Escreval("      Deseja cadastrar outro CLÍNICO GERAL?  ")
+                                 Escreval()
                                  Escreval("===================================================")
                                  Escreval()
                                  Escreval("[S] SIM")
@@ -1373,9 +1399,13 @@ Inicio
                                  Enquanto (buttonT <> "n") E (buttonT <> "N") E (buttonT <> "s") E (buttonT <> "S") Faça
 
                                     Escreval("===================================================")
+                                    Escreval()
                                     Escreval("          ERRO! DIGITE UMA OPÇÃO VÁLIDA!.          ")
+                                    Escreval()
                                     Escreval("===================================================")
+                                    Escreval()
                                     Escreval("      Deseja cadastrar outro CLÍNICO GERAL?  ")
+                                    Escreval()
                                     Escreval("===================================================")
                                     Escreval()
                                     Escreval("[S] SIM")
@@ -1463,11 +1493,11 @@ Inicio
 
                                  Se (registro_med < 1) ou (registro_med > max_med) Então
 
-                                    Escreval("==========================================")
+                                    Escreval("==============================================")
                                     Escreval()
-                                    Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                    Escreval(  "ERRO! Digite um número de REGISTRO VÁLIDO!")
                                     Escreval()
-                                    Escreval("==========================================")
+                                    Escreval("==============================================")
 
                                  Senão
 
@@ -1483,21 +1513,21 @@ Inicio
 
                                        Se (med_Espec[registro_med] <> "Pediatra") Então
 
-                                          Escreval("=======================================")
+                                          Escreval("===========================================")
                                           Escreval()
-                                          Escreval("ERRO! Médico com especidalidade errada!")
+                                          Escreval(  "ERRO! Médico com ESPECIALIDADE ERRADA!")
                                           Escreval()
-                                          Escreval("=======================================")
+                                          Escreval("===========================================")
 
                                        Senão
 
                                           Se (disp_tarde[registro_med] <> "Sim") Então
 
-                                             Escreval("=================================")
+                                             Escreval("=====================================")
                                              Escreval()
-                                             Escreval("ERRO! Médico Sem Disponibilidade!")
+                                             Escreval("ERRO! Médico SEM DISPONIBILIDADE!")
                                              Escreval()
-                                             Escreval("=================================")
+                                             Escreval("=====================================")
 
                                           Senão
 
@@ -1505,7 +1535,7 @@ Inicio
 
                                                 Escreval("=================================")
                                                 Escreval()
-                                                Escreval("ERRO! Médico JÁ CADASTRADO!")
+                                                Escreval(   "ERRO! Médico JÁ CADASTRADO!")
                                                 Escreval()
                                                 Escreval("=================================")
 
@@ -1513,19 +1543,19 @@ Inicio
 
                                                 Se (qtd_turnos_escalados[registro_med] = 2) Então
 
-                                                   Escreval("====================================================")
+                                                   Escreval("========================================================")
                                                    Escreval()
-                                                   Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                                   Escreval(  "ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
                                                    Escreval()
-                                                   Escreval("====================================================")
+                                                   Escreval("========================================================")
 
                                                 Senão
 
-                                                   Escreval("=================================")
+                                                   Escreval("====================================")
                                                    Escreval()
-                                                   Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                                   Escreval(   "MÉDICO CADASTRADO COM SUCESSO!")
                                                    Escreval()
-                                                   Escreval("=================================")
+                                                   Escreval("====================================")
 
                                                    reg_tarde[registro_med] <- 1
                                                    turno_tarde[registro_med] <- 1
@@ -1545,7 +1575,9 @@ Inicio
 
                                  Escreval()
                                  Escreval("===================================================")
+                                 Escreval()
                                  Escreval("      Deseja cadastrar outro PEDIATRA?  ")
+                                 Escreval()
                                  Escreval("===================================================")
                                  Escreval()
                                  Escreval("[S] SIM")
@@ -1560,9 +1592,13 @@ Inicio
                                  Enquanto (buttonT <> "n") E (buttonT <> "N") E (buttonT <> "s") E (buttonT <> "S") Faça
 
                                     Escreval("===================================================")
+                                    Escreval()
                                     Escreval("          ERRO! DIGITE UMA OPÇÃO VÁLIDA!.          ")
+                                    Escreval()
                                     Escreval("===================================================")
+                                    Escreval()
                                     Escreval("      Deseja cadastrar outro PEDIATRA?  ")
+                                    Escreval()
                                     Escreval("===================================================")
                                     Escreval()
                                     Escreval("[S] SIM")
@@ -1650,11 +1686,11 @@ Inicio
 
                                  Se (registro_med < 1) ou (registro_med > max_med) Então
 
-                                    Escreval("==========================================")
+                                    Escreval("==============================================")
                                     Escreval()
-                                    Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                    Escreval(  "ERRO! Digite um número de REGISTRO VÁLIDO!")
                                     Escreval()
-                                    Escreval("==========================================")
+                                    Escreval("==============================================")
 
                                  Senão
 
@@ -1670,21 +1706,21 @@ Inicio
 
                                        Se (med_Espec[registro_med] <> "Cirurgião") Então
 
-                                          Escreval("=======================================")
+                                          Escreval("===========================================")
                                           Escreval()
-                                          Escreval("ERRO! Médico com especidalidade errada!")
+                                          Escreval(  "ERRO! Médico com ESPECIALIDADE ERRADA!")
                                           Escreval()
-                                          Escreval("=======================================")
+                                          Escreval("===========================================")
 
                                        Senão
 
                                           Se (disp_tarde[registro_med] <> "Sim") Então
 
-                                             Escreval("=================================")
+                                             Escreval("=====================================")
                                              Escreval()
-                                             Escreval("ERRO! Médico Sem Disponibilidade!")
+                                             Escreval(  "ERRO! Médico SEM DISPONIBILIDADE!")
                                              Escreval()
-                                             Escreval("=================================")
+                                             Escreval("=====================================")
 
                                           Senão
 
@@ -1692,7 +1728,7 @@ Inicio
 
                                                 Escreval("=================================")
                                                 Escreval()
-                                                Escreval("ERRO! Médico JÁ CADASTRADO!")
+                                                Escreval(  "ERRO! Médico JÁ CADASTRADO!")
                                                 Escreval()
                                                 Escreval("=================================")
 
@@ -1701,19 +1737,19 @@ Inicio
 
                                                 Se (qtd_turnos_escalados[registro_med] = 2) Então
 
-                                                   Escreval("====================================================")
+                                                   Escreval("========================================================")
                                                    Escreval()
-                                                   Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                                   Escreval(  "ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
                                                    Escreval()
-                                                   Escreval("====================================================")
+                                                   Escreval("========================================================")
 
                                                 Senão
 
-                                                   Escreval("=================================")
+                                                   Escreval("====================================")
                                                    Escreval()
-                                                   Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                                   Escreval(   "MÉDICO CADASTRADO COM SUCESSO!")
                                                    Escreval()
-                                                   Escreval("=================================")
+                                                   Escreval("====================================")
 
                                                    reg_tarde[registro_med] <- 1
                                                    turno_tarde[registro_med] <- 1
@@ -1733,7 +1769,9 @@ Inicio
 
                                  Escreval()
                                  Escreval("===================================================")
+                                 Escreval()
                                  Escreval("      Deseja cadastrar outro CIRURGIÃO?  ")
+                                 Escreval()
                                  Escreval("===================================================")
                                  Escreval()
                                  Escreval("[S] SIM")
@@ -1748,9 +1786,13 @@ Inicio
                                  Enquanto (buttonT <> "n") E (buttonT <> "N") E (buttonT <> "s") E (buttonT <> "S") Faça
 
                                     Escreval("===================================================")
+                                    Escreval()
                                     Escreval("          ERRO! DIGITE UMA OPÇÃO VÁLIDA!.          ")
+                                    Escreval()
                                     Escreval("===================================================")
+                                    Escreval()
                                     Escreval("      Deseja cadastrar outro CIRURGIÃO?  ")
+                                    Escreval()
                                     Escreval("===================================================")
                                     Escreval()
                                     Escreval("[S] SIM")
@@ -1778,6 +1820,8 @@ Inicio
                               Escreval()
                               Escreval("  CONFIRMA o Cadastro do Turno da TARDE  ")
                               Escreval()
+                              Escreval("=========================================")
+                              Escreval()
                               Escreval("[S] SIM")
                               Escreval("[N] NÃO")
                               Escreval()
@@ -1789,11 +1833,11 @@ Inicio
 
                               Se (button <> "n") E (button <> "N") E (button <> "s") E (button <> "S") Então
 
-                                 Escreval("=====================")
+                                 Escreval("=========================")
                                  Escreval()
-                                 Escreval("ERRO! OPÇÃO INVÁLIDA!")
+                                 Escreval(  "ERRO! OPÇÃO INVÁLIDA!")
                                  Escreval()
-                                 Escreval("=====================")
+                                 Escreval("=========================")
 
                               Senão
 
@@ -1924,11 +1968,11 @@ Inicio
 
                                     Se (registro_med < 1) ou (registro_med > max_med) Então
 
-                                       Escreval("==========================================")
+                                       Escreval("==============================================")
                                        Escreval()
-                                       Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                       Escreval(  "ERRO! Digite um número de REGISTRO VÁLIDO!")
                                        Escreval()
-                                       Escreval("==========================================")
+                                       Escreval("==============================================")
 
                                     Senão
 
@@ -1944,21 +1988,21 @@ Inicio
 
                                           Se (med_Espec[registro_med] <> "Clínico geral") Então
 
-                                             Escreval("=======================================")
+                                             Escreval("===========================================")
                                              Escreval()
-                                             Escreval("ERRO! Médico com especidalidade errada!")
+                                             Escreval(  "ERRO! Médico com ESPECIALIDADE ERRADA!")
                                              Escreval()
-                                             Escreval("=======================================")
+                                             Escreval("===========================================")
 
                                           Senão
 
                                              Se (disp_noite[registro_med] <> "Sim") Então
 
-                                                Escreval("=================================")
+                                                Escreval("=====================================")
                                                 Escreval()
-                                                Escreval("ERRO! Médico Sem Disponibilidade!")
+                                                Escreval(  "ERRO! Médico SEM DISPONIBILIDADE!")
                                                 Escreval()
-                                                Escreval("=================================")
+                                                Escreval("=====================================")
 
                                              Senão
 
@@ -1966,7 +2010,7 @@ Inicio
 
                                                    Escreval("=================================")
                                                    Escreval()
-                                                   Escreval("ERRO! Médico JÁ CADASTRADO!")
+                                                   Escreval(   "ERRO! Médico JÁ CADASTRADO!")
                                                    Escreval()
                                                    Escreval("=================================")
 
@@ -1974,19 +2018,19 @@ Inicio
 
                                                    Se (qtd_turnos_escalados[registro_med] = 2) Então
 
-                                                      Escreval("====================================================")
+                                                      Escreval("========================================================")
                                                       Escreval()
-                                                      Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                                      Escreval(  "ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
                                                       Escreval()
-                                                      Escreval("====================================================")
+                                                      Escreval("========================================================")
 
                                                    Senão
 
-                                                      Escreval("=================================")
+                                                      Escreval("====================================")
                                                       Escreval()
-                                                      Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                                      Escreval(   "MÉDICO CADASTRADO COM SUCESSO!")
                                                       Escreval()
-                                                      Escreval("=================================")
+                                                      Escreval("====================================")
 
                                                       reg_noite[registro_med] <- 1
                                                       turno_noite[registro_med] <- 1
@@ -2006,7 +2050,9 @@ Inicio
 
                                     Escreval()
                                     Escreval("===================================================")
+                                    Escreval()
                                     Escreval("      Deseja cadastrar outro CLÍNICO GERAL?  ")
+                                    Escreval()
                                     Escreval("===================================================")
                                     Escreval()
                                     Escreval("[S] SIM")
@@ -2021,9 +2067,13 @@ Inicio
                                     Enquanto (buttonT <> "n") E (buttonT <> "N") E (buttonT <> "s") E (buttonT <> "S") Faça
 
                                        Escreval("===================================================")
+                                       Escreval()
                                        Escreval("          ERRO! DIGITE UMA OPÇÃO VÁLIDA!.          ")
+                                       Escreval()
                                        Escreval("===================================================")
+                                       Escreval()
                                        Escreval("      Deseja cadastrar outro CLÍNICO GERAL?  ")
+                                       Escreval()
                                        Escreval("===================================================")
                                        Escreval()
                                        Escreval("[S] SIM")
@@ -2111,11 +2161,11 @@ Inicio
 
                                     Se (registro_med < 1) ou (registro_med > max_med) Então
 
-                                       Escreval("==========================================")
+                                       Escreval("==============================================")
                                        Escreval()
-                                       Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                       Escreval(  "ERRO! Digite um número de REGISTRO VÁLIDO!")
                                        Escreval()
-                                       Escreval("==========================================")
+                                       Escreval("==============================================")
 
                                     Senão
 
@@ -2131,21 +2181,21 @@ Inicio
 
                                           Se (med_Espec[registro_med] <> "Pediatra") Então
 
-                                             Escreval("=======================================")
+                                             Escreval("===========================================")
                                              Escreval()
-                                             Escreval("ERRO! Médico com especidalidade errada!")
+                                             Escreval(  "ERRO! Médico com ESPECIALIDADE ERRADA!")
                                              Escreval()
-                                             Escreval("=======================================")
+                                             Escreval("===========================================")
 
                                           Senão
 
                                              Se (disp_noite[registro_med] <> "Sim") Então
 
-                                                Escreval("=================================")
+                                                Escreval("=====================================")
                                                 Escreval()
-                                                Escreval("ERRO! Médico Sem Disponibilidade!")
+                                                Escreval(  "ERRO! Médico SEM DISPONIBILIDADE!")
                                                 Escreval()
-                                                Escreval("=================================")
+                                                Escreval("=====================================")
 
                                              Senão
 
@@ -2153,7 +2203,7 @@ Inicio
 
                                                    Escreval("=================================")
                                                    Escreval()
-                                                   Escreval("ERRO! Médico JÁ CADASTRADO!")
+                                                   Escreval(   "ERRO! Médico JÁ CADASTRADO!")
                                                    Escreval()
                                                    Escreval("=================================")
 
@@ -2161,19 +2211,19 @@ Inicio
 
                                                    Se (qtd_turnos_escalados[registro_med] = 2) Então
 
-                                                      Escreval("====================================================")
+                                                      Escreval("========================================================")
                                                       Escreval()
-                                                      Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                                      Escreval(  "ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
                                                       Escreval()
-                                                      Escreval("====================================================")
+                                                      Escreval("========================================================")
 
                                                    Senão
 
-                                                      Escreval("=================================")
+                                                      Escreval("====================================")
                                                       Escreval()
-                                                      Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                                      Escreval(   "MÉDICO CADASTRADO COM SUCESSO!")
                                                       Escreval()
-                                                      Escreval("=================================")
+                                                      Escreval("====================================")
 
                                                       reg_noite[registro_med] <- 1
                                                       turno_noite[registro_med] <- 1
@@ -2193,7 +2243,9 @@ Inicio
 
                                     Escreval()
                                     Escreval("===================================================")
+                                    Escreval()
                                     Escreval("      Deseja cadastrar outro PEDIATRA?  ")
+                                    Escreval()
                                     Escreval("===================================================")
                                     Escreval()
                                     Escreval("[S] SIM")
@@ -2208,9 +2260,13 @@ Inicio
                                     Enquanto (buttonT <> "n") E (buttonT <> "N") E (buttonT <> "s") E (buttonT <> "S") Faça
 
                                        Escreval("===================================================")
+                                       Escreval()
                                        Escreval("          ERRO! DIGITE UMA OPÇÃO VÁLIDA!.          ")
+                                       Escreval()
                                        Escreval("===================================================")
+                                       Escreval()
                                        Escreval("      Deseja cadastrar outro PEDIATRA?  ")
+                                       Escreval()
                                        Escreval("===================================================")
                                        Escreval()
                                        Escreval("[S] SIM")
@@ -2298,11 +2354,11 @@ Inicio
 
                                     Se (registro_med < 1) ou (registro_med > max_med) Então
 
-                                       Escreval("==========================================")
+                                       Escreval("==============================================")
                                        Escreval()
-                                       Escreval("ERRO! Digite um número de REGISTRO VÁLIDO!")
+                                       Escreval(  "ERRO! Digite um número de REGISTRO VÁLIDO!")
                                        Escreval()
-                                       Escreval("==========================================")
+                                       Escreval("==============================================")
 
                                     Senão
 
@@ -2318,21 +2374,21 @@ Inicio
 
                                           Se (med_Espec[registro_med] <> "Cirurgião") Então
 
-                                             Escreval("=======================================")
+                                             Escreval("===========================================")
                                              Escreval()
-                                             Escreval("ERRO! Médico com especidalidade errada!")
+                                             Escreval(  "ERRO! Médico com ESPECIALIDADE ERRADA!")
                                              Escreval()
-                                             Escreval("=======================================")
+                                             Escreval("===========================================")
 
                                           Senão
 
                                              Se (disp_noite[registro_med] <> "Sim") Então
 
-                                                Escreval("=================================")
+                                                Escreval("=====================================")
                                                 Escreval()
-                                                Escreval("ERRO! Médico Sem Disponibilidade!")
+                                                Escreval(  "ERRO! Médico SEM DISPONIBILIDADE!")
                                                 Escreval()
-                                                Escreval("=================================")
+                                                Escreval("=====================================")
 
                                              Senão
 
@@ -2340,7 +2396,7 @@ Inicio
 
                                                    Escreval("=================================")
                                                    Escreval()
-                                                   Escreval("ERRO! Médico JÁ CADASTRADO!")
+                                                   Escreval(   "ERRO! Médico JÁ CADASTRADO!")
                                                    Escreval()
                                                    Escreval("=================================")
 
@@ -2348,19 +2404,19 @@ Inicio
 
                                                    Se (qtd_turnos_escalados[registro_med] = 2) Então
 
-                                                      Escreval("====================================================")
+                                                      Escreval("========================================================")
                                                       Escreval()
-                                                      Escreval("ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
+                                                      Escreval(  "ERRO! Médico NÃO PODE TRABALHAR EM MAIS DE 2 TURNOS!")
                                                       Escreval()
-                                                      Escreval("====================================================")
+                                                      Escreval("========================================================")
 
                                                    Senão
 
-                                                      Escreval("=================================")
+                                                      Escreval("====================================")
                                                       Escreval()
-                                                      Escreval(" MÉDICO CADASTRADO COM SUCESSO!")
+                                                      Escreval(   "MÉDICO CADASTRADO COM SUCESSO!")
                                                       Escreval()
-                                                      Escreval("=================================")
+                                                      Escreval("====================================")
 
                                                       reg_noite[registro_med] <- 1
                                                       turno_noite[registro_med] <- 1
@@ -2380,7 +2436,9 @@ Inicio
 
                                     Escreval()
                                     Escreval("===================================================")
+                                    Escreval()
                                     Escreval("      Deseja cadastrar outro CIRURGIÃO?  ")
+                                    Escreval()
                                     Escreval("===================================================")
                                     Escreval()
                                     Escreval("[S] SIM")
@@ -2395,9 +2453,13 @@ Inicio
                                     Enquanto (buttonT <> "n") E (buttonT <> "N") E (buttonT <> "s") E (buttonT <> "S") Faça
 
                                        Escreval("===================================================")
+                                       Escreval()
                                        Escreval("          ERRO! DIGITE UMA OPÇÃO VÁLIDA!.          ")
+                                       Escreval()
                                        Escreval("===================================================")
+                                       Escreval()
                                        Escreval("      Deseja cadastrar outro CIRURGIÃO?  ")
+                                       Escreval()
                                        Escreval("===================================================")
                                        Escreval()
                                        Escreval("[S] SIM")
@@ -2425,6 +2487,8 @@ Inicio
                                  Escreval()
                                  Escreval("CONFIRMA o Cadastro do Turno da NOITE?")
                                  Escreval()
+                                 Escreval("========================================")
+                                 Escreval()
                                  Escreval("[S] SIM")
                                  Escreval("[N] NÃO")
                                  Escreval()
@@ -2436,11 +2500,11 @@ Inicio
 
                                  Se (button <> "n") E (button <> "N") E (button <> "s") E (button <> "S") Então
 
-                                    Escreval("=====================")
+                                    Escreval("=========================")
                                     Escreval()
-                                    Escreval("ERRO! OPÇÃO INVÁLIDA!")
+                                    Escreval(  "ERRO! OPÇÃO INVÁLIDA!")
                                     Escreval()
-                                    Escreval("=====================")
+                                    Escreval("=========================")
 
                                  Senão
 
