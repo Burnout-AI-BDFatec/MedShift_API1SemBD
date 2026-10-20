@@ -2700,7 +2700,7 @@ Inicio
 
                               Se (turno_manha[indice_relatorio] = 1) Então
 
-                                 Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                 Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                     Se (med_Cod[indice_relatorio] < 10) Então
 
@@ -2836,7 +2836,7 @@ Inicio
 
                               Se (turno_manha[indice_relatorio] = 1) Então
 
-                                 Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                 Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                     Se (med_Cod[indice_relatorio] < 10) Então
 
@@ -2990,7 +2990,7 @@ Inicio
 
                                  Se (turno_tarde[indice_relatorio] = 1) Então
 
-                                    Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                    Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                        Se (med_Cod[indice_relatorio] < 10) Então
 
@@ -3128,7 +3128,7 @@ Inicio
 
                                  Se (turno_tarde[indice_relatorio] = 1) Então
 
-                                    Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                    Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                        Se (med_Cod[indice_relatorio] < 10) Então
 
@@ -3285,7 +3285,7 @@ Inicio
 
                                     Se (turno_noite[indice_relatorio] = 1) Então
 
-                                       Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                       Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                           Se (med_Cod[indice_relatorio] < 10) Então
 
@@ -3422,7 +3422,7 @@ Inicio
 
                                     Se (turno_noite[indice_relatorio] = 1) Então
 
-                                       Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                       Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                           Se (med_Cod[indice_relatorio] < 10) Então
 
@@ -3645,7 +3645,7 @@ Inicio
 
                                        Se (turno_manha[indice_relatorio] = 1) Então
 
-                                          Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                          Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
@@ -3742,7 +3742,7 @@ Inicio
 
                                        Se (turno_tarde[indice_relatorio] = 1) Então
 
-                                          Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                          Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
@@ -3840,7 +3840,7 @@ Inicio
 
                                        Se (turno_noite[indice_relatorio] = 1) Então
 
-                                          Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                          Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
@@ -4036,7 +4036,7 @@ Inicio
 
                                        Se (turno_manha[indice_relatorio] = 1) Então
 
-                                          Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                          Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
@@ -4133,7 +4133,7 @@ Inicio
 
                                        Se (turno_tarde[indice_relatorio] = 1) Então
 
-                                          Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                          Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
@@ -4231,7 +4231,7 @@ Inicio
 
                                        Se (turno_noite[indice_relatorio] = 1) Então
 
-                                          Se (med_Espec[indice_relatorio] = "Cirurgião geral") Então
+                                          Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
