@@ -1,5 +1,6 @@
 Algoritmo "EscalaMedicos_2°sprint"
 
+
 //API FATEC - BANCO DE DADOS - 1º SEMESTRE
 //EQUIPE BURNOUT AI
 //P.O. - GUSTAVO NEVES
@@ -2723,7 +2724,7 @@ Inicio
                            Escreval()
                            Escreval("===========================================")
                            Escreval()
-                           Escreval("  PLANTÃO DA MANHÃ * PODE * SER PUBLICADO  ")
+                           Escreval("   TURNO DA MANHÃ * PODE * SER PUBLICADO   ")
                            Escreval()
                            Escreval("===========================================")
                            Escreval()
@@ -2747,19 +2748,19 @@ Inicio
                                     Se (med_Cod[indice_relatorio] < 10) Então
 
                                        Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                       Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                     Senao
 
                                        Se (med_Cod[indice_relatorio] < 100) Então
 
                                           Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                        Senao
 
                                           Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                        Fimse
 
@@ -2772,19 +2773,19 @@ Inicio
                                        Se med_Cod[indice_relatorio] < 10 Então
 
                                           Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                        Senão
 
                                           Se med_Cod[indice_relatorio] < 100 Então
 
                                              Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                           Senão
 
                                              Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                           Fimse
 
@@ -2830,7 +2831,7 @@ Inicio
                            Escreval()
                            Escreval("===========================================")
                            Escreval()
-                           Escreval("PLANTÃO DA MANHÃ * NÃO PODE * SER PUBLICADO")
+                           Escreval(" TURNO DA MANHÃ * NÃO PODE * SER PUBLICADO ")
                            Escreval()
                            Escreval("===========================================")
                            Escreval()
@@ -2883,19 +2884,19 @@ Inicio
                                     Se (med_Cod[indice_relatorio] < 10) Então
 
                                        Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                       Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                     Senao
 
                                        Se (med_Cod[indice_relatorio] < 100) Então
 
                                           Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                        Senao
 
                                           Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                        Fimse
 
@@ -2908,19 +2909,19 @@ Inicio
                                        Se med_Cod[indice_relatorio] < 10 Então
 
                                           Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                        Senão
 
                                           Se med_Cod[indice_relatorio] < 100 Então
 
                                              Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                           Senão
 
                                              Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                           Fimse
 
@@ -3013,7 +3014,7 @@ Inicio
                               Escreval()
                               Escreval("===========================================")
                               Escreval()
-                              Escreval("  PLANTÃO DA TARDE * PODE * SER PUBLICADO  ")
+                              Escreval("   TURNO DA TARDE * PODE * SER PUBLICADO   ")
                               Escreval()
                               Escreval("===========================================")
                               Escreval()
@@ -3037,19 +3038,19 @@ Inicio
                                        Se (med_Cod[indice_relatorio] < 10) Então
 
                                           Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                        Senao
 
                                           Se (med_Cod[indice_relatorio] < 100) Então
 
                                              Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                           Senao
 
                                              Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                           Fimse
 
@@ -3062,19 +3063,19 @@ Inicio
                                           Se med_Cod[indice_relatorio] < 10 Então
 
                                              Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                           Senão
 
                                              Se med_Cod[indice_relatorio] < 100 Então
 
                                                 Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senão
 
                                                 Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                              Fimse
 
@@ -3121,7 +3122,7 @@ Inicio
                               Escreval()
                               Escreval("===========================================")
                               Escreval()
-                              Escreval("PLANTÃO DA TARDE * NÃO PODE * SER PUBLICADO")
+                              Escreval(" TURNO DA TARDE * NÃO PODE * SER PUBLICADO ")
                               Escreval()
                               Escreval("===========================================")
                               Escreval()
@@ -3175,19 +3176,19 @@ Inicio
                                        Se (med_Cod[indice_relatorio] < 10) Então
 
                                           Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                          Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                        Senao
 
                                           Se (med_Cod[indice_relatorio] < 100) Então
 
                                              Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                           Senao
 
                                              Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                           Fimse
 
@@ -3200,19 +3201,19 @@ Inicio
                                           Se med_Cod[indice_relatorio] < 10 Então
 
                                              Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                           Senão
 
                                              Se med_Cod[indice_relatorio] < 100 Então
 
                                                 Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senão
 
                                                 Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                              Fimse
 
@@ -3308,7 +3309,7 @@ Inicio
                                  Escreval()
                                  Escreval("===========================================")
                                  Escreval()
-                                 Escreval("  PLANTÃO DA NOITE * PODE * SER PUBLICADO  ")
+                                 Escreval("   TURNO DA NOITE * PODE * SER PUBLICADO   ")
                                  Escreval()
                                  Escreval("===========================================")
                                  Escreval()
@@ -3332,19 +3333,19 @@ Inicio
                                           Se (med_Cod[indice_relatorio] < 10) Então
 
                                              Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                           Senao
 
                                              Se (med_Cod[indice_relatorio] < 100) Então
 
                                                 Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senao
 
                                                 Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                              Fimse
 
@@ -3357,19 +3358,19 @@ Inicio
                                              Se med_Cod[indice_relatorio] < 10 Então
 
                                                 Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senão
 
                                                 Se med_Cod[indice_relatorio] < 100 Então
 
                                                    Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senão
 
                                                    Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Fimse
 
@@ -3416,7 +3417,7 @@ Inicio
                                  Escreval()
                                  Escreval("===========================================")
                                  Escreval()
-                                 Escreval("PLANTÃO DA NOITE * NÃO PODE * SER PUBLICADO")
+                                 Escreval(" TURNO DA NOITE * NÃO PODE * SER PUBLICADO ")
                                  Escreval()
                                  Escreval("===========================================")
                                  Escreval()
@@ -3469,19 +3470,19 @@ Inicio
                                           Se (med_Cod[indice_relatorio] < 10) Então
 
                                              Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                             Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                           Senao
 
                                              Se (med_Cod[indice_relatorio] < 100) Então
 
                                                 Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senao
 
                                                 Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                              Fimse
 
@@ -3494,19 +3495,19 @@ Inicio
                                              Se med_Cod[indice_relatorio] < 10 Então
 
                                                 Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senão
 
                                                 Se med_Cod[indice_relatorio] < 100 Então
 
                                                    Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senão
 
                                                    Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Fimse
 
@@ -3692,19 +3693,19 @@ Inicio
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
                                                 Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senao
 
                                                 Se (med_Cod[indice_relatorio] < 100) Então
 
                                                    Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senao
 
                                                    EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Fimse
 
@@ -3717,19 +3718,19 @@ Inicio
                                                 Se med_Cod[indice_relatorio] < 10 Então
 
                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senão
 
                                                    Se med_Cod[indice_relatorio] < 100 Então
 
                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Senão
 
                                                       Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Fimse
 
@@ -3789,19 +3790,19 @@ Inicio
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
                                                 Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senao
 
                                                 Se (med_Cod[indice_relatorio] < 100) Então
 
                                                    Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senao
 
                                                    EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Fimse
 
@@ -3814,19 +3815,19 @@ Inicio
                                                 Se med_Cod[indice_relatorio] < 10 Então
 
                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senão
 
                                                    Se med_Cod[indice_relatorio] < 100 Então
 
                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Senão
 
                                                       Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Fimse
 
@@ -3887,19 +3888,19 @@ Inicio
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
                                                 Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senao
 
                                                 Se (med_Cod[indice_relatorio] < 100) Então
 
                                                    Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senao
 
                                                    EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Fimse
 
@@ -3912,19 +3913,19 @@ Inicio
                                                 Se med_Cod[indice_relatorio] < 10 Então
 
                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senão
 
                                                    Se med_Cod[indice_relatorio] < 100 Então
 
                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Senão
 
                                                       Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Fimse
 
@@ -3998,7 +3999,7 @@ Inicio
                                     Escreval()
                                     Escreval("===================================================")
                                     Escreval()
-                                    Escreval("                 RELATÓRIO - MANHÃ                 ")
+                                    Escreval("             RELATÓRIO - TURNO DA MANHÃ            ")
                                     Escreval()
                                     Escreval("===================================================")
                                     Escreval(" - FALTAM: ", falta_cg_manha, " CLÍNICO(S) GERAL(IS)")
@@ -4027,7 +4028,7 @@ Inicio
                                     Escreval()
                                     Escreval("===================================================")
                                     Escreval()
-                                    Escreval("                 RELATÓRIO - TARDE                 ")
+                                    Escreval("            RELATÓRIO - TURNO DA TARDE             ")
                                     Escreval()
                                     Escreval("===================================================")
                                     Escreval(" - FALTAM: ", falta_cg_tarde, " CLÍNICO(S) GERAL(IS)")
@@ -4056,7 +4057,7 @@ Inicio
                                     Escreval()
                                     Escreval("===================================================")
                                     Escreval()
-                                    Escreval("                 RELATÓRIO - NOITE                 ")
+                                    Escreval("            RELATÓRIO - TURNO DA NOITE             ")
                                     Escreval()
                                     Escreval("===================================================")
                                     Escreval(" - FALTAM: ", falta_cg_noite, " CLÍNICO(S) GERAL(IS)")
@@ -4083,19 +4084,19 @@ Inicio
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
                                                 Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senao
 
                                                 Se (med_Cod[indice_relatorio] < 100) Então
 
                                                    Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senao
 
                                                    EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Fimse
 
@@ -4108,19 +4109,19 @@ Inicio
                                                 Se med_Cod[indice_relatorio] < 10 Então
 
                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senão
 
                                                    Se med_Cod[indice_relatorio] < 100 Então
 
                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Senão
 
                                                       Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Fimse
 
@@ -4180,19 +4181,19 @@ Inicio
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
                                                 Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senao
 
                                                 Se (med_Cod[indice_relatorio] < 100) Então
 
                                                    Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senao
 
                                                    EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Fimse
 
@@ -4205,19 +4206,19 @@ Inicio
                                                 Se med_Cod[indice_relatorio] < 10 Então
 
                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senão
 
                                                    Se med_Cod[indice_relatorio] < 100 Então
 
                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Senão
 
                                                       Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Fimse
 
@@ -4278,19 +4279,19 @@ Inicio
                                              Se (med_Cod[indice_relatorio] < 10) Então
 
                                                 Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                              Senao
 
                                                 Se (med_Cod[indice_relatorio] < 100) Então
 
                                                    Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senao
 
                                                    EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Fimse
 
@@ -4303,19 +4304,19 @@ Inicio
                                                 Se med_Cod[indice_relatorio] < 10 Então
 
                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                   Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                   Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                 Senão
 
                                                    Se med_Cod[indice_relatorio] < 100 Então
 
                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Senão
 
                                                       Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
-                                                      Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+                                                      Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
 
                                                    Fimse
 
