@@ -1,4 +1,4 @@
-Algoritmo "EscalaMedicos_2°sprint"
+Algoritmo "EscalaMedicos_3°sprint"
 
 
 //API FATEC - BANCO DE DADOS - 1º SEMESTRE
@@ -11,8 +11,6 @@ Algoritmo "EscalaMedicos_2°sprint"
 //DEV - JONAS VIEIRA
 //DEV - LUCAS ROBERTO
 //DEV - WILLIAM TOLEDO
-
-arquivo "cadastros_10.txt"
 
 Const
 
@@ -16592,9 +16590,4 @@ Inicio
    FimEnquanto
 
 Fimalgoritmo
-
-
-
-
-
 
