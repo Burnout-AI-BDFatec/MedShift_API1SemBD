@@ -1,8 +1,6 @@
 Algoritmo "EscalaMedicos_3°sprint"
 
 
-
-
 //API FATEC - BANCO DE DADOS - 1º SEMESTRE
 //EQUIPE BURNOUT AI
 //P.O. - GUSTAVO NEVES
@@ -113,7 +111,7 @@ Inicio
    id <- 0
    opcao <- 0
 
-   Enquanto (opcao_menu <> 5) Faça
+   Enquanto (opcao_menu <> 6) Faça
 
       Escreval("=========================================")
       Escreval()
@@ -124,8 +122,9 @@ Inicio
       Escreval("        1 - CADASTRAR MÉDICOS")
       Escreval("        2 - CONSULTAR CADASTROS")
       Escreval("        3 - MONTAR ESCALA")
-      Escreval("        4 - VALIDAR PLANTÃO")
-      Escreval("        5 - ENCERRAR PROGRAMA")
+      Escreval("        4 - VALIDAR PLANTÕES")
+      Escreval("        5 - RELATÓRIOS SEMANAIS")
+      Escreval("        6 - ENCERRAR PROGRAMA")
       Escreval()
       Escreval("=========================================")
       Escreval()
@@ -11281,7 +11280,9 @@ Inicio
 
                //VALIDADOR DE PLANTAO
 
-               Se (opcao_menu = 4) Então
+               Se (opcao_menu = 4) ou (opcao_menu = 5) Então
+
+                  Se (opcao_menu = 5) Entao
 
                   // RELATORIOS SEMANAIS - US22 A US25
                   opcao_relatorio_semana <- -1
@@ -11294,7 +11295,7 @@ Inicio
                      Escreval("2 - Media de escalas")
                      Escreval("3 - Quantidade de escalas por medico")
                      Escreval("4 - Medicos com sobrecarga")
-                     Escreval("0 - Ir para validacao de plantoes")
+                     Escreval("0 - Voltar ao menu principal")
                      Escreval("========================================")
                      Escreva("Escolha uma opcao: ")
                      Leia(opcao_relatorio_semana)
@@ -11360,7 +11361,7 @@ Inicio
                               media_escalas_semana <- total_escalas_semana / total_medicos_semana
                               Escreval("Total de medicos: ", total_medicos_semana)
                               Escreval("Total de escalas: ", total_escalas_semana)
-                              Escreval("Media semanal: ", media_escalas_semana:0:2)
+                              Escreval("Media semanal: ", media_escalas_semana:6:2)
                            Fimse
 
                         Caso 3
@@ -11393,8 +11394,8 @@ Inicio
                            Senao
                               media_escalas_semana <- total_escalas_semana / total_medicos_semana
                               encontrou_sobrecarga <- falso
-                              Escreval("Media semanal: ", media_escalas_semana:0:2)
-                              Escreval("Limite de sobrecarga: ", (media_escalas_semana + 1):0:2)
+                              Escreval("Media semanal: ", media_escalas_semana:6:2)
+                              Escreval("Limite de sobrecarga: ", (media_escalas_semana + 1):6:2)
                               Escreval()
                               Para indice_carga de 1 ate max_med Faca
                                  Se (med_Cod[indice_carga] <> 0) e (qtd_turnos_escalados[indice_carga] > (media_escalas_semana + 1)) Entao
@@ -11412,7 +11413,7 @@ Inicio
                            Fimse
 
                         Caso 0
-                           Escreval("Indo para validacoes diarias...")
+                           Escreval("Voltando ao menu principal...")
 
                         OutroCaso
                            Escreval("Opcao invalida!")
@@ -11425,6 +11426,10 @@ Inicio
                         LimpaTela()
                      Fimse
                   Fimenquanto
+
+                  Fimse
+
+                  Se (opcao_menu = 4) Entao
 
                   // VALIDACOES DIARIAS EXISTENTES
                   opcao_esc <- 0
@@ -16713,13 +16718,13 @@ Inicio
 
                   Fimenquanto
 
-
+                  Fimse
 
                Senão
 
                   //SAINDO DO PROGRAMA
 
-                  Se (opcao_menu = 5) Então
+                  Se (opcao_menu = 6) Então
 
                      Escreval()
                      Escreval("===============================================")
@@ -16734,7 +16739,7 @@ Inicio
 
                      Escreval("==========================================")
                      Escreval()
-                     Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 a 5!")
+                     Escreval("ERRO! OPÇÃO INVÁLIDA! Escolha entre 1 a 6!")
                      Escreval()
                      Escreval("==========================================")
 
