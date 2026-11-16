@@ -1,6 +1,8 @@
 Algoritmo "EscalaMedicos_3°sprint"
 
 
+
+
 //API FATEC - BANCO DE DADOS - 1º SEMESTRE
 //EQUIPE BURNOUT AI
 //P.O. - GUSTAVO NEVES
@@ -90,6 +92,19 @@ Var
    //novas variaveis para validar escala
    dia_semana_escolha : inteiro
    dia_semana_nome_escolhido:  caractere
+
+
+   // RELATORIOS SEMANAIS - US22 A US25
+   opcao_relatorio_semana: inteiro
+   indice_carga: inteiro
+   menor_carga: inteiro
+   maior_carga: inteiro
+   total_escalas_semana: inteiro
+   total_medicos_semana: inteiro
+   media_escalas_semana: real
+   encontrou_sobrecarga: logico
+   encontrou_escalado: logico
+
 
 Inicio
 
@@ -11268,6 +11283,151 @@ Inicio
 
                Se (opcao_menu = 4) Então
 
+                  // RELATORIOS SEMANAIS - US22 A US25
+                  opcao_relatorio_semana <- -1
+
+                  Enquanto (opcao_relatorio_semana <> 0) Faca
+                     Escreval("========================================")
+                     Escreval("       RELATORIOS DA SEMANA")
+                     Escreval("========================================")
+                     Escreval("1 - Maior e menor carga de escalas")
+                     Escreval("2 - Media de escalas")
+                     Escreval("3 - Quantidade de escalas por medico")
+                     Escreval("4 - Medicos com sobrecarga")
+                     Escreval("0 - Ir para validacao de plantoes")
+                     Escreval("========================================")
+                     Escreva("Escolha uma opcao: ")
+                     Leia(opcao_relatorio_semana)
+                     LimpaTela()
+
+                     // CALCULOS COMPARTILHADOS
+                     total_medicos_semana <- 0
+                     total_escalas_semana <- 0
+                     menor_carga <- 0
+                     maior_carga <- 0
+
+                     Para indice_carga de 1 ate max_med Faca
+                        Se (med_Cod[indice_carga] <> 0) Entao
+                           total_medicos_semana <- total_medicos_semana + 1
+                           total_escalas_semana <- total_escalas_semana + qtd_turnos_escalados[indice_carga]
+
+                           Se (qtd_turnos_escalados[indice_carga] > maior_carga) Entao
+                              maior_carga <- qtd_turnos_escalados[indice_carga]
+                           Fimse
+
+                           Se (total_medicos_semana = 1) Entao
+                              menor_carga <- qtd_turnos_escalados[indice_carga]
+                           Senao
+                              Se (qtd_turnos_escalados[indice_carga] < menor_carga) Entao
+                                 menor_carga <- qtd_turnos_escalados[indice_carga]
+                              Fimse
+                           Fimse
+                        Fimse
+                     Fimpara
+
+                     Escolha (opcao_relatorio_semana)
+                        Caso 1
+                           // US22 - MAIOR E MENOR CARGA
+                           Escreval("========================================")
+                           Escreval("     MAIOR E MENOR CARGA SEMANAL")
+                           Escreval("========================================")
+                           Se (total_medicos_semana = 0) Entao
+                              Escreval("Nao existem medicos cadastrados.")
+                           Senao
+                              Escreval("Menor carga: ", menor_carga)
+                              Escreval("Maior carga: ", maior_carga)
+                              Escreval()
+                              Escreval("Medicos com maior carga:")
+                              Para indice_carga de 1 ate max_med Faca
+                                 Se (med_Cod[indice_carga] <> 0) e (qtd_turnos_escalados[indice_carga] = maior_carga) Entao
+                                    Escreval("Registro: ", med_Cod[indice_carga])
+                                    Escreval("Nome: ", med_Nome[indice_carga])
+                                    Escreval("Escalas: ", qtd_turnos_escalados[indice_carga])
+                                    Escreval("----------------------------------------")
+                                 Fimse
+                              Fimpara
+                           Fimse
+
+                        Caso 2
+                           // US23 - MEDIA DE ESCALAS
+                           Escreval("========================================")
+                           Escreval("         MEDIA DE ESCALAS")
+                           Escreval("========================================")
+                           Se (total_medicos_semana = 0) Entao
+                              Escreval("Nao e possivel calcular a media.")
+                              Escreval("Nao existem medicos cadastrados.")
+                           Senao
+                              media_escalas_semana <- total_escalas_semana / total_medicos_semana
+                              Escreval("Total de medicos: ", total_medicos_semana)
+                              Escreval("Total de escalas: ", total_escalas_semana)
+                              Escreval("Media semanal: ", media_escalas_semana:0:2)
+                           Fimse
+
+                        Caso 3
+                           // US24 - QUANTIDADE DE ESCALAS
+                           Escreval("========================================")
+                           Escreval("     ESCALAS POR PROFISSIONAL")
+                           Escreval("========================================")
+                           encontrou_escalado <- falso
+                           Para indice_carga de 1 ate max_med Faca
+                              Se (med_Cod[indice_carga] <> 0) e (qtd_turnos_escalados[indice_carga] > 0) Entao
+                                 encontrou_escalado <- verdadeiro
+                                 Escreval("Registro: ", med_Cod[indice_carga])
+                                 Escreval("Nome: ", med_Nome[indice_carga])
+                                 Escreval("Especialidade: ", med_Espec[indice_carga])
+                                 Escreval("Total de escalas: ", qtd_turnos_escalados[indice_carga])
+                                 Escreval("----------------------------------------")
+                              Fimse
+                           Fimpara
+                           Se (encontrou_escalado = falso) Entao
+                              Escreval("Nenhum medico escalado na semana.")
+                           Fimse
+
+                        Caso 4
+                           // US25 - SOBRECARGA SEMANAL
+                           Escreval("========================================")
+                           Escreval("       SOBRECARGA DE ESCALAS")
+                           Escreval("========================================")
+                           Se (total_medicos_semana = 0) Entao
+                              Escreval("Nao existem medicos cadastrados.")
+                           Senao
+                              media_escalas_semana <- total_escalas_semana / total_medicos_semana
+                              encontrou_sobrecarga <- falso
+                              Escreval("Media semanal: ", media_escalas_semana:0:2)
+                              Escreval("Limite de sobrecarga: ", (media_escalas_semana + 1):0:2)
+                              Escreval()
+                              Para indice_carga de 1 ate max_med Faca
+                                 Se (med_Cod[indice_carga] <> 0) e (qtd_turnos_escalados[indice_carga] > (media_escalas_semana + 1)) Entao
+                                    encontrou_sobrecarga <- verdadeiro
+                                    Escreval("Registro: ", med_Cod[indice_carga])
+                                    Escreval("Nome: ", med_Nome[indice_carga])
+                                    Escreval("Especialidade: ", med_Espec[indice_carga])
+                                    Escreval("Escalas: ", qtd_turnos_escalados[indice_carga])
+                                    Escreval("----------------------------------------")
+                                 Fimse
+                              Fimpara
+                              Se (encontrou_sobrecarga = falso) Entao
+                                 Escreval("Nenhum medico apresenta sobrecarga.")
+                              Fimse
+                           Fimse
+
+                        Caso 0
+                           Escreval("Indo para validacoes diarias...")
+
+                        OutroCaso
+                           Escreval("Opcao invalida!")
+                     FimEscolha
+
+                     Se (opcao_relatorio_semana <> 0) Entao
+                        Escreval()
+                        Escreval("Digite qualquer caractere para continuar:")
+                        Leia(continuar)
+                        LimpaTela()
+                     Fimse
+                  Fimenquanto
+
+                  // VALIDACOES DIARIAS EXISTENTES
+                  opcao_esc <- 0
                   Enquanto (opcao_esc <> 5) Faça
 
 
@@ -13943,7 +14103,7 @@ Inicio
                                                 // FIM DA VALIDAÇÃO DE 3 TURNO DE QUARTA
 
                                              Senão
-                                               //VALIDAR QUINTA DE MANHA
+                                                //VALIDAR QUINTA DE MANHA
 
                                                 Se (opcao_esc = 1) e (dia_semana_nome_escolhido = "QUINTA-FEIRA") Então
 
@@ -14815,7 +14975,7 @@ Inicio
 
                                                       Senão
 
-                                                           //VALIDAR SEXTA DE MANHA
+                                                         //VALIDAR SEXTA DE MANHA
 
                                                          Se (opcao_esc = 1) e (dia_semana_nome_escolhido = "SEXTA-FEIRA") Então
 
