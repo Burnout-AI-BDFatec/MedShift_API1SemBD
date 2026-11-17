@@ -16,7 +16,7 @@ Algoritmo "EscalaMedicos_3°sprint"
 
 Const
 
-   max_med = 140
+max_med = 140
 
 Var
 
@@ -11713,7 +11713,7 @@ Inicio
                               valida_p_noite <- 0
                               valida_c_noite <- 0
 
-                              Para indice_turno_relatorio de 1 ate max_med Faca
+                              Para indice_turno_relatorio de 1 ate total_cadastrados Faca
 
                                  Se (med_Cod[indice_turno_relatorio] <> 0) Entao
 
