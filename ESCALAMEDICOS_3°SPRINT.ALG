@@ -42,7 +42,7 @@ Var
    turno_noite_sexta: vetor[1..max_med] de inteiro
 
 
-   opcao_menu, opcao_esc, registro_med, cadastrou, descadastro : inteiro
+   opcao_menu, opcao_esc, registro_med, cadastrou : inteiro
    pare, button, buttonT: caractere
    repetido: logico
 
@@ -659,9 +659,9 @@ Inicio
                            //ao entrar na opcao de montar novamente a escala de segunda
                            //a escala anteriormente montada sera desalocada
 
-                           Para descadastro de 1 ate max_med Faca
+                           Para registro_med de 1 ate max_med Faca
 
-                              Se (turno_manha_segunda[registro_med] = 1) Entao
+                              Se(turno_manha_segunda[registro_med] = 1)Entao
 
                                  turno_manha_segunda[registro_med] <- 0
                                  qtd_turnos_escalados_segunda[registro_med] <- (qtd_turnos_escalados_segunda[registro_med] - 1)
@@ -1306,7 +1306,7 @@ Inicio
 
                                           //se o turno nao for confirmado temos que desalocar
 
-                                          Para descadastro de 1 ate max_med Faca
+                                          Para registro_med de 1 ate max_med Faca
 
                                              Se (turno_manha_segunda[registro_med] = 1) Entao
 
@@ -1343,7 +1343,7 @@ Inicio
                               //ao entrar na opcao de montar novamente a escala de segunda
                               //a escala anteriormente montada sera desalocada
 
-                              Para descadastro de 1 ate max_med Faca
+                              Para registro_med de 1 ate max_med Faca
 
                                  Se (turno_tarde_segunda[registro_med] = 1) Entao
 
@@ -1991,7 +1991,7 @@ Inicio
 
                                              //se o turno nao for confirmado temos que desalocar
 
-                                             Para descadastro de 1 ate max_med Faca
+                                             Para registro_med de 1 ate max_med Faca
 
                                                 Se (turno_tarde_segunda[registro_med] = 1) Entao
 
@@ -2030,7 +2030,7 @@ Inicio
                                  //ao entrar na opcao de montar novamente a escala de segunda
                                  //a escala anteriormente montada sera desalocada
 
-                                 Para descadastro de 1 ate max_med Faca
+                                 Para registro_med de 1 ate max_med Faca
 
                                     Se (turno_noite_segunda[registro_med] = 1) Entao
 
@@ -2722,7 +2722,7 @@ Inicio
 
                                                 //se o turno nao for confirmado temos que desalocar
 
-                                                Para descadastro de 1 ate max_med Faca
+                                                Para registro_med de 1 ate max_med Faca
 
                                                    Se (turno_noite_segunda[registro_med] = 1) Entao
 
@@ -2771,6 +2771,7 @@ Inicio
                      //caso seja selecionado terça-feira
 
                   Caso (2)
+                  
                      opcao_esc <- -1
 
                      Enquanto (opcao_esc <> 0) Faca
@@ -2808,7 +2809,7 @@ Inicio
                            //ao entrar na opcao de montar novamente a escala de terca
                            //a escala anteriormente montada sera desalocada
 
-                           Para descadastro de 1 ate max_med Faca
+                           Para registro_med de 1 ate max_med Faca
 
                               Se (turno_manha_terca[registro_med] = 1) Entao
 
@@ -3502,7 +3503,7 @@ Inicio
 
                                           //se o turno nao for confirmado temos que desalocar
 
-                                          Para descadastro de 1 ate max_med Faca
+                                          Para registro_med de 1 ate max_med Faca
 
                                              Se (turno_manha_terca[registro_med] = 1) Entao
 
@@ -3539,7 +3540,7 @@ Inicio
                               //ao entrar na opcao de montar novamente a escala de terca
                               //a escala anteriormente montada sera desalocada
 
-                              Para descadastro de 1 ate max_med Faca
+                              Para registro_med de 1 ate max_med Faca
 
                                  Se (turno_tarde_terca[registro_med] = 1) Entao
 
@@ -4187,7 +4188,7 @@ Inicio
 
                                              //se o turno nao for confirmado temos que desalocar
 
-                                             Para descadastro de 1 ate max_med Faca
+                                             Para registro_med de 1 ate max_med Faca
 
                                                 Se (turno_tarde_terca[registro_med] = 1) Entao
 
@@ -4226,7 +4227,7 @@ Inicio
                                  //ao entrar na opcao de montar novamente a escala de terca
                                  //a escala anteriormente montada sera desalocada
 
-                                 Para descadastro de 1 ate max_med Faca
+                                 Para registro_med de 1 ate max_med Faca
 
                                     Se (turno_noite_terca[registro_med] = 1) Entao
 
@@ -4918,7 +4919,7 @@ Inicio
 
                                                 //se o turno nao for confirmado temos que desalocar
 
-                                                Para descadastro de 1 ate max_med Faca
+                                                Para registro_med de 1 ate max_med Faca
 
                                                    Se (turno_noite_terca[registro_med] = 1) Entao
 
@@ -5005,7 +5006,7 @@ Inicio
                            //ao entrar na opcao de montar novamente a escala de quarta
                            //a escala anteriormente montada sera desalocada
 
-                           Para descadastro de 1 ate max_med Faca
+                           Para registro_med de 1 ate max_med Faca
 
                               Se (turno_manha_quarta[registro_med] = 1) Entao
 
@@ -5362,7 +5363,7 @@ Inicio
 
                                                    Senao
 
-                                                      Se ((qtd_turnos_escalados_quartaregistro_med] = 2) ou (qtd_turnos_escalados[registro_med] = 6)) Entao
+                                                      Se ((qtd_turnos_escalados_quarta[registro_med] = 2) ou (qtd_turnos_escalados[registro_med] = 6)) Entao
 
                                                          Se (qtd_turnos_escalados_quarta[registro_med] = 2) Entao
 
@@ -5699,7 +5700,7 @@ Inicio
 
                                           //se o turno nao for confirmado temos que desalocar
 
-                                          Para descadastro de 1 ate max_med Faca
+                                          Para registro_med de 1 ate max_med Faca
 
                                              Se (turno_manha_quarta[registro_med] = 1) Entao
 
@@ -5736,7 +5737,7 @@ Inicio
                               //ao entrar na opcao de montar novamente a escala de quarta
                               //a escala anteriormente montada sera desalocada
 
-                              Para descadastro de 1 ate max_med Faca
+                              Para registro_med de 1 ate max_med Faca
 
                                  Se (turno_tarde_quarta[registro_med] = 1) Entao
 
@@ -6384,7 +6385,7 @@ Inicio
 
                                              //se o turno nao for confirmado temos que desalocar
 
-                                             Para descadastro de 1 ate max_med Faca
+                                             Para registro_med de 1 ate max_med Faca
 
                                                 Se (turno_tarde_quarta[registro_med] = 1) Entao
 
@@ -6423,7 +6424,7 @@ Inicio
                                  //ao entrar na opcao de montar novamente a escala de quarta
                                  //a escala anteriormente montada sera desalocada
 
-                                 Para descadastro de 1 ate max_med Faca
+                                 Para registro_med de 1 ate max_med Faca
 
                                     Se (turno_noite_quarta[registro_med] = 1) Entao
 
@@ -7115,7 +7116,7 @@ Inicio
 
                                                 //se o turno nao for confirmado temos que desalocar
 
-                                                Para descadastro de 1 ate max_med Faca
+                                                Para registro_med de 1 ate max_med Faca
 
                                                    Se (turno_noite_quarta[registro_med] = 1) Entao
 
@@ -7203,7 +7204,7 @@ Inicio
                            //ao entrar na opcao de montar novamente a escala de quinta
                            //a escala anteriormente montada sera desalocada
 
-                           Para descadastro de 1 ate max_med Faca
+                           Para registro_med de 1 ate max_med Faca
 
                               Se (turno_manha_quinta[registro_med] = 1) Entao
 
@@ -7897,7 +7898,7 @@ Inicio
 
                                           //se o turno nao for confirmado temos que desalocar
 
-                                          Para descadastro de 1 ate max_med Faca
+                                          Para registro_med de 1 ate max_med Faca
 
                                              Se (turno_manha_quinta[registro_med] = 1) Entao
 
@@ -7934,7 +7935,7 @@ Inicio
                               //ao entrar na opcao de montar novamente a escala de quinta
                               //a escala anteriormente montada sera desalocada
 
-                              Para descadastro de 1 ate max_med Faca
+                              Para registro_med de 1 ate max_med Faca
 
                                  Se (turno_tarde_quinta[registro_med] = 1) Entao
 
@@ -8582,7 +8583,7 @@ Inicio
 
                                              //se o turno nao for confirmado temos que desalocar
 
-                                             Para descadastro de 1 ate max_med Faca
+                                             Para registro_med de 1 ate max_med Faca
 
                                                 Se (turno_tarde_quinta[registro_med] = 1) Entao
 
@@ -8621,7 +8622,7 @@ Inicio
                                  //ao entrar na opcao de montar novamente a escala de quinta
                                  //a escala anteriormente montada sera desalocada
 
-                                 Para descadastro de 1 ate max_med Faca
+                                 Para registro_med de 1 ate max_med Faca
 
                                     Se (turno_noite_quinta[registro_med] = 1) Entao
 
@@ -9313,7 +9314,7 @@ Inicio
 
                                                 //se o turno nao for confirmado temos que desalocar
 
-                                                Para descadastro de 1 ate max_med Faca
+                                                Para registro_med de 1 ate max_med Faca
 
                                                    Se (turno_noite_quinta[registro_med] = 1) Entao
 
@@ -9401,7 +9402,7 @@ Inicio
                            //ao entrar na opcao de montar novamente a escala de sexta
                            //a escala anteriormente montada sera desalocada
 
-                           Para descadastro de 1 ate max_med Faca
+                           Para registro_med de 1 ate max_med Faca
 
                               Se (turno_manha_sexta[registro_med] = 1) Entao
 
@@ -10095,7 +10096,7 @@ Inicio
 
                                           //se o turno nao for confirmado temos que desalocar
 
-                                          Para descadastro de 1 ate max_med Faca
+                                          Para registro_med de 1 ate max_med Faca
 
                                              Se (turno_manha_sexta[registro_med] = 1) Entao
 
@@ -10132,7 +10133,7 @@ Inicio
                               //ao entrar na opcao de montar novamente a escala de sexta
                               //a escala anteriormente montada sera desalocada
 
-                              Para descadastro de 1 ate max_med Faca
+                              Para registro_med de 1 ate max_med Faca
 
                                  Se (turno_tarde_sexta[registro_med] = 1) Entao
 
@@ -10780,7 +10781,7 @@ Inicio
 
                                              //se o turno nao for confirmado temos que desalocar
 
-                                             Para descadastro de 1 ate max_med Faca
+                                             Para registro_med de 1 ate max_med Faca
 
                                                 Se (turno_tarde_sexta[registro_med] = 1) Entao
 
@@ -10819,7 +10820,7 @@ Inicio
                                  //ao entrar na opcao de montar novamente a escala de sexta
                                  //a escala anteriormente montada sera desalocada
 
-                                 Para descadastro de 1 ate max_med Faca
+                                 Para registro_med de 1 ate max_med Faca
 
                                     Se (turno_noite_sexta[registro_med] = 1) Entao
 
@@ -11471,7 +11472,7 @@ Inicio
 
                                                 //se o turno nao for confirmado temos que desalocar
 
-                                                Para descadastro de 1 ate max_med Faca
+                                                Para registro_med de 1 ate max_med Faca
 
                                                    Se (turno_noite_sexta[registro_med] = 1) Entao
 
