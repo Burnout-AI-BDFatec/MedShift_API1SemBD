@@ -1,4 +1,6 @@
 Algoritmo "EscalaMedicos_3°sprint"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi
 
 
 //API FATEC - BANCO DE DADOS - 1º SEMESTRE
@@ -102,6 +104,11 @@ Var
    limite_sobrecarga_semana: real
    encontrou_sobrecarga: logico
    encontrou_escalado: logico
+   // US26 - COBERTURA SEMANAL
+   dia_relatorio, indice_turno_relatorio: inteiro
+   turnos_validados, turnos_incompletos: inteiro
+   esc_manha, esc_tarde, esc_noite: inteiro
+   porcentagem_turnos: real
 
 
 Inicio
@@ -11550,6 +11557,7 @@ Inicio
                         Escreval("2 - MEDIA DE ESCALAS")
                         Escreval("3 - QUANTIDADE DE ESCALAS POR MEDICO")
                         Escreval("4 - MEDICOS COM SOBRECARGA")
+                        Escreval("5 - QUANTIDADE E PORCENTAGEM DE TURNOS COBERTOS")
                         Escreval("0 - VOLTAR AO MENU ANTERIOR")
                         Escreval("========================================")
                         Escreva("Escolha uma opcao: ")
@@ -11685,6 +11693,152 @@ Inicio
                                  Escreval("Nenhum medico apresenta sobrecarga.")
                               Fimse
                            Fimse
+
+                        Caso 5
+                           // US26 - QUANTIDADE E PORCENTAGEM DE TURNOS COBERTOS
+
+                           turnos_validados <- 0
+
+                           Para dia_relatorio de 1 ate 5 Faca
+
+                              valida_cg_manha <- 0
+                              valida_p_manha <- 0
+                              valida_c_manha <- 0
+
+                              valida_cg_tarde <- 0
+                              valida_p_tarde <- 0
+                              valida_c_tarde <- 0
+
+                              valida_cg_noite <- 0
+                              valida_p_noite <- 0
+                              valida_c_noite <- 0
+
+                              Para indice_turno_relatorio de 1 ate max_med Faca
+
+                                 Se (med_Cod[indice_turno_relatorio] <> 0) Entao
+
+                                    esc_manha <- 0
+                                    esc_tarde <- 0
+                                    esc_noite <- 0
+
+                                    // VERIFICAR ESCALAS DO DIA
+
+                                    Escolha dia_relatorio
+
+                                    Caso 1
+                                       esc_manha <- turno_manha_segunda[indice_turno_relatorio]
+                                       esc_tarde <- turno_tarde_segunda[indice_turno_relatorio]
+                                       esc_noite <- turno_noite_segunda[indice_turno_relatorio]
+
+                                    Caso 2
+                                       esc_manha <- turno_manha_terca[indice_turno_relatorio]
+                                       esc_tarde <- turno_tarde_terca[indice_turno_relatorio]
+                                       esc_noite <- turno_noite_terca[indice_turno_relatorio]
+
+                                    Caso 3
+                                       esc_manha <- turno_manha_quarta[indice_turno_relatorio]
+                                       esc_tarde <- turno_tarde_quarta[indice_turno_relatorio]
+                                       esc_noite <- turno_noite_quarta[indice_turno_relatorio]
+
+                                    Caso 4
+                                       esc_manha <- turno_manha_quinta[indice_turno_relatorio]
+                                       esc_tarde <- turno_tarde_quinta[indice_turno_relatorio]
+                                       esc_noite <- turno_noite_quinta[indice_turno_relatorio]
+
+                                    Caso 5
+                                       esc_manha <- turno_manha_sexta[indice_turno_relatorio]
+                                       esc_tarde <- turno_tarde_sexta[indice_turno_relatorio]
+                                       esc_noite <- turno_noite_sexta[indice_turno_relatorio]
+
+                                    FimEscolha
+
+
+                                    Se (med_Espec[indice_turno_relatorio] = "Clínico geral") Entao
+
+                                       Se (esc_manha = 1) Entao
+                                          valida_cg_manha <- valida_cg_manha + 1
+                                       Fimse
+
+                                       Se (esc_tarde = 1) Entao
+                                          valida_cg_tarde <- valida_cg_tarde + 1
+                                       Fimse
+
+                                       Se (esc_noite = 1) Entao
+                                          valida_cg_noite <- valida_cg_noite + 1
+                                       Fimse
+
+                                    Fimse
+
+
+
+                                    Se (med_Espec[indice_turno_relatorio] = "Pediatra") Entao
+
+                                       Se (esc_manha = 1) Entao
+                                          valida_p_manha <- valida_p_manha + 1
+                                       Fimse
+
+                                       Se (esc_tarde = 1) Entao
+                                          valida_p_tarde <- valida_p_tarde + 1
+                                       Fimse
+
+                                       Se (esc_noite = 1) Entao
+                                          valida_p_noite <- valida_p_noite + 1
+                                       Fimse
+
+                                    Fimse
+
+
+
+                                    Se (med_Espec[indice_turno_relatorio] = "Cirurgião") Entao
+
+                                       Se (esc_manha = 1) Entao
+                                          valida_c_manha <- valida_c_manha + 1
+                                       Fimse
+
+                                       Se (esc_tarde = 1) Entao
+                                          valida_c_tarde <- valida_c_tarde + 1
+                                       Fimse
+
+                                       Se (esc_noite = 1) Entao
+                                          valida_c_noite <- valida_c_noite + 1
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimpara
+
+
+
+                              Se (valida_cg_manha >= 2) e (valida_p_manha >= 1) e (valida_c_manha >= 1) Entao
+                                 turnos_validados <- turnos_validados + 1
+                              Fimse
+
+                              Se (valida_cg_tarde >= 2) e (valida_p_tarde >= 1) e (valida_c_tarde >= 1) Entao
+                                 turnos_validados <- turnos_validados + 1
+                              Fimse
+
+                              Se (valida_cg_noite >= 2) e (valida_p_noite >= 1) e (valida_c_noite >= 1) Entao
+                                 turnos_validados <- turnos_validados + 1
+                              Fimse
+
+                           Fimpara
+
+                           turnos_incompletos <- 15 - turnos_validados
+                           porcentagem_turnos <- (turnos_validados * 100) / 15
+                           
+                           
+
+                           Escreval("==========================================")
+                           Escreval("       COBERTURA SEMANAL DE TURNOS")
+                           Escreval("==========================================")
+                           Escreval("Total de turnos: 15")
+                           Escreval("Turnos cobertos: ", turnos_validados)
+                           Escreval("Turnos incompletos: ", turnos_incompletos)
+                           Escreval("Porcentagem: ", porcentagem_turnos:6:2, "%")
+                           Escreval("==========================================")
+
 
                         Caso 0
                            Escreval("Voltando ao menu principal...")
