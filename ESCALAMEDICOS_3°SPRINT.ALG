@@ -15688,8 +15688,8 @@ Inicio
 
 
                                                                   //VALIDAR AS 24 HRS (OU SEJA OS TRES TURNOS JUNTOS)
-
-                                                                  Se (opcao_esc = 4) Então
+                                                                                          //VALIDAÇÃO SEGUNDA
+                                                                  Se (opcao_esc = 4) e (dia_semana_nome_escolhido = "SEGUNDA-FEIRA")Então
 
                                                                      valida_cg_manha <- 0
                                                                      valida_p_manha <- 0
@@ -15766,7 +15766,7 @@ Inicio
                                                                         Fimse
 
 
-                                                                        Se (turno_noite[contador_escala] = 1) Então
+                                                                        Se (turno_noite_segunda[contador_escala] = 1) Então
 
                                                                            Se (med_Espec[contador_escala] = "Clínico geral") Então
 
@@ -16011,7 +16011,7 @@ Inicio
 
                                                                         Para indice_relatorio de 1 até max_med Faça
 
-                                                                           Se (turno_noite[indice_relatorio] = 1) Então
+                                                                           Se (turno_noite_segunda[indice_relatorio] = 1) Então
 
                                                                               Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
@@ -16126,7 +16126,8 @@ Inicio
 
                                                                         Fimse
 
-                                                                        Escreval()
+                                                                        Escreval("            VALIDANDO ", dia_semana_nome_escolhido)
+
                                                                         Escreval("===================================================")
                                                                         Escreval()
                                                                         Escreval("             RELATÓRIO - TURNO DA MANHÃ            ")
@@ -16402,7 +16403,7 @@ Inicio
 
                                                                         Para indice_relatorio de 1 até max_med Faça
 
-                                                                           Se (turno_noite[indice_relatorio] = 1) Então
+                                                                           Se (turno_noite_segunda[indice_relatorio] = 1) Então
 
                                                                               Se (med_Espec[indice_relatorio] = "Clínico geral") Então
 
@@ -16489,6 +16490,3229 @@ Inicio
 
                                                                      Fimse
 
+                                                                     Senão
+
+
+                                                                  //VALIDAR AS 24 HRS (OU SEJA OS TRES TURNOS JUNTOS)
+                                                                                          //VALIDAÇÃO TERÇA
+                                                                  Se (opcao_esc = 4) e (dia_semana_nome_escolhido = "TERCA-FEIRA")Então
+
+                                                                     valida_cg_manha <- 0
+                                                                     valida_p_manha <- 0
+                                                                     valida_c_manha <- 0
+                                                                     valida_cg_tarde <- 0
+                                                                     valida_p_tarde <- 0
+                                                                     valida_c_tarde <- 0
+                                                                     valida_cg_noite <- 0
+                                                                     valida_p_noite <- 0
+                                                                     valida_c_noite <- 0
+                                                                     falta_cg_manha <- 0
+                                                                     falta_p_manha <- 0
+                                                                     falta_c_manha <- 0
+                                                                     falta_cg_tarde <- 0
+                                                                     falta_p_tarde <- 0
+                                                                     falta_c_tarde <- 0
+                                                                     falta_cg_noite <- 0
+                                                                     falta_p_noite <- 0
+                                                                     falta_c_noite <- 0
+
+                                                                     Para contador_escala de 1 até max_med Faça
+
+                                                                        Se (turno_manha_terca[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_manha <- (valida_cg_manha + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_manha <- (valida_p_manha + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_manha <- (valida_c_manha + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+
+                                                                        Se (turno_tarde_terca[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_tarde <- (valida_cg_tarde + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_tarde <- (valida_p_tarde + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_tarde <- (valida_c_tarde + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+
+                                                                        Se (turno_noite_terca[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_noite <- (valida_cg_noite + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_noite <- (valida_p_noite + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_noite <- (valida_c_noite + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+                                                                     Fimpara
+
+                                                                     Se ((valida_cg_manha >= 2) e (valida_p_manha >= 1) e (valida_c_manha >= 1) e (valida_cg_tarde >= 2) e (valida_p_tarde >= 1) e (valida_c_tarde >= 1) e (valida_cg_noite >= 2) e (valida_p_noite >= 1) e (valida_c_noite >= 1)) Então
+
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+                                                                        Escreval("  PLANTÃO DE 24 HRS * PODE * SER PUBLICADO  ")
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA MANHÃ                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_manha_terca[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA TARDE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_tarde_terca[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA NOITE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_noite_terca[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                     Senão
+
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+                                                                        Escreval("PLANTÃO DE 24 HRS * NÃO PODE * SER PUBLICADO")
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+
+
+
+                                                                        Se (valida_cg_manha < 2) Então
+
+                                                                           falta_cg_manha <- (2 - valida_cg_manha)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_manha < 1) Então
+
+                                                                           falta_p_manha <- (1 - valida_p_manha)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_manha < 1) Então
+
+                                                                           falta_c_manha <- (1 - valida_c_manha)
+
+                                                                        Fimse
+
+                                                                         Escreval("            VALIDANDO ", dia_semana_nome_escolhido)
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("             RELATÓRIO - TURNO DA MANHÃ            ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_manha, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_manha, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_manha, " CIRURGIÃO")
+                                                                        Escreval()
+
+                                                                        Se (valida_cg_tarde < 2) Então
+
+                                                                           falta_cg_tarde <- (2 - valida_cg_tarde)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_tarde < 1) Então
+
+                                                                           falta_p_tarde <- (1 - valida_p_tarde)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_tarde < 1) Então
+
+                                                                           falta_c_tarde <- (1 - valida_c_tarde)
+
+                                                                        Fimse
+
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("            RELATÓRIO - TURNO DA TARDE             ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_tarde, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_tarde, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_tarde, " CIRURGIÃO")
+                                                                        Escreval()
+
+                                                                        Se (valida_cg_noite < 2) Então
+
+                                                                           falta_cg_noite <- (2 - valida_cg_noite)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_noite < 1) Então
+
+                                                                           falta_p_noite <- (1 - valida_p_noite)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_noite < 1) Então
+
+                                                                           falta_c_noite <- (1 - valida_c_noite)
+
+                                                                        Fimse
+
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("            RELATÓRIO - TURNO DA NOITE             ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_noite, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_noite, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_noite, " CIRURGIÃO")
+                                                                        Escreval()
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA MANHÃ                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_manha_terca[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA TARDE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_tarde_terca[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA NOITE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_noite_terca[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                     Fimse
+                                                                      Senão
+
+
+                                                                  //VALIDAR AS 24 HRS (OU SEJA OS TRES TURNOS JUNTOS)
+                                                                                          //VALIDAÇÃO QUARTA
+                                                                  Se (opcao_esc = 4) e (dia_semana_nome_escolhido = "QUARTA-FEIRA")Então
+
+                                                                     valida_cg_manha <- 0
+                                                                     valida_p_manha <- 0
+                                                                     valida_c_manha <- 0
+                                                                     valida_cg_tarde <- 0
+                                                                     valida_p_tarde <- 0
+                                                                     valida_c_tarde <- 0
+                                                                     valida_cg_noite <- 0
+                                                                     valida_p_noite <- 0
+                                                                     valida_c_noite <- 0
+                                                                     falta_cg_manha <- 0
+                                                                     falta_p_manha <- 0
+                                                                     falta_c_manha <- 0
+                                                                     falta_cg_tarde <- 0
+                                                                     falta_p_tarde <- 0
+                                                                     falta_c_tarde <- 0
+                                                                     falta_cg_noite <- 0
+                                                                     falta_p_noite <- 0
+                                                                     falta_c_noite <- 0
+
+                                                                     Para contador_escala de 1 até max_med Faça
+
+                                                                        Se (turno_manha_quarta[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_manha <- (valida_cg_manha + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_manha <- (valida_p_manha + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_manha <- (valida_c_manha + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+
+                                                                        Se (turno_tarde_quarta[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_tarde <- (valida_cg_tarde + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_tarde <- (valida_p_tarde + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_tarde <- (valida_c_tarde + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+
+                                                                        Se (turno_noite_quarta[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_noite <- (valida_cg_noite + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_noite <- (valida_p_noite + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_noite <- (valida_c_noite + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+                                                                     Fimpara
+
+                                                                     Se ((valida_cg_manha >= 2) e (valida_p_manha >= 1) e (valida_c_manha >= 1) e (valida_cg_tarde >= 2) e (valida_p_tarde >= 1) e (valida_c_tarde >= 1) e (valida_cg_noite >= 2) e (valida_p_noite >= 1) e (valida_c_noite >= 1)) Então
+
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+                                                                        Escreval("  PLANTÃO DE 24 HRS * PODE * SER PUBLICADO  ")
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA MANHÃ                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_manha_quarta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA TARDE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_tarde_quarta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA NOITE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_noite_quarta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                     Senão
+
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+                                                                        Escreval("PLANTÃO DE 24 HRS * NÃO PODE * SER PUBLICADO")
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+
+
+
+                                                                        Se (valida_cg_manha < 2) Então
+
+                                                                           falta_cg_manha <- (2 - valida_cg_manha)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_manha < 1) Então
+
+                                                                           falta_p_manha <- (1 - valida_p_manha)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_manha < 1) Então
+
+                                                                           falta_c_manha <- (1 - valida_c_manha)
+
+                                                                        Fimse
+
+                                                                        Escreval("            VALIDANDO ", dia_semana_nome_escolhido)
+                                                                        
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("             RELATÓRIO - TURNO DA MANHÃ            ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_manha, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_manha, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_manha, " CIRURGIÃO")
+                                                                        Escreval()
+
+
+                                                                        Se (valida_cg_tarde < 2) Então
+
+                                                                           falta_cg_tarde <- (2 - valida_cg_tarde)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_tarde < 1) Então
+
+                                                                           falta_p_tarde <- (1 - valida_p_tarde)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_tarde < 1) Então
+
+                                                                           falta_c_tarde <- (1 - valida_c_tarde)
+
+                                                                        Fimse
+
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("            RELATÓRIO - TURNO DA TARDE             ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_tarde, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_tarde, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_tarde, " CIRURGIÃO")
+                                                                        Escreval()
+
+                                                                        Se (valida_cg_noite < 2) Então
+
+                                                                           falta_cg_noite <- (2 - valida_cg_noite)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_noite < 1) Então
+
+                                                                           falta_p_noite <- (1 - valida_p_noite)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_noite < 1) Então
+
+                                                                           falta_c_noite <- (1 - valida_c_noite)
+
+                                                                        Fimse
+
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("            RELATÓRIO - TURNO DA NOITE             ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_noite, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_noite, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_noite, " CIRURGIÃO")
+                                                                        Escreval()
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA MANHÃ                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_manha_quarta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA TARDE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_tarde_quarta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA NOITE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_noite_quarta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                     Fimse
+                                                                     
+
+Senão
+
+
+                                                                  //VALIDAR AS 24 HRS (OU SEJA OS TRES TURNOS JUNTOS)
+
+                                                                                                 //VALIDAÇÃO QUINTA
+                                                                  Se (opcao_esc = 4) e (dia_semana_nome_escolhido = "QUINTA-FEIRA")Então
+
+                                                                     valida_cg_manha <- 0
+                                                                     valida_p_manha <- 0
+                                                                     valida_c_manha <- 0
+                                                                     valida_cg_tarde <- 0
+                                                                     valida_p_tarde <- 0
+                                                                     valida_c_tarde <- 0
+                                                                     valida_cg_noite <- 0
+                                                                     valida_p_noite <- 0
+                                                                     valida_c_noite <- 0
+                                                                     falta_cg_manha <- 0
+                                                                     falta_p_manha <- 0
+                                                                     falta_c_manha <- 0
+                                                                     falta_cg_tarde <- 0
+                                                                     falta_p_tarde <- 0
+                                                                     falta_c_tarde <- 0
+                                                                     falta_cg_noite <- 0
+                                                                     falta_p_noite <- 0
+                                                                     falta_c_noite <- 0
+
+                                                                     Para contador_escala de 1 até max_med Faça
+
+                                                                        Se (turno_manha_quinta[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_manha <- (valida_cg_manha + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_manha <- (valida_p_manha + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_manha <- (valida_c_manha + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+
+                                                                        Se (turno_tarde_quinta[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_tarde <- (valida_cg_tarde + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_tarde <- (valida_p_tarde + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_tarde <- (valida_c_tarde + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+
+                                                                        Se (turno_noite_quinta[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_noite <- (valida_cg_noite + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_noite <- (valida_p_noite + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_noite <- (valida_c_noite + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+                                                                     Fimpara
+
+                                                                     Se ((valida_cg_manha >= 2) e (valida_p_manha >= 1) e (valida_c_manha >= 1) e (valida_cg_tarde >= 2) e (valida_p_tarde >= 1) e (valida_c_tarde >= 1) e (valida_cg_noite >= 2) e (valida_p_noite >= 1) e (valida_c_noite >= 1)) Então
+
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+                                                                        Escreval("  PLANTÃO DE 24 HRS * PODE * SER PUBLICADO  ")
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA MANHÃ                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_manha_quinta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA TARDE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_tarde_quinta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA NOITE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_noite_quinta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                     Senão
+
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+                                                                        Escreval("PLANTÃO DE 24 HRS * NÃO PODE * SER PUBLICADO")
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+
+
+
+                                                                        Se (valida_cg_manha < 2) Então
+
+                                                                           falta_cg_manha <- (2 - valida_cg_manha)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_manha < 1) Então
+
+                                                                           falta_p_manha <- (1 - valida_p_manha)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_manha < 1) Então
+
+                                                                           falta_c_manha <- (1 - valida_c_manha)
+
+                                                                        Fimse
+
+                                                                        Escreval("            VALIDANDO ", dia_semana_nome_escolhido)
+
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("             RELATÓRIO - TURNO DA MANHÃ            ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_manha, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_manha, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_manha, " CIRURGIÃO")
+                                                                        Escreval()
+
+
+                                                                        Se (valida_cg_tarde < 2) Então
+
+                                                                           falta_cg_tarde <- (2 - valida_cg_tarde)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_tarde < 1) Então
+
+                                                                           falta_p_tarde <- (1 - valida_p_tarde)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_tarde < 1) Então
+
+                                                                           falta_c_tarde <- (1 - valida_c_tarde)
+
+                                                                        Fimse
+
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("            RELATÓRIO - TURNO DA TARDE             ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_tarde, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_tarde, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_tarde, " CIRURGIÃO")
+                                                                        Escreval()
+
+                                                                        Se (valida_cg_noite < 2) Então
+
+                                                                           falta_cg_noite <- (2 - valida_cg_noite)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_noite < 1) Então
+
+                                                                           falta_p_noite <- (1 - valida_p_noite)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_noite < 1) Então
+
+                                                                           falta_c_noite <- (1 - valida_c_noite)
+
+                                                                        Fimse
+
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("            RELATÓRIO - TURNO DA NOITE             ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_noite, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_noite, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_noite, " CIRURGIÃO")
+                                                                        Escreval()
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA MANHÃ                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_manha_quinta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA TARDE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_tarde_quinta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA NOITE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_noite_quinta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                     Fimse
+                                                                     SENAO
+                                                                                               //VALIDAÇÃO SEXTA
+                                                                  Se (opcao_esc = 4) e (dia_semana_nome_escolhido = "SEXTA-FEIRA")Então
+
+                                                                     valida_cg_manha <- 0
+                                                                     valida_p_manha <- 0
+                                                                     valida_c_manha <- 0
+                                                                     valida_cg_tarde <- 0
+                                                                     valida_p_tarde <- 0
+                                                                     valida_c_tarde <- 0
+                                                                     valida_cg_noite <- 0
+                                                                     valida_p_noite <- 0
+                                                                     valida_c_noite <- 0
+                                                                     falta_cg_manha <- 0
+                                                                     falta_p_manha <- 0
+                                                                     falta_c_manha <- 0
+                                                                     falta_cg_tarde <- 0
+                                                                     falta_p_tarde <- 0
+                                                                     falta_c_tarde <- 0
+                                                                     falta_cg_noite <- 0
+                                                                     falta_p_noite <- 0
+                                                                     falta_c_noite <- 0
+
+                                                                     Para contador_escala de 1 até max_med Faça
+
+                                                                        Se (turno_manha_sexta[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_manha <- (valida_cg_manha + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_manha <- (valida_p_manha + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_manha <- (valida_c_manha + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+
+                                                                        Se (turno_tarde_sexta[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_tarde <- (valida_cg_tarde + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_tarde <- (valida_p_tarde + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_tarde <- (valida_c_tarde + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+
+                                                                        Se (turno_noite_sexta[contador_escala] = 1) Então
+
+                                                                           Se (med_Espec[contador_escala] = "Clínico geral") Então
+
+                                                                              valida_cg_noite <- (valida_cg_noite + 1)
+
+                                                                           Senão
+
+                                                                              Se (med_Espec[contador_escala] = "Pediatra") Então
+
+                                                                                 valida_p_noite <- (valida_p_noite + 1)
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[contador_escala] = "Cirurgião") Então
+
+                                                                                    valida_c_noite <- (valida_c_noite + 1)
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimse
+
+                                                                     Fimpara
+
+                                                                     Se ((valida_cg_manha >= 2) e (valida_p_manha >= 1) e (valida_c_manha >= 1) e (valida_cg_tarde >= 2) e (valida_p_tarde >= 1) e (valida_c_tarde >= 1) e (valida_cg_noite >= 2) e (valida_p_noite >= 1) e (valida_c_noite >= 1)) Então
+
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+                                                                        Escreval("  PLANTÃO DE 24 HRS * PODE * SER PUBLICADO  ")
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA MANHÃ                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_manha_sexta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA TARDE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_tarde_sexta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA NOITE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_noite_sexta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                     Senão
+
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+                                                                        Escreval("PLANTÃO DE 24 HRS * NÃO PODE * SER PUBLICADO")
+                                                                        Escreval()
+                                                                        Escreval("============================================")
+                                                                        Escreval()
+
+
+
+                                                                        Se (valida_cg_manha < 2) Então
+
+                                                                           falta_cg_manha <- (2 - valida_cg_manha)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_manha < 1) Então
+
+                                                                           falta_p_manha <- (1 - valida_p_manha)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_manha < 1) Então
+
+                                                                           falta_c_manha <- (1 - valida_c_manha)
+
+                                                                        Fimse
+
+                                                                        Escreval("            VALIDANDO ", dia_semana_nome_escolhido)
+
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("             RELATÓRIO - TURNO DA MANHÃ            ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_manha, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_manha, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_manha, " CIRURGIÃO")
+                                                                        Escreval()
+
+
+                                                                        Se (valida_cg_tarde < 2) Então
+
+                                                                           falta_cg_tarde <- (2 - valida_cg_tarde)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_tarde < 1) Então
+
+                                                                           falta_p_tarde <- (1 - valida_p_tarde)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_tarde < 1) Então
+
+                                                                           falta_c_tarde <- (1 - valida_c_tarde)
+
+                                                                        Fimse
+
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("            RELATÓRIO - TURNO DA TARDE             ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_tarde, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_tarde, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_tarde, " CIRURGIÃO")
+                                                                        Escreval()
+
+                                                                        Se (valida_cg_noite < 2) Então
+
+                                                                           falta_cg_noite <- (2 - valida_cg_noite)
+
+                                                                        Fimse
+
+                                                                        Se (valida_p_noite < 1) Então
+
+                                                                           falta_p_noite <- (1 - valida_p_noite)
+
+                                                                        Fimse
+
+                                                                        Se (valida_c_noite < 1) Então
+
+                                                                           falta_c_noite <- (1 - valida_c_noite)
+
+                                                                        Fimse
+
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval()
+                                                                        Escreval("            RELATÓRIO - TURNO DA NOITE             ")
+                                                                        Escreval()
+                                                                        Escreval("===================================================")
+                                                                        Escreval(" - FALTAM: ", falta_cg_noite, " CLÍNICO(S) GERAL(IS)")
+                                                                        Escreval(" - FALTAM: ", falta_p_noite, " PEDIATRA")
+                                                                        Escreval(" - FALTAM: ", falta_c_noite, " CIRURGIÃO")
+                                                                        Escreval()
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA MANHÃ                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_manha_sexta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA TARDE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_tarde_sexta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+
+                                                                        Escreval("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("                         RELATÓRIO DE MÉDICOS - TURNO DA NOITE                              ")
+                                                                        Escreval()
+                                                                        EscrevaL("============================================================================================")
+                                                                        Escreval()
+                                                                        Escreval("REGISTRO   NOME              ESPECIALIDADE    TURNOS ESCALADOS")
+                                                                        Escreval()
+                                                                        Escreval("--------------------------------------------------------------------------------------------")
+
+                                                                        Para indice_relatorio de 1 até max_med Faça
+
+                                                                           Se (turno_noite_sexta[indice_relatorio] = 1) Então
+
+                                                                              Se (med_Espec[indice_relatorio] = "Clínico geral") Então
+
+                                                                                 Se (med_Cod[indice_relatorio] < 10) Então
+
+                                                                                    Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                    Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                 Senao
+
+                                                                                    Se (med_Cod[indice_relatorio] < 100) Então
+
+                                                                                       Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senao
+
+                                                                                       EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "       ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Senão
+
+                                                                                 Se (med_Espec[indice_relatorio] = "Pediatra") Então
+
+                                                                                    Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                       Escreval("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                       Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                    Senão
+
+                                                                                       Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                          Escreval(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Escreval(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "            ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Senão
+
+                                                                                    Se (med_Espec[indice_relatorio] = "Cirurgião") Então
+
+                                                                                       Se med_Cod[indice_relatorio] < 10 Então
+
+                                                                                          EscrevaL("  ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                          Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                       Senão
+
+                                                                                          Se med_Cod[indice_relatorio] < 100 Então
+
+                                                                                             EscrevaL(" ",med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Senão
+
+                                                                                             EscrevaL(med_Cod[indice_relatorio], "      ", med_Nome[indice_relatorio])
+                                                                                             Escreval("                           ", med_Espec[indice_relatorio], "           ",qtd_turnos_escalados[indice_relatorio])
+
+                                                                                          Fimse
+
+                                                                                       Fimse
+
+                                                                                    Fimse
+
+                                                                                 Fimse
+
+                                                                              Fimse
+
+                                                                           Fimse
+
+                                                                        Fimpara
+
+                                                                     Fimse
+                                                                     
                                                                   Senão
 
                                                                      Se (opcao_esc = 5) Então
@@ -16543,8 +19767,12 @@ Inicio
                         Fimse
 
                      Fimse
-
-
+                     Fimse  //ACRECENTAR FIMSE A CADA DIA DE VALIDAÇÃO
+                     FIMSE
+                     fimse
+                     FIMSE
+                     
+                     
                      Escreval()
                      Escreval("APERTE [ENTER] PARA CONTINUAR")
                      Escreval()
@@ -16586,6 +19814,7 @@ Inicio
          Fimse
 
       Fimse
+
 
    FimEnquanto
 
