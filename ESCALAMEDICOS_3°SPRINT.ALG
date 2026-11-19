@@ -1,6 +1,4 @@
 Algoritmo "EscalaMedicos_3°sprint"
-// Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi
 
 
 //API FATEC - BANCO DE DADOS - 1º SEMESTRE
@@ -104,12 +102,16 @@ Var
    limite_sobrecarga_semana: real
    encontrou_sobrecarga: logico
    encontrou_escalado: logico
+
    // US26 - COBERTURA SEMANAL
    dia_relatorio, indice_turno_relatorio: inteiro
    turnos_validados, turnos_incompletos: inteiro
    esc_manha, esc_tarde, esc_noite: inteiro
    porcentagem_turnos: real
 
+   //US29 - VALIDAÇÃO DA COBERTURA SEMANAL
+   dia_semana, i_med, total_turnos_ok: inteiro
+   nome_dia: caractere
 
 Inicio
 
@@ -11558,6 +11560,7 @@ Inicio
                         Escreval("3 - QUANTIDADE DE ESCALAS POR MEDICO")
                         Escreval("4 - MEDICOS COM SOBRECARGA")
                         Escreval("5 - QUANTIDADE E PORCENTAGEM DE TURNOS COBERTOS")
+                        Escreval("6 - VALIDAÇÃO DA SEMANA")
                         Escreval("0 - VOLTAR AO MENU ANTERIOR")
                         Escreval("========================================")
                         Escreva("Escolha uma opcao: ")
@@ -11839,6 +11842,172 @@ Inicio
                            Escreval("Porcentagem: ", porcentagem_turnos:6:2, "%")
                            Escreval("==========================================")
 
+                        caso 6
+                           //US29 - VALIDAÇÃO DA COBERTURA SEMANAL
+                           Escreval("========================================")
+                           Escreval("          VALIDACAO DA SEMANA")
+                           Escreval("========================================")
+
+                           total_cadastrados <- i - 1
+                           total_turnos_ok <- 0
+                           
+
+                           Para dia_semana de 1 ate 5 Faca
+
+                              valida_cg_manha <- 0
+                              valida_p_manha <- 0
+                              valida_c_manha <- 0
+
+                              valida_cg_tarde <- 0
+                              valida_p_tarde <- 0
+                              valida_c_tarde <- 0
+
+                              valida_cg_noite <- 0
+                              valida_p_noite <- 0
+                              valida_c_noite <- 0
+
+                              Escolha dia_semana
+                              Caso 1
+                                 nome_dia <- "SEGUNDA"
+                              Caso 2
+                                 nome_dia <- "TERCA"
+                              Caso 3
+                                 nome_dia <- "QUARTA"
+                              Caso 4
+                                 nome_dia <- "QUINTA"
+                              Caso 5
+                                 nome_dia <- "SEXTA"
+                              FimEscolha
+
+                              Para i_med de 1 ate total_cadastrados Faca
+
+                                 Se (med_Cod[i_med] <> 0) Entao
+
+                                    esc_manha <- 0
+                                    esc_tarde <- 0
+                                    esc_noite <- 0
+
+                                    Escolha dia_semana
+
+                                    Caso 1
+                                       esc_manha <- turno_manha_segunda[i_med]
+                                       esc_tarde <- turno_tarde_segunda[i_med]
+                                       esc_noite <- turno_noite_segunda[i_med]
+
+                                    Caso 2
+                                       esc_manha <- turno_manha_terca[i_med]
+                                       esc_tarde <- turno_tarde_terca[i_med]
+                                       esc_noite <- turno_noite_terca[i_med]
+
+                                    Caso 3
+                                       esc_manha <- turno_manha_quarta[i_med]
+                                       esc_tarde <- turno_tarde_quarta[i_med]
+                                       esc_noite <- turno_noite_quarta[i_med]
+
+                                    Caso 4
+                                       esc_manha <- turno_manha_quinta[i_med]
+                                       esc_tarde <- turno_tarde_quinta[i_med]
+                                       esc_noite <- turno_noite_quinta[i_med]
+
+                                    Caso 5
+                                       esc_manha <- turno_manha_sexta[i_med]
+                                       esc_tarde <- turno_tarde_sexta[i_med]
+                                       esc_noite <- turno_noite_sexta[i_med]
+
+                                    FimEscolha
+
+                                    Se (med_Espec[i_med] = "Clínico geral") Entao
+
+                                       Se (esc_manha = 1) Entao
+                                          valida_cg_manha <- valida_cg_manha + 1
+                                       Fimse
+
+                                       Se (esc_tarde = 1) Entao
+                                          valida_cg_tarde <- valida_cg_tarde + 1
+                                       Fimse
+
+                                       Se (esc_noite = 1) Entao
+                                          valida_cg_noite <- valida_cg_noite + 1
+                                       Fimse
+
+                                    Fimse
+
+                                    Se (med_Espec[i_med] = "Pediatra") Entao
+
+                                       Se (esc_manha = 1) Entao
+                                          valida_p_manha <- valida_p_manha + 1
+                                       Fimse
+
+                                       Se (esc_tarde = 1) Entao
+                                          valida_p_tarde <- valida_p_tarde + 1
+                                       Fimse
+
+                                       Se (esc_noite = 1) Entao
+                                          valida_p_noite <- valida_p_noite + 1
+                                       Fimse
+
+                                    Fimse
+
+                                    Se (med_Espec[i_med] = "Cirurgião") Entao
+
+                                       Se (esc_manha = 1) Entao
+                                          valida_c_manha <- valida_c_manha + 1
+                                       Fimse
+
+                                       Se (esc_tarde = 1) Entao
+                                          valida_c_tarde <- valida_c_tarde + 1
+                                       Fimse
+
+                                       Se (esc_noite = 1) Entao
+                                          valida_c_noite <- valida_c_noite + 1
+                                       Fimse
+
+                                    Fimse
+
+                                 Fimse
+
+                              Fimpara
+
+                              Se (valida_cg_manha >= 2) e (valida_p_manha >= 1) e (valida_c_manha >= 1) Entao
+                                 total_turnos_ok <- total_turnos_ok + 1
+                              Senao
+                                 Escreval(nome_dia, " - MANHA: INCOMPLETO")
+                              Fimse
+
+                              Se (valida_cg_tarde >= 2) e (valida_p_tarde >= 1) e (valida_c_tarde >= 1) Entao
+                                 total_turnos_ok <- total_turnos_ok + 1
+                              Senao
+                                 Escreval(nome_dia, " - TARDE: INCOMPLETO")
+                              Fimse
+
+                              Se (valida_cg_noite >= 2) e (valida_p_noite >= 1) e (valida_c_noite >= 1) Entao
+                                 total_turnos_ok <- total_turnos_ok + 1
+                              Senao
+                                 Escreval(nome_dia, " - NOITE: INCOMPLETO")
+                              Fimse
+
+                           Fimpara
+
+                           Escreval()
+                           Escreval("========================================")
+
+                           Se (total_turnos_ok = 15) Entao
+
+                              Escreval("SEMANA VALIDADA!")
+                              Escreval("Todos os 15 turnos estao cobertos.")
+
+                           Senao
+
+                              Escreval("SEMANA INVALIDADA!")
+                              Escreval("Existem turnos que precisam de revisão.")
+
+                           Fimse
+
+                           Escreval()
+                           Escreval("Total de turnos: 15")
+                           Escreval("Turnos cobertos: ", total_turnos_ok)
+                           Escreval("Turnos incompletos: ", 15 - total_turnos_ok)
+                           Escreval("========================================")
 
                         Caso 0
                            Escreval("Voltando ao menu principal...")
